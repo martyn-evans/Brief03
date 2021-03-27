@@ -18,6 +18,8 @@ public class TankControls
     public KeyCode fireButton = KeyCode.Space; // the button to fire
     private bool fireButtonWasPressed = false; // has the fire button been pressed?
 
+    public Resources resources; // a reference to the Resource script
+
     /// <summary>
     /// If the value returned is postive then the postive axis has been pressed for that key.
     /// if the value returned is negative then the negative axis as been pressed
@@ -57,7 +59,7 @@ public class TankControls
                 }
             case KeyType.Fire:
                 {
-                    if (Input.GetKey(fireButton)) // if we are pressing the fire button
+                    if (Input.GetKey(fireButton) && resources.ammo.ammoValue > 0) // if we are pressing the fire button and we have ammo
                     {
                         currentValue = 1; // the fire button is pressed
                         fireButtonWasPressed = true;
@@ -67,12 +69,12 @@ public class TankControls
                     {
                         fireButtonWasPressed = false;
                         currentValue = -1;
+                        resources.ammo.MinusAmmo(); // takes a single ammo from the current value
                         //Debug.Log("Fire Released");
                     }
                     break;
                 }
         }
-
         return currentValue;
     }
 }

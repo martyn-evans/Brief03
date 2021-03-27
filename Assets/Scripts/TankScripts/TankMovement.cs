@@ -19,7 +19,7 @@ public class TankMovement
     private bool enableMovement = true; // if this is true we are allowed to accept input from the player
 
     private Transform tankReference; // a reference to the tank gameobject
-
+    public Resources resources; // a reference to the Resource script
 
     /// <summary>
     /// Handles the set up of our tank movement script
@@ -57,13 +57,13 @@ public class TankMovement
     public void HandleMovement(float ForwardMovement, float RotationMovement)
     {
         // if we can't move don't
-        if(enableMovement == false)
+        if(enableMovement == false || resources.fuel.CurrentFuel <= 0) // checks enable movement or fuel value
         {
             return;
         }
         Move(ForwardMovement);
         Turn(RotationMovement);
-
+        resources.fuel.UseFuel();
         tankSoundEffects.PlayTankEngine(ForwardMovement, RotationMovement); // update our audio based on our input
     }
 
