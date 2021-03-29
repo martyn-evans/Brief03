@@ -53,7 +53,6 @@ public class ShellExplosion : MonoBehaviour
         // spawn in our explosion effect
         GameObject clone = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
         Destroy(clone,maxShellLifeTime);
-
     }
 
     /// <summary>

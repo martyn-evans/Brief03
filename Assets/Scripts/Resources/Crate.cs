@@ -9,35 +9,57 @@ public class Crate : MonoBehaviour
     public GameObject fuelItemPrefab;
     public GameObject ammoItemPrefab;
 
+    /// <summary>
+    /// if the crate collides with certain objects it executes this function
+    /// </summary>
+    /// <param name="collision"></param>
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.root.GetComponent<Tank>())
+        if(collision.transform.tag == tag) // if object has same tag, it will return
+        {
+            return;
+        }
+
+        //if (collision.transform.root.GetComponent<Tank>() || collision.gameObject && gameObject.tag == "Shell")
+
+        if(collision.transform.tag == "Player" || collision.transform.tag == "Shell") // if object has tag of player or shell it proceeds
         {
             
             int coinFlip = Random.Range(0, 2);
             if(coinFlip == 0)
             {
-                CrateExplosion(smallExplosionPrefab);
-                DropItem(fuelItemPrefab);
-                Debug.Log("Fuel Dropped");
+                FuelDrop(); // calls fuel drop function
             }
             else if(coinFlip == 1)
             {
-                CrateExplosion(smallExplosionPrefab);
-                DropItem(ammoItemPrefab);
-                Debug.Log("Ammo Dropped");
+                AmmoDrop(); // calls ammo drop function
+            }
+
+            if(collision.transform.tag == "Shell") // if the colliding object has tag shell
+            {
+                Destroy(collision.gameObject); // destroy object on collision
             }
         }
     }
 
     /// <summary>
-    /// this drops either fuel or ammo from the crate
+    /// this creates a small explosion and drops fuel
     /// </summary>
-    /// <param name="Prefab"></param>
-    public void DropItem(GameObject Prefab)
+    public void FuelDrop()
     {
-        GameObject clone = Instantiate(Prefab, transform.position, Prefab.transform.rotation);
-        Destroy(gameObject);
+        CrateExplosion(smallExplosionPrefab);
+        DropItem(fuelItemPrefab);
+        // Debug.Log("Fuel Dropped");
+    }
+
+    /// <summary>
+    /// this creates a small explosion and drops ammo
+    /// </summary>
+    public void AmmoDrop()
+    {
+        CrateExplosion(smallExplosionPrefab);
+        DropItem(ammoItemPrefab);
+        // Debug.Log("Ammo Dropped");
     }
 
     /// <summary>
@@ -48,5 +70,15 @@ public class Crate : MonoBehaviour
     {
         GameObject clone = Instantiate(smallExplosionPrefab, transform.position, smallExplosionPrefab.transform.rotation);
         Destroy(clone, 2);
+    }
+
+    /// <summary>
+    /// this drops either fuel or ammo from the crate
+    /// </summary>
+    /// <param name="Prefab"></param>
+    public void DropItem(GameObject Prefab)
+    {
+        GameObject clone = Instantiate(Prefab, transform.position, Prefab.transform.rotation);
+        Destroy(gameObject);
     }
 }
