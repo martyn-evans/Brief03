@@ -61,9 +61,9 @@ public class TankMovement
         {
             return;
         }
+        
         Move(ForwardMovement);
         Turn(RotationMovement);
-        resources.fuel.UseFuel();
         tankSoundEffects.PlayTankEngine(ForwardMovement, RotationMovement); // update our audio based on our input
     }
 
@@ -75,6 +75,7 @@ public class TankMovement
         // create a vector based on the forward vector of our tank, move it forwad or backwards on nothing based on the key input, multiplied by the speed, multipled by the time between frames rendered to make it smooth
         Vector3 movementVector = tankReference.forward * ForwardMovement * speed * Time.deltaTime;
         //Debug.Log(movementVector);
+        resources.fuel.UseFuel();
         rigidbody.MovePosition(rigidbody.position + movementVector); // move our rigibody based on our current position + our movement vector
     }
     /// <summary>

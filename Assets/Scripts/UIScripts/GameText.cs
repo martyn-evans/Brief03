@@ -18,6 +18,18 @@ public static class GameText
     public static string Credits_Back = "Back";
     #endregion
 
+    #region Skill Menu Text
+    public static string Skill_Title = "Skills";
+    public static string Skill_AssignText = "Click skill to assign one point";
+    public static string Skill_RemainingText = "Skill points remaining:";
+    public static string Skill_FuelLevel = "Fuel Level";
+    public static string Skill_MaxFuel = "Max Fuel";
+    public static string Skill_AmmoLevel = "Ammo Level";
+    public static string Skill_MaxAmmo = "Max Ammo";
+    public static string Skill_TurretSpeedLevel = "Turret Speed Level";
+    public static string Skill_TurretSpeed = "Turret Speed";
+    #endregion
+
     #region Pause Menu Text
     public static string Paused_Title = "Paused";
     public static string Paused_Resume = "Resume";

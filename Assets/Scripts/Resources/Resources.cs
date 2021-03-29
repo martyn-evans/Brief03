@@ -24,6 +24,7 @@ public class Resources : MonoBehaviour
 public class Ammo
 {
     public int ammoValue;
+    public int maxAmmoValue;
 
     private UIManager uiManager; // a reference to the UIManager script
 
@@ -34,8 +35,9 @@ public class Ammo
     {
         uiManager = current;
         ammoValue = 10;
+        maxAmmoValue = 10;
         Debug.Log("Bullets left " + ammoValue);
-        uiManager.inGameUI.UpdateAmmo(ammoValue);
+        uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
     }
 
     /// <summary>
@@ -45,7 +47,8 @@ public class Ammo
     public void AddAmmo(int amount)
     {
         ammoValue += amount;
-        uiManager.inGameUI.UpdateAmmo(ammoValue);
+        ammoValue = Mathf.Clamp(ammoValue, 0, maxAmmoValue);
+        uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
     }
 
     /// <summary>
@@ -54,7 +57,7 @@ public class Ammo
     public void MinusAmmo()
     {
         ammoValue -= 1;
-        uiManager.inGameUI.UpdateAmmo(ammoValue);
+        uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
     }
 }
 
@@ -108,7 +111,7 @@ public class Fuel
         set
         {
             currentFuel = Mathf.Clamp(value, 0, maxFuel);
-            uiManager.inGameUI.UpdateFuel(CurrentFuel / maxFuel); // normalise our fuel value
+            uiManager.inGameUI.UpdateFuelUI(CurrentFuel / maxFuel); // normalise our fuel value
         }
     }
 }

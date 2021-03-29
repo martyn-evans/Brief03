@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public static UnityEvent pauseGame = new UnityEvent();
     public static UnityEvent resumeGame = new UnityEvent();
+    public static UnityEvent skillPauseGame = new UnityEvent();
+    public static UnityEvent skillResumeGame = new UnityEvent();
 
     public static UnityEvent returnToMenu = new UnityEvent();
     public static UnityEvent quitGame = new UnityEvent();
@@ -21,7 +23,10 @@ public class GameManager : MonoBehaviour
     {
         pauseGame.AddListener(PauseGame);
         resumeGame.AddListener(ResumeGame);
+        skillPauseGame.AddListener(PauseGame);
+        skillResumeGame.AddListener(ResumeGame);
         returnToMenu.AddListener(ReturnToMenu);
+        quitGame.AddListener(QuitGame);
         // playerDeath.AddListener(GameOver);
     }
 
@@ -29,7 +34,10 @@ public class GameManager : MonoBehaviour
     {
         pauseGame.RemoveListener(PauseGame);
         resumeGame.RemoveListener(ResumeGame);
+        skillPauseGame.RemoveListener(PauseGame);
+        skillResumeGame.RemoveListener(ResumeGame);
         returnToMenu.RemoveListener(ReturnToMenu);
+        quitGame.RemoveListener(QuitGame);
         // playerDeath.RemoveListener(GameOver);
     }
 
@@ -43,6 +51,17 @@ public class GameManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
             pauseGame?.Invoke();
+            isPaused = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab) && isPaused)
+        {
+            skillResumeGame?.Invoke();
+            isPaused = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab) && !isPaused)
+        {
+            skillPauseGame?.Invoke();
             isPaused = true;
         }
     }
@@ -95,5 +114,6 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        Debug.Log("Quit Game");
     }
 }
