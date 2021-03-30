@@ -10,7 +10,7 @@ public class AmmoPickUp : MonoBehaviour
     {
         if (collision.transform.root.GetComponent<Tank>())
         {
-            GameManager.playerPickUp?.Invoke();
+            Stats.playerPickUp?.Invoke();
             collision.transform.root.GetComponent<Tank>().tankMovement.resources.ammo.AddAmmo(ammoValue);
             Destroy(gameObject);
         }

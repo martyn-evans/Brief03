@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public Stats stat;
+    public Stats stats;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,10 +15,12 @@ public class Checkpoint : MonoBehaviour
 
         if (other.transform.tag == "Player")
         {
-            stat.resources.fuel.AddFuel(5);
-            stat.points.AddPointsCheckpoint();
-            stat.CheckStatPoint();
-            stat.uiManager.skillMenu.UpdateSkillPointUI();
+            stats.resources.fuel.AddFuel(5);
+            stats.playerScore += 5;
+            stats.CheckStatPoint();
+            stats.uiManager.skillMenu.UpdateSkillPointUI();
+            stats.uiManager.inGameUI.UpdateScore();
+            stats.uiManager.loseMenu.UpdateLoseMenuScore();
             Destroy(gameObject,2);
         }
     }

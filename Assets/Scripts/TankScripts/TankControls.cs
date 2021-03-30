@@ -9,13 +9,17 @@ using UnityEngine;
 [System.Serializable]
 public class TankControls
 {
-    public enum KeyType { Movement, Rotation, Fire }
+    public enum KeyType { Movement, Rotation, TurretRotation, Fire }
 
     public KeyCode forward = KeyCode.W; // the forward button to use
     public KeyCode backwards = KeyCode.S; // the backwards button
     public KeyCode left = KeyCode.A; // the left button
     public KeyCode right = KeyCode.D; // the right button
     public KeyCode fireButton = KeyCode.Space; // the button to fire
+
+    public KeyCode turretLeft = KeyCode.LeftArrow;
+    public KeyCode turretRight = KeyCode.RightArrow;
+
     private bool fireButtonWasPressed = false; // has the fire button been pressed?
 
     public Resources resources; // a reference to the Resource script
@@ -57,6 +61,18 @@ public class TankControls
                     }
                     break;
                 }
+            case KeyType.TurretRotation:
+                {
+                    if (Input.GetKey(turretRight)) // if we are pressing the right button
+                    {
+                        currentValue = 1; // we are rotating positively.
+                    }
+                    else if (Input.GetKey(turretLeft))// if we are pressing the left button
+                    {
+                        currentValue = -1; // we are rotating negatively
+                    }
+                    break;
+                }
             case KeyType.Fire:
                 {
                     if (Input.GetKey(fireButton) && resources.ammo.ammoValue > 0) // if we are pressing the fire button and we have ammo
@@ -78,4 +94,3 @@ public class TankControls
         return currentValue;
     }
 }
-  

@@ -11,11 +11,13 @@ public class TankMovement
 {
     public float speed = 12f; // the speed our tank moves
     public float turnSpeed = 180f; // the speed that we can turn in degrees in seconds.
+    public float turretTurnSpeed = 20f; // the speed our turret turns in degrees in seconds
 
     private TankParticleEffects tankParticleEffects = new TankParticleEffects(); // creating a new instance of our tank particle effects class
     public TankSoundEffects tankSoundEffects = new TankSoundEffects(); // creating a new instance of our tank sound effects class
 
     private Rigidbody rigidbody;// a reference to the rigidbody on our tank
+    public Transform turretTransform;
     private bool enableMovement = true; // if this is true we are allowed to accept input from the player
 
     private Transform tankReference; // a reference to the tank gameobject
@@ -52,9 +54,9 @@ public class TankMovement
     }
 
     /// <summary>
-    /// Handles the movement of our tank
+    /// Handles the movement of our tank and our turret
     /// </summary>
-    public void HandleMovement(float ForwardMovement, float RotationMovement)
+    public void HandleMovement(float ForwardMovement, float RotationMovement, float TurretRotationMovement)
     {
         // if we can't move don't
         if(enableMovement == false || resources.fuel.CurrentFuel <= 0) // checks enable movement or fuel value
@@ -64,6 +66,7 @@ public class TankMovement
         
         Move(ForwardMovement);
         Turn(RotationMovement);
+        TurretTurn(TurretRotationMovement);
         tankSoundEffects.PlayTankEngine(ForwardMovement, RotationMovement); // update our audio based on our input
     }
 
@@ -75,7 +78,10 @@ public class TankMovement
         // create a vector based on the forward vector of our tank, move it forwad or backwards on nothing based on the key input, multiplied by the speed, multipled by the time between frames rendered to make it smooth
         Vector3 movementVector = tankReference.forward * ForwardMovement * speed * Time.deltaTime;
         //Debug.Log(movementVector);
-        resources.fuel.UseFuel();
+        if(ForwardMovement > 0 || ForwardMovement < 0)
+        {
+            resources.fuel.UseFuel();
+        }
         rigidbody.MovePosition(rigidbody.position + movementVector); // move our rigibody based on our current position + our movement vector
     }
     /// <summary>
@@ -89,6 +95,15 @@ public class TankMovement
 
         // update our rigidboy with this new rotation
         rigidbody.MoveRotation(rigidbody.rotation * turnRotation); // rotate our rigidbody based on our input.
+    }
+
+    /// <summary>
+    /// Rotates the Turret on the Y axis
+    /// </summary>
+    /// <param name="RotationalAmount"></param>
+    private void TurretTurn(float RotationalAmount)
+    {
+        turretTransform.Rotate(0, RotationalAmount * turretTurnSpeed * Time.deltaTime, 0, Space.World);
     }
 }
 

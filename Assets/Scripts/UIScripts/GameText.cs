@@ -37,7 +37,19 @@ public static class GameText
     public static string Paused_Quit = "Quit Game";
     #endregion
 
+    #region Lose Menu Text
+    public static string Lose_Title = "Game Over!";
+    public static string Lose_OutOfFuel = "You Ran Our Of Fuel";
+    public static string Lose_ScoreText = "Score:";
+    public static string Lose_Retry = "Retry";
+    public static string Lose_MainMenu = "Main Menu";
+    public static string Lose_Quit = "Quit Game";
+    #endregion
+
     #region In Game Text
-    public static string AmmoCount_Text = "Ammo :";
+    public static string AmmoCount_Text = "Ammo";
+    public static string Score_Text = "Score:";
+    public static string Upgrade_Text = "Upgrade Available";
+    public static string Upgrade_Instruct = "Press 'tab' to upgrade";
     #endregion
 }

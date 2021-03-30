@@ -47,9 +47,9 @@ public class Tank : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         // passes in the values from our key input, to our motor to make it move
-        tankMovement.HandleMovement(tankControls.ReturnKeyValue(TankControls.KeyType.Movement), tankControls.ReturnKeyValue(TankControls.KeyType.Rotation));
+        tankMovement.HandleMovement(tankControls.ReturnKeyValue(TankControls.KeyType.Movement), tankControls.ReturnKeyValue(TankControls.KeyType.Rotation), tankControls.ReturnKeyValue(TankControls.KeyType.TurretRotation));
         tankMainGun.UpdateMainGun(tankControls.ReturnKeyValue(TankControls.KeyType.Fire)); // grab the input from the fire key
     }
 

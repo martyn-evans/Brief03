@@ -15,6 +15,13 @@ public class Resources : MonoBehaviour
         ammo.SetUp(uiManager);
         fuel.SetUp(uiManager);
     }
+    public void Update()
+    {
+        if(fuel.CurrentFuel <= 0)
+        {
+            uiManager.loseMenu.ShowLoseMenu(enabled);
+        }
+    }
 }
 
 /// <summary>

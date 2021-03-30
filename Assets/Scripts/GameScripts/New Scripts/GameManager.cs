@@ -6,15 +6,13 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    public static UnityEvent playerLose = new UnityEvent();
-    public static UnityEvent playerPickUp = new UnityEvent();
-
     public static UnityEvent pauseGame = new UnityEvent();
     public static UnityEvent resumeGame = new UnityEvent();
     public static UnityEvent skillPauseGame = new UnityEvent();
     public static UnityEvent skillResumeGame = new UnityEvent();
 
     public static UnityEvent returnToMenu = new UnityEvent();
+    public static UnityEvent retryLevel = new UnityEvent();
     public static UnityEvent quitGame = new UnityEvent();
 
     public bool isPaused = false;
@@ -26,8 +24,8 @@ public class GameManager : MonoBehaviour
         skillPauseGame.AddListener(PauseGame);
         skillResumeGame.AddListener(ResumeGame);
         returnToMenu.AddListener(ReturnToMenu);
+        retryLevel.AddListener(Retry);
         quitGame.AddListener(QuitGame);
-        // playerDeath.AddListener(GameOver);
     }
 
     private void OnDisable()
@@ -37,8 +35,8 @@ public class GameManager : MonoBehaviour
         skillPauseGame.RemoveListener(PauseGame);
         skillResumeGame.RemoveListener(ResumeGame);
         returnToMenu.RemoveListener(ReturnToMenu);
+        retryLevel.RemoveListener(Retry);
         quitGame.RemoveListener(QuitGame);
-        // playerDeath.RemoveListener(GameOver);
     }
 
     private void Update()
@@ -54,7 +52,7 @@ public class GameManager : MonoBehaviour
             isPaused = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.Tab) && isPaused)
+        if (Input.GetKeyDown(KeyCode.Tab) && isPaused)
         {
             skillResumeGame?.Invoke();
             isPaused = false;
@@ -66,15 +64,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    private void Retry()
     {
-        // save my game over time
-        // PlayerPrefs.SetFloat("DeathTime", timer);
-
-        // cancel any loading that is already happening
-        // CancelInvoke("LoadDeathMenu");
-        // call the load death menu function after 2 seconds
-        // Invoke("LoadDeathMenu", 1.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void PauseGame()
@@ -91,11 +83,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
-    }
-
-    private void LoadLoseMenu()
-    {
-        // SceneManager.LoadScene("LunarLanderDeathMenu");
     }
 
     public void LoadNextLevel()

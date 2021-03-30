@@ -10,7 +10,7 @@ public class FuelPickUp : MonoBehaviour
     {
         if (collision.transform.root.GetComponent<Tank>())
         {
-            GameManager.playerPickUp?.Invoke();
+            Stats.playerPickUp?.Invoke();
             collision.transform.root.GetComponent<Tank>().tankMovement.resources.fuel.AddFuel(fuelValue);
             Destroy(gameObject);
         }

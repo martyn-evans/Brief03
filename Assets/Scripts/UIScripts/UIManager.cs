@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public InGameUI inGameUI;
     public PauseMenu pauseMenu;
     public SkillMenu skillMenu;
+    public LoseMenu loseMenu;
+    public Stats stats;
     public GameManager gameManager;
 
     private void OnEnable()
@@ -32,6 +34,7 @@ public class UIManager : MonoBehaviour
         inGameUI.SetUp(this);
         pauseMenu.Setup(this);
         skillMenu.SetUp(this);
+        loseMenu.SetUp(this);
     }
 }
 
@@ -39,8 +42,13 @@ public class UIManager : MonoBehaviour
 public class InGameUI
 {
     public GameObject inGameUI;
+    public GameObject upgradeUI;
     public Text ammoText;
     public Text ammoCount;
+    public Text scoreText;
+    public Text scoreCount;
+    public Text upgradeText;
+    public Text upgradeInstructText;
     public Slider fuelGauge; // reference to our fuel gauge
     private UIManager uiManager;
 
@@ -48,6 +56,15 @@ public class InGameUI
     {
         uiManager = current;
         ShowInGameUI(true);
+        ShowUpgradeTextUI(false);
+
+        ammoText.text = GameText.AmmoCount_Text;
+        scoreText.text = GameText.Score_Text;
+    }
+
+    public void UpdateScore()
+    {
+        scoreCount.text = " " + uiManager.stats.playerScore;
     }
 
     public void UpdateAmmoUI(int amount, int maxAmount)
@@ -64,12 +81,66 @@ public class InGameUI
     {
         inGameUI.SetActive(enable);
     }
+
+    public void ShowUpgradeTextUI(bool enable)
+    {
+        upgradeText.text = GameText.Upgrade_Text;
+        upgradeInstructText.text = GameText.Upgrade_Instruct;
+        upgradeUI.SetActive(enable);
+    }
+}
+
+[System.Serializable]
+public class LoseMenu
+{
+    public GameObject loseMenu;
+    public Text gameOver;
+    public Text outOfFuel;
+    public Text scoreText;
+    public Text scoreCount;
+    public Button retryButton;
+    public Button mainMenuButton;
+    public Button quitButton;
+    private UIManager uiManager;
+
+    public void SetUp(UIManager current)
+    {
+        uiManager = current;
+        ShowLoseMenu(false);
+
+        gameOver.text = GameText.Lose_Title;
+        outOfFuel.text = GameText.Lose_OutOfFuel;
+        scoreText.text = GameText.Lose_ScoreText;
+
+        retryButton.GetComponentInChildren<Text>().text = GameText.Lose_Retry;
+        mainMenuButton.GetComponentInChildren<Text>().text = GameText.Lose_MainMenu;
+        quitButton.GetComponentInChildren<Text>().text = GameText.Lose_Quit;
+
+        retryButton.onClick.RemoveAllListeners();
+        retryButton.onClick.AddListener(() => GameManager.retryLevel?.Invoke());
+
+        mainMenuButton.onClick.RemoveAllListeners();
+        mainMenuButton.onClick.AddListener(() => GameManager.returnToMenu?.Invoke());
+
+
+        quitButton.onClick.RemoveAllListeners();
+        quitButton.onClick.AddListener(() => GameManager.quitGame?.Invoke());
+    }
+
+    public void UpdateLoseMenuScore()
+    {
+        scoreCount.text = " " + uiManager.stats.playerScore;
+    }
+
+    public void ShowLoseMenu(bool enable)
+    {
+        loseMenu.SetActive(enable);
+    }
 }
 
 [System.Serializable]
 public class SkillMenu
 {
-    public Stats stats;
     public GameObject skillMenu;
     #region UI Text
     public Text title;
@@ -111,19 +182,19 @@ public class SkillMenu
 
     public void UpdateSkillPointUI()
     {
-        pointCount.text = " " + stats.statPoint;
+        pointCount.text = " " + uiManager.stats.statPoint;
         UpdateFuelLevelUI();
         UpdateAmmoLevelUI();
     }
 
     public void UpdateFuelLevelUI()
     {
-        fuelLevel.text = " " + stats.upgradeFuelLevel;
+        fuelLevel.text = " " + uiManager.stats.upgradeFuelLevel;
     }
 
     public void UpdateAmmoLevelUI()
     {
-        ammoLevel.text = " " + stats.upgradeAmmoLevel;
+        ammoLevel.text = " " + uiManager.stats.upgradeAmmoLevel;
     }
 
     public void Resume()

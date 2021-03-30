@@ -89,10 +89,8 @@ public class TankMainGun
         {
             weaponFired = false;
         }
-  
         mainGunArrowIndicator.value = currentLaunchForce; // set our arrow back to min at all times
     }
-
 
     /// <summary>
     /// Called when the fire button has been released
@@ -119,5 +117,4 @@ public class TankMainGun
             weaponFired = false;
         }
     }
-
 }
