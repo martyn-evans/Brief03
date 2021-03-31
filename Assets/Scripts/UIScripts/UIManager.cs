@@ -178,6 +178,8 @@ public class SkillMenu
         maxFuel.onClick.AddListener(() => Stats.upgradeFuel?.Invoke());
 
         maxAmmo.onClick.AddListener(() => Stats.upgradeAmmo?.Invoke());
+
+        turretSpeed.onClick.AddListener(() => Stats.upgradeTurret?.Invoke());
     }
 
     public void UpdateSkillPointUI()
@@ -185,6 +187,7 @@ public class SkillMenu
         pointCount.text = " " + uiManager.stats.statPoint;
         UpdateFuelLevelUI();
         UpdateAmmoLevelUI();
+        UpdateTurretLevelUI();
     }
 
     public void UpdateFuelLevelUI()
@@ -195,6 +198,11 @@ public class SkillMenu
     public void UpdateAmmoLevelUI()
     {
         ammoLevel.text = " " + uiManager.stats.upgradeAmmoLevel;
+    }
+
+    public void UpdateTurretLevelUI()
+    {
+        turretLevel.text = " " + uiManager.stats.upgradeSpeedLevel;
     }
 
     public void Resume()

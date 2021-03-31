@@ -13,17 +13,19 @@ public class Stats : MonoBehaviour
     public int upgradeSpeedLevel = 0;
 
     public Resources resources;
+    public TankMovement turret;
     public UIManager uiManager;
 
     public static UnityEvent playerPickUp = new UnityEvent();
     public static UnityEvent upgradeFuel = new UnityEvent();
     public static UnityEvent upgradeAmmo = new UnityEvent();
-    // public static UnityEvent upgradeTurret = new UnityEvent();
+    public static UnityEvent upgradeTurret = new UnityEvent();
 
     private void OnEnable()
     {
         upgradeFuel.AddListener(UpgradeFuel);
         upgradeAmmo.AddListener(UpgradeAmmo);
+        upgradeTurret.AddListener(UpgradeTurretSpeed);
         playerPickUp.AddListener(ItemPickUpBonus);
     }
 
@@ -31,6 +33,7 @@ public class Stats : MonoBehaviour
     {
         upgradeFuel.RemoveListener(UpgradeFuel);
         upgradeAmmo.RemoveListener(UpgradeAmmo);
+        upgradeTurret.RemoveListener(UpgradeTurretSpeed);
         playerPickUp.RemoveListener(ItemPickUpBonus);
     }
 
@@ -104,10 +107,26 @@ public class Stats : MonoBehaviour
         }
     }
 
-    //public void IncreaseTurretSpeed()
-    //{
+    public void UpgradeTurretSpeed()
+    {
+        if (statPoint > 0)
+        {
+            upgradeSpeedLevel += 1;
+            turret.turretTurnSpeed += 2.5f;
+            Debug.Log("turret speed is " + turret.turretTurnSpeed);
+            statPoint -= 1;
+            uiManager.skillMenu.UpdateSkillPointUI();
 
-    //}
+            if (statPoint == 0)
+            {
+                uiManager.inGameUI.ShowUpgradeTextUI(false);
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
 
     public void UpdateScore()
     {
