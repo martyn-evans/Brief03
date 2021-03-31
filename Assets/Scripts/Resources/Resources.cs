@@ -103,7 +103,7 @@ public class Fuel
     /// <param name="amount"></param>
     public void UseFuel()
     {
-        CurrentFuel -= 0.005f;
+        CurrentFuel -= 0.01f;
     }
 
     /// <summary>

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
+        // adds functions to my events
         pauseGame.AddListener(PauseGame);
         resumeGame.AddListener(ResumeGame);
         skillPauseGame.AddListener(PauseGame);
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
+        // removes functions from my events
         pauseGame.RemoveListener(PauseGame);
         resumeGame.RemoveListener(ResumeGame);
         skillPauseGame.RemoveListener(PauseGame);
@@ -41,44 +43,66 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused) // checks if escape key has been pressed and is paused
         {
-            resumeGame?.Invoke();
-            isPaused = false;
+            resumeGame?.Invoke(); // resumes game
+            isPaused = false; // is not paused
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        else if (Input.GetKeyDown(KeyCode.Escape) && !isPaused) // checks if escape key has been pressed and is not paused
         {
-            pauseGame?.Invoke();
-            isPaused = true;
+            pauseGame?.Invoke(); // pauses game, displays pause menu
+            isPaused = true; // is paused
+
+            if (Input.GetKeyDown(KeyCode.Tab) && isPaused) // checks if escape key has been pressed and is paused
+            {
+                return; // do nothing
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && isPaused)
+        if (Input.GetKeyDown(KeyCode.Tab) && isPaused) // checks if tab key has been pressed and is paused
         {
-            skillResumeGame?.Invoke();
-            isPaused = false;
+            skillResumeGame?.Invoke(); // resumes game
+            isPaused = false; // is not paused
         }
-        else if (Input.GetKeyDown(KeyCode.Tab) && !isPaused)
+        else if (Input.GetKeyDown(KeyCode.Tab) && !isPaused) // checks if tab key has been pressed and is not paused
         {
-            skillPauseGame?.Invoke();
-            isPaused = true;
+            skillPauseGame?.Invoke(); // pauses game, displays skill menu
+            isPaused = true; // is paused
+
+            if (Input.GetKeyDown(KeyCode.Escape) && isPaused) // checks if escape key has been pressed and is paused
+            {
+                return; // do nothing
+            }
         }
     }
 
+    /// <summary>
+    /// loads up the active scene again
+    /// </summary>
     private void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    /// <summary>
+    /// pauses game
+    /// </summary>
     private void PauseGame()
     {
         Time.timeScale = 0;
     }
 
+    /// <summary>
+    /// resumes game
+    /// </summary>
     private void ResumeGame()
     {
         Time.timeScale = 1;
     }
 
+    /// <summary>
+    /// loads up the main menu scene
+    /// </summary>
     private void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
@@ -98,9 +122,11 @@ public class GameManager : MonoBehaviour
         // Time.timeScale = 1;
     }
 
+    /// <summary>
+    /// quits the application
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit Game");
     }
 }

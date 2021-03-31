@@ -17,7 +17,7 @@ public class TankMovement
     public TankSoundEffects tankSoundEffects = new TankSoundEffects(); // creating a new instance of our tank sound effects class
 
     private Rigidbody rigidbody;// a reference to the rigidbody on our tank
-    public Transform turretTransform;
+    public Transform turretTransform; // a reference to the transform of the turret
     private bool enableMovement = true; // if this is true we are allowed to accept input from the player
 
     private Transform tankReference; // a reference to the tank gameobject
@@ -64,9 +64,9 @@ public class TankMovement
             return;
         }
         
-        Move(ForwardMovement);
-        Turn(RotationMovement);
-        TurretTurn(TurretRotationMovement);
+        Move(ForwardMovement); // moves tank forward/back
+        Turn(RotationMovement); // turns tank left/right on y axis
+        TurretTurn(TurretRotationMovement); // turns turret left/right on y axis
         tankSoundEffects.PlayTankEngine(ForwardMovement, RotationMovement); // update our audio based on our input
     }
 
@@ -78,7 +78,7 @@ public class TankMovement
         // create a vector based on the forward vector of our tank, move it forwad or backwards on nothing based on the key input, multiplied by the speed, multipled by the time between frames rendered to make it smooth
         Vector3 movementVector = tankReference.forward * ForwardMovement * speed * Time.deltaTime;
         //Debug.Log(movementVector);
-        if(ForwardMovement > 0 || ForwardMovement < 0)
+        if(ForwardMovement > 0 || ForwardMovement < 0) // if fuel is not zero, use fuel when moving
         {
             resources.fuel.UseFuel();
         }
@@ -103,7 +103,7 @@ public class TankMovement
     /// <param name="RotationalAmount"></param>
     private void TurretTurn(float RotationalAmount)
     {
-        turretTransform.Rotate(0, RotationalAmount * turretTurnSpeed * Time.deltaTime, 0, Space.World);
+        turretTransform.Rotate(0, RotationalAmount * turretTurnSpeed * Time.deltaTime, 0, 0); // rotates the turrets transform on the y axis, by the turret speed per second
     }
 }
 

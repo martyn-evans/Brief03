@@ -8,24 +8,30 @@ public class MainMenuUI : MonoBehaviour
 {
     public MainMenu mainMenu; // a reference to a new instance of the main menu data class
     public CreditsMenu creditMenu; // a reference to a new instance of the credits menu data class
-    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        // sets up the screen reference
-        mainMenu.Setup(this);
-        creditMenu.Setup(this);
-        // display the main menu and then hide the credits menu
-        creditMenu.ShowScreen(false);
-        mainMenu.ShowScreen(true);
+        mainMenu.Setup(this); // sets up the main menu reference
+        creditMenu.Setup(this); // sets up the credit menu reference
+                                
+        mainMenu.ShowScreen(true); // display the main menu
+        creditMenu.ShowScreen(false); // hides the credits menu
     }
 
+    /// <summary>
+    /// function that can show/hide main menu
+    /// </summary>
+    /// <param name="ShowScreen"></param>
     public void ShowMainMenu(bool ShowScreen)
     {
         mainMenu.ShowScreen(ShowScreen);
     }
 
+    /// <summary>
+    /// function that can show/hide the credits
+    /// </summary>
+    /// <param name="ShowScreen"></param>
     public void ShowCredits(bool ShowScreen)
     {
         creditMenu.ShowScreen(ShowScreen);
@@ -35,12 +41,12 @@ public class MainMenuUI : MonoBehaviour
 [System.Serializable]
 public class MainMenu
 {
-    public GameObject mainMenuScreen;
+    public GameObject mainMenuScreen; // a reference to the main menu UI object
 
-    public Text title;
-    public Button playGameButton;
-    public Button creditsButton;
-    public Button quitButton;
+    public Text title; // a reference to the title text
+    public Button playGameButton; // a reference to the play game button
+    public Button creditsButton; // a reference to the credits button
+    public Button quitButton; // a reference to the quit button
     private MainMenuUI m_MainMenuUI;
 
     /// <summary>
@@ -64,7 +70,7 @@ public class MainMenu
         creditsButton.onClick.AddListener(CreditsMenu);
 
         quitButton.onClick.RemoveAllListeners();
-        // quitButton.onClick.AddListener(mainMenuUI.gameManager.QuitGame);
+        quitButton.onClick.AddListener(QuitGame);
     }
 
     /// <summary>
@@ -81,8 +87,7 @@ public class MainMenu
     /// </summary>
     private void PlayGame()
     {
-        // just get the next scene in the build index
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // just get the next scene in the build index
     }
 
     /// <summary>
@@ -90,22 +95,27 @@ public class MainMenu
     /// </summary>
     private void CreditsMenu()
     {
-        //hides the main menu
-        ShowScreen(false);
-        // displays credits
-        m_MainMenuUI.ShowCredits(true);
+        ShowScreen(false); // hides the main menu
+        m_MainMenuUI.ShowCredits(true); // displays credits
+    }
+
+    /// <summary>
+    /// Main Menu quit game function
+    /// </summary>
+    private void QuitGame()
+    {
+        GameManager.quitGame?.Invoke();
     }
 }
-
 
 [System.Serializable]
 public class CreditsMenu
 {
-    public GameObject creditsMenuScreen;
-    public Text title;
-    public Text creditText;
-    public Text creditDeveloper;
-    public Button backButton;
+    public GameObject creditsMenuScreen;  // a reference to the credits menu object
+    public Text title;  // a reference to the title text
+    public Text creditText;  // a reference to the credit text
+    public Text creditDeveloper;  // a reference to the developer text
+    public Button backButton;  // a reference to the back button
     private MainMenuUI m_MainMenuUI;
 
     /// <summary>
@@ -120,6 +130,8 @@ public class CreditsMenu
         creditDeveloper.text = GameText.Credits_Developer;
         backButton.GetComponentInChildren<Text>().text = GameText.Credits_Back;
 
+        // set up the functions for each of my buttons
+        // remove all the functions on the button already, and add my own
         backButton.onClick.RemoveAllListeners();
         backButton.onClick.AddListener(Back);
     }
@@ -133,11 +145,12 @@ public class CreditsMenu
         creditsMenuScreen.SetActive(displayScreen);
     }
 
+    /// <summary>
+    /// the credits back button function
+    /// </summary>
     private void Back()
     {
-        // hide the credits
-        ShowScreen(false);
-        // displays the main menu
-        m_MainMenuUI.ShowMainMenu(true);
+        ShowScreen(false); // hide the credits
+        m_MainMenuUI.ShowMainMenu(true); // displays the main menu
     }
 }

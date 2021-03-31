@@ -82,7 +82,6 @@ public class Stats : MonoBehaviour
         {
             return;
         }
-
     }
 
     public void UpgradeAmmo()
@@ -128,6 +127,9 @@ public class Stats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// updates the score on the lose menu
+    /// </summary>
     public void UpdateScore()
     {
         uiManager.loseMenu.UpdateLoseMenuScore();

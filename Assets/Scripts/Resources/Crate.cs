@@ -49,7 +49,6 @@ public class Crate : MonoBehaviour
     {
         CrateExplosion(smallExplosionPrefab);
         DropItem(fuelItemPrefab);
-        // Debug.Log("Fuel Dropped");
     }
 
     /// <summary>
@@ -59,7 +58,6 @@ public class Crate : MonoBehaviour
     {
         CrateExplosion(smallExplosionPrefab);
         DropItem(ammoItemPrefab);
-        // Debug.Log("Ammo Dropped");
     }
 
     /// <summary>

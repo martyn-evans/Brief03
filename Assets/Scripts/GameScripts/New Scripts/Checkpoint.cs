@@ -13,15 +13,23 @@ public class Checkpoint : MonoBehaviour
             return;
         }
 
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player") // if object has tag of Player
         {
-            stats.resources.fuel.AddFuel(5);
-            stats.playerScore += 5;
-            stats.CheckStatPoint();
-            stats.uiManager.skillMenu.UpdateSkillPointUI();
-            stats.uiManager.inGameUI.UpdateScore();
-            stats.uiManager.loseMenu.UpdateLoseMenuScore();
-            Destroy(gameObject,2);
+            stats.resources.fuel.AddFuel(5); // add value to fuel
+            stats.playerScore += 5; // add value to score
+            stats.CheckStatPoint(); // checks stat points through function
+            UpdateAllUI(); // calls update ui function
+            Destroy(gameObject); // destroys object
         }
+    }
+
+    /// <summary>
+    /// updates skill, ingame, lose menu UI
+    /// </summary>
+    private void UpdateAllUI()
+    {
+        stats.uiManager.skillMenu.UpdateSkillPointUI();
+        stats.uiManager.inGameUI.UpdateScore();
+        stats.uiManager.loseMenu.UpdateLoseMenuScore();
     }
 }
