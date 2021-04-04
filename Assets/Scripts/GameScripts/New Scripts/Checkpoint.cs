@@ -28,8 +28,8 @@ public class Checkpoint : MonoBehaviour
     /// </summary>
     private void UpdateAllUI()
     {
-        stats.uiManager.skillMenu.UpdateSkillPointUI();
-        stats.uiManager.inGameUI.UpdateScore();
-        stats.uiManager.loseMenu.UpdateLoseMenuScore();
+        stats.uiManager.skillMenu.UpdateSkillPointUI(); // updates skill menu score UI
+        stats.uiManager.inGameUI.UpdateScore(); // updates in games score UI
+        stats.uiManager.loseMenu.UpdateLoseMenuScore(); // updates lose menu score UI
     }
 }
