@@ -72,6 +72,7 @@ public class Ammo
         uiManager = current;
         ammoValue = 10;
         maxAmmoValue = 10;
+
         if(debuggingEnable)
         {
             Debug.Log("Bullets left " + ammoValue);

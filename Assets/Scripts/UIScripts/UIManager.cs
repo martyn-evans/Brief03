@@ -6,16 +6,23 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     #region public variables
-    public InGameUI inGameUI;
-    public PauseMenu pauseMenu;
-    public SkillMenu skillMenu;
-    public LoseMenu loseMenu;
-    public Stats stats;
-    public GameManager gameManager;
+    public InGameUI inGameUI; // reference to the ingame class
+    public PauseMenu pauseMenu; // reference to the pause menu class
+    public SkillMenu skillMenu; // reference to the skill menu class
+    public LoseMenu loseMenu; // reference to the lose menu class
+    public Stats stats; // reference to the stats script
+    public GameManager gameManager; // reference to the game manager
     #endregion
 
     #region private variables
     #endregion
+
+    #region Unity Functions
+    private void Awake()
+    {
+        stats = FindObjectOfType<Stats>();
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void OnEnable()
     {
@@ -41,6 +48,7 @@ public class UIManager : MonoBehaviour
         skillMenu.SetUp(this);
         loseMenu.SetUp(this);
     }
+    #endregion
 }
 
 #region InGame UI

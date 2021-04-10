@@ -5,9 +5,9 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     #region public variables
-    public Stats stats;
-    public GameObject explosionPrefab;
-    public GameObject buildingDebris;
+    public Stats stats; // a reference to our stats script
+    public GameObject explosionPrefab; // the explosion prefab
+    public GameObject buildingDebris; // the building debris prefab
 
     public bool debuggingEnabled = false;
     #endregion
@@ -15,12 +15,18 @@ public class Building : MonoBehaviour
     #region private variables
     #endregion
 
+    private void Awake()
+    {
+        stats = FindObjectOfType<Stats>(); // finds stats script and assigns it to this variable
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Shell")
         {
             stats.playerScore += 2; // add two to player score
             BuildingExplosion(explosionPrefab, collision); // explode building
+            stats.CheckStatPoint();
             UpdateUI();
             Destroy(collision.gameObject); // destroy object on collision
             DebrisSpawn(buildingDebris);

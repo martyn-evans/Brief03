@@ -16,6 +16,7 @@ public class TankHealth
     public Color fullHealthColour = Color.green; // our full health colour
     public Color zeroHealthColour = Color.red; // colour of no health
     private Transform tankParent; // reference to the tank that this script is attached to
+    public bool debuggingEnabled = false;
 
     public float CurrentHealth
     {
@@ -71,7 +72,11 @@ public class TankHealth
             if(healthSlider.fillRect != null)
             {
                 fillImage = healthSlider.fillRect.transform.GetComponent<Image>(); // grab a reference to our health slider image
-                Debug.Log("Got instance");
+
+                if (debuggingEnabled)
+                {
+                    Debug.Log("Got instance");
+                }
             }
             else
             {

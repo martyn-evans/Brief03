@@ -44,10 +44,11 @@ public class NPCMovement : MonoBehaviour
         Vector3 movementVector = tankReference.forward * speed * Time.deltaTime;
         Vector3 tankMovement = new Vector3(currentGoal.position.x, transform.position.y, currentGoal.position.z);
         rigidBody.MovePosition(rigidBody.position + movementVector); // move our rigibody based on our current position + our movement vector
+        tankReference.transform.Rotate(currentGoal.position.x, 0, currentGoal.position.z, Space.Self);
 
         transform.position = Vector3.MoveTowards(transform.position, tankMovement, speed * Time.deltaTime);
         CalculateDistance(currentGoal);
-        if(distanceTo < 0.5f)
+        if(distanceTo < 2f)
         {
             SetNextGoal();
             if (enableDebug)

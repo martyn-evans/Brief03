@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TankLevel1.unity
     guid: d15979eef5613f043b6ac11c3278fd27
+  - enabled: 1
+    path: Assets/Scenes/TankLevel2.unity
+    guid: f1ea6046c1167e44e9a9fceaaf82f532
   m_configObjects: {}

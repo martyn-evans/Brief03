@@ -28,6 +28,13 @@ public class Stats : MonoBehaviour
     #region private variances
     #endregion
 
+    #region Unity Functions
+    private void Awake()
+    {
+        resources = FindObjectOfType<Resources>();
+        uiManager = FindObjectOfType<UIManager>();
+    }
+
     private void OnEnable()
     {
         upgradeFuel.AddListener(UpgradeFuel);
@@ -43,6 +50,7 @@ public class Stats : MonoBehaviour
         upgradeTurret.RemoveListener(UpgradeTurretSpeed);
         playerPickUp.RemoveListener(ItemPickUpBonus);
     }
+    #endregion
 
     /// <summary>
     /// checks xp points, gives a stat point if xp is over the threshold, doubles threshold
