@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    #region public variables
     public MainMenu mainMenu; // a reference to a new instance of the main menu data class
     public CreditsMenu creditMenu; // a reference to a new instance of the credits menu data class
+    #endregion
+
+    #region private variables
+    #endregion
 
     // Start is called before the first frame update
     void Start()

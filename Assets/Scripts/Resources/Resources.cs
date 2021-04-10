@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Resources : MonoBehaviour
 {
+    #region public variances
     public Ammo ammo; // a reference to the ammo class
     public Fuel fuel; // a reference to the fuel class
+
+    public bool debuggingEnable = false; // enables/disables debugging
+    #endregion
+
+    #region private variances
     private UIManager uiManager;  // a reference to the UIManager script
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +24,25 @@ public class Resources : MonoBehaviour
     }
     public void Update()
     {
-        if(fuel.CurrentFuel <= 0)
+        if(fuel.CurrentFuel <= 0) // if fuel hits 0, player loses and displays lose menu
         {
             uiManager.loseMenu.ShowLoseMenu(enabled);
+
+            if (debuggingEnable)
+            {
+                Debug.Log("Player ran out of fuel");
+            }
+        }
+
+        if(debuggingEnable) // enables/disables debugging for fuel/ammo
+        {
+            ammo.debuggingEnable = true;
+            fuel.debuggingEnable = true;
+        }
+        else
+        {
+            ammo.debuggingEnable = false;
+            fuel.debuggingEnable = false;
         }
     }
 }
@@ -30,10 +53,16 @@ public class Resources : MonoBehaviour
 [System.Serializable]
 public class Ammo
 {
+    #region public variances
     public int ammoValue;
     public int maxAmmoValue;
 
-    private UIManager uiManager; // a reference to the UIManager script
+    public bool debuggingEnable = false; // enables/disables debugging
+    #endregion
+
+    #region private variances
+    private UIManager uiManager;  // a reference to the UIManager script
+    #endregion
 
     /// <summary>
     /// sets up ammo value for the game
@@ -43,7 +72,10 @@ public class Ammo
         uiManager = current;
         ammoValue = 10;
         maxAmmoValue = 10;
-        Debug.Log("Bullets left " + ammoValue);
+        if(debuggingEnable)
+        {
+            Debug.Log("Bullets left " + ammoValue);
+        }
         uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
     }
 
@@ -56,6 +88,11 @@ public class Ammo
         ammoValue += amount;
         ammoValue = Mathf.Clamp(ammoValue, 0, maxAmmoValue);
         uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
+
+        if (debuggingEnable)
+        {
+            Debug.Log("Ammo added");
+        }
     }
 
     /// <summary>
@@ -65,6 +102,11 @@ public class Ammo
     {
         ammoValue -= 1;
         uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
+
+        if (debuggingEnable)
+        {
+            Debug.Log("Ammo decreased");
+        }
     }
 }
 
@@ -74,10 +116,16 @@ public class Ammo
 [System.Serializable]
 public class Fuel
 {
+    #region public variables
     private float currentFuel = 15;
     public float maxFuel = 20;
 
-    private UIManager uiManager; // a reference to the UIManager script
+    public bool debuggingEnable = false; // enables/disables debugging
+    #endregion
+
+    #region private variances
+    private UIManager uiManager;  // a reference to the UIManager script
+    #endregion
 
     /// <summary>
     /// sets up ammo value for the game
@@ -95,6 +143,11 @@ public class Fuel
     public void AddFuel(float amount)
     {
         CurrentFuel += amount;
+
+        if (debuggingEnable)
+        {
+            Debug.Log("Fuel added");
+        }
     }
 
     /// <summary>
@@ -103,7 +156,12 @@ public class Fuel
     /// <param name="amount"></param>
     public void UseFuel()
     {
-        CurrentFuel -= 0.01f;
+        CurrentFuel -= 0.005f;
+
+        if (debuggingEnable)
+        {
+            Debug.Log("Player is using fuel");
+        }
     }
 
     /// <summary>

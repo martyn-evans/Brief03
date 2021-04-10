@@ -9,19 +9,27 @@ using UnityEngine;
 [System.Serializable]
 public class TankMovement 
 {
+    #region public variables
     public float speed = 12f; // the speed our tank moves
     public float turnSpeed = 180f; // the speed that we can turn in degrees in seconds.
     public float turretTurnSpeed = 20f; // the speed our turret turns in degrees in seconds
 
-    private TankParticleEffects tankParticleEffects = new TankParticleEffects(); // creating a new instance of our tank particle effects class
     public TankSoundEffects tankSoundEffects = new TankSoundEffects(); // creating a new instance of our tank sound effects class
-
-    private Rigidbody rigidbody;// a reference to the rigidbody on our tank
     public Transform turretTransform; // a reference to the transform of the turret
+    public Resources resources; // a reference to the Resource script
+
+    public bool debuggingEnabled = false;
+    #endregion
+
+    #region private variables
     private bool enableMovement = true; // if this is true we are allowed to accept input from the player
 
+    private TankParticleEffects tankParticleEffects = new TankParticleEffects(); // creating a new instance of our tank particle effects class
     private Transform tankReference; // a reference to the tank gameobject
-    public Resources resources; // a reference to the Resource script
+    private Rigidbody rigidbody;// a reference to the rigidbody on our tank
+    #endregion
+
+
 
     /// <summary>
     /// Handles the set up of our tank movement script
@@ -36,7 +44,10 @@ public class TankMovement
         }
         else
         {
-            Debug.LogError("No Rigidbody attached to the tank");
+            if (debuggingEnabled)
+            {
+                Debug.LogError("No Rigidbody attached to the tank");
+            }
         }
         tankParticleEffects.SetUpEffects(tankReference); // set up our tank effects
         tankSoundEffects.SetUp(tankReference);
@@ -61,6 +72,10 @@ public class TankMovement
         // if we can't move don't
         if(enableMovement == false || resources.fuel.CurrentFuel <= 0) // checks enable movement or fuel value
         {
+            if (debuggingEnabled)
+            {
+                Debug.Log("Player unable to move");
+            }
             return;
         }
         

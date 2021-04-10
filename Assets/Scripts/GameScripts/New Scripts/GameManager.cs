@@ -6,16 +6,22 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    public static UnityEvent pauseGame = new UnityEvent();
-    public static UnityEvent resumeGame = new UnityEvent();
-    public static UnityEvent skillPauseGame = new UnityEvent();
-    public static UnityEvent skillResumeGame = new UnityEvent();
+    #region public variances
+    public static UnityEvent pauseGame = new UnityEvent(); // event for pausing the game
+    public static UnityEvent resumeGame = new UnityEvent(); // event for resuming the game
+    public static UnityEvent skillPauseGame = new UnityEvent(); // event for pausing the game for skill menu
+    public static UnityEvent skillResumeGame = new UnityEvent(); // event for resuming the game from the skill menu
 
-    public static UnityEvent returnToMenu = new UnityEvent();
-    public static UnityEvent retryLevel = new UnityEvent();
-    public static UnityEvent quitGame = new UnityEvent();
+    public static UnityEvent returnToMenu = new UnityEvent(); // event for returning to the main menu
+    public static UnityEvent retryLevel = new UnityEvent(); // event to retry level
+    public static UnityEvent quitGame = new UnityEvent(); // event to quit game
 
-    public bool isPaused = false;
+    public bool isPaused = false; // is/is not paused
+    public bool debuggingEnabled = false; // enables/disables debugging
+    #endregion
+
+    #region private variances
+    #endregion
 
     private void OnEnable()
     {
@@ -47,11 +53,21 @@ public class GameManager : MonoBehaviour
         {
             resumeGame?.Invoke(); // resumes game
             isPaused = false; // is not paused
+
+            if(debuggingEnabled)
+            {
+                Debug.Log("Game is resumed");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && !isPaused) // checks if escape key has been pressed and is not paused
         {
             pauseGame?.Invoke(); // pauses game, displays pause menu
             isPaused = true; // is paused
+
+            if (debuggingEnabled)
+            {
+                Debug.Log("Game is paused");
+            }
 
             if (Input.GetKeyDown(KeyCode.Tab) && isPaused) // checks if escape key has been pressed and is paused
             {
@@ -63,11 +79,21 @@ public class GameManager : MonoBehaviour
         {
             skillResumeGame?.Invoke(); // resumes game
             isPaused = false; // is not paused
+
+            if (debuggingEnabled)
+            {
+                Debug.Log("Game is resumed");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && !isPaused) // checks if tab key has been pressed and is not paused
         {
             skillPauseGame?.Invoke(); // pauses game, displays skill menu
             isPaused = true; // is paused
+
+            if (debuggingEnabled)
+            {
+                Debug.Log("Game is paused");
+            }
 
             if (Input.GetKeyDown(KeyCode.Escape) && isPaused) // checks if escape key has been pressed and is paused
             {

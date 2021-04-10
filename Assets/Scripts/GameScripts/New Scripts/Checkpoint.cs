@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    #region public variables
     public Stats stats;
+    public bool debuggingEnabled = false;
+    #endregion
+
+    #region private variables
+    #endregion
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,18 +24,26 @@ public class Checkpoint : MonoBehaviour
             stats.resources.fuel.AddFuel(5); // add value to fuel
             stats.playerScore += 5; // add value to score
             stats.CheckStatPoint(); // checks stat points through function
-            UpdateAllUI(); // calls update ui function
+            UpdateUI(); // calls update ui function
             Destroy(gameObject); // destroys object
+            if (debuggingEnabled)
+            {
+                Debug.Log("Checkpoint Triggered");
+            }
         }
     }
 
     /// <summary>
     /// updates skill, ingame, lose menu UI
     /// </summary>
-    private void UpdateAllUI()
+    private void UpdateUI()
     {
         stats.uiManager.skillMenu.UpdateSkillPointUI(); // updates skill menu score UI
         stats.uiManager.inGameUI.UpdateScore(); // updates in games score UI
         stats.uiManager.loseMenu.UpdateLoseMenuScore(); // updates lose menu score UI
+        if (debuggingEnabled)
+        {
+            Debug.Log("UI updated");
+        }
     }
 }

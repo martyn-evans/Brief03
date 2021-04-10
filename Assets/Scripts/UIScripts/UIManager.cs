@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    #region public variables
     public InGameUI inGameUI;
     public PauseMenu pauseMenu;
     public SkillMenu skillMenu;
     public LoseMenu loseMenu;
     public Stats stats;
     public GameManager gameManager;
+    #endregion
+
+    #region private variables
+    #endregion
 
     private void OnEnable()
     {
@@ -38,9 +43,11 @@ public class UIManager : MonoBehaviour
     }
 }
 
+#region InGame UI
 [System.Serializable]
 public class InGameUI
 {
+    #region public variables
     public GameObject inGameUI;
     public GameObject upgradeUI;
     public Text ammoText;
@@ -50,7 +57,11 @@ public class InGameUI
     public Text upgradeText;
     public Text upgradeInstructText;
     public Slider fuelGauge; // reference to our fuel gauge
+    #endregion
+
+    #region private variables
     private UIManager uiManager;
+    #endregion
 
     public void SetUp(UIManager current)
     {
@@ -89,10 +100,13 @@ public class InGameUI
         upgradeUI.SetActive(enable);
     }
 }
+#endregion
 
+#region Lose Menu
 [System.Serializable]
 public class LoseMenu
 {
+    #region public variables
     public GameObject loseMenu;
     public Text gameOver;
     public Text outOfFuel;
@@ -101,7 +115,11 @@ public class LoseMenu
     public Button retryButton;
     public Button mainMenuButton;
     public Button quitButton;
+    #endregion
+
+    #region private variables
     private UIManager uiManager;
+    #endregion
 
     public void SetUp(UIManager current)
     {
@@ -137,12 +155,14 @@ public class LoseMenu
         loseMenu.SetActive(enable);
     }
 }
+#endregion
 
+#region Skill Menu
 [System.Serializable]
 public class SkillMenu
 {
+    #region public variables
     public GameObject skillMenu;
-    #region UI Text
     public Text title;
     public Text assignText;
     public Text remainingText;
@@ -153,11 +173,14 @@ public class SkillMenu
     public Text ammoLevel;
     public Text turretLevelText;
     public Text turretLevel;
-    #endregion
     public Button maxFuel;
     public Button maxAmmo;
     public Button turretSpeed;
+    #endregion
+
+    #region private variables
     private UIManager uiManager;
+    #endregion
 
     public void SetUp(UIManager current)
     {
@@ -220,16 +243,23 @@ public class SkillMenu
         skillMenu.SetActive(Enable);
     }
 }
+#endregion
 
+#region Pause Menu
 [System.Serializable] 
 public class PauseMenu
 {
+    #region public variables
     public GameObject pauseMenu;
     public Text title;
     public Button resume;
     public Button returnToMenu;
     public Button quit;
+    #endregion
+
+    #region private variables
     private UIManager uiManager;
+    #endregion
 
     public void Setup(UIManager current)
     {
@@ -267,3 +297,4 @@ public class PauseMenu
         pauseMenu.SetActive(Enable);
     }
 }
+#endregion

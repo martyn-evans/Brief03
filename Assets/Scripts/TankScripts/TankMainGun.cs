@@ -9,6 +9,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class TankMainGun
 {
+    #region public variables
     public Transform mainGunTransform; // reference to the main gun of the tank
     public GameObject tankShellPrefab; // reference to the tank prefab we want to fire
 
@@ -18,15 +19,22 @@ public class TankMainGun
 
     public Slider mainGunArrowIndicator; // a reference to the main gun slider
 
-    private float currentLaunchForce; // the force we should use to fire our shell
-    private float chargeSpeed; // how fast we should charge up our weapon
-    private bool weaponFired; // have we just fired our weapon?
-
     public AudioSource weaponSystemSource; // reference to the audio source for the main gun
     public AudioClip chargingSFX; // a charging up sound
     public AudioClip firingSFX; // a firing weapon SFX.
 
+    public ShellScriptableObject shellType; // access scriptable object
+
+    public bool debuggingEnabled = false; // enables/disables debugging
+    #endregion
+
+    #region private variables
+    private float currentLaunchForce; // the force we should use to fire our shell
+    private float chargeSpeed; // how fast we should charge up our weapon
+    private bool weaponFired; // have we just fired our weapon?
+
     private bool enableShooting; // should we be allowed to fire?
+    #endregion
 
     /// <summary>
     /// Sets up all the necessary variables for our main gun script
@@ -62,7 +70,7 @@ public class TankMainGun
         {
             // if we are at max charge essentially and we haven't fired the weapon
             currentLaunchForce = maxLaunchForce;
-            FireWeapon(); // fire our gun
+            FireWeapon(mainGunTransform, currentLaunchForce); // fire our gun
         }
         // get the input from out main button press
         else if(MainGunValue > 0 && !weaponFired)
@@ -74,7 +82,10 @@ public class TankMainGun
             if(!weaponSystemSource.isPlaying)
             {
                 weaponSystemSource.Play();// start playing the charging up sound effect
-                Debug.Log("Charging");
+                if(debuggingEnabled)
+                {
+                    Debug.Log("Charging");
+                }
             }
             // play a charging up sound effect
         }
@@ -83,7 +94,7 @@ public class TankMainGun
            // Debug.Log("Weapon Button Released");
             // we've released our button
             // we want to fire our weapon
-            FireWeapon(true);
+            FireWeapon(mainGunTransform, currentLaunchForce, true);
         }
         else if(MainGunValue < 0 && weaponFired)
         {
@@ -95,18 +106,11 @@ public class TankMainGun
     /// <summary>
     /// Called when the fire button has been released
     /// </summary>
-    private void FireWeapon(bool ButtonReleased = false)
+    private void FireWeapon(Transform SpawnPoint, float ShellForce, bool ButtonReleased = false)
     {
         weaponFired = true; // we have fired our weapon
-        // spawns in a tank shell at the main gun transform and matches the rotation of the main gun and stores it in the clone GameObject variable
-        GameObject clone = Object.Instantiate(tankShellPrefab, mainGunTransform.position, mainGunTransform.rotation);
 
-        // If the clone has a rigidbody, we want to add some velocity to it to make it fire!
-        if(clone.GetComponent<Rigidbody>())
-        {
-            clone.GetComponent<Rigidbody>().velocity = currentLaunchForce * mainGunTransform.forward; // make the velocity of our bullet go in the direction of our gun at the launch force
-        }
-        Object.Destroy(clone,5f);
+        shellType.Fire(SpawnPoint, ShellForce); // calls on scriptable object script
         
         weaponSystemSource.PlayOneShot(firingSFX); // play the firing sound effect
         weaponSystemSource.Stop(); // stop charging up

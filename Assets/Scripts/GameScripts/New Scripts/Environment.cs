@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
+    #region public variables
     public GameObject smallExplosionPrefab;
+    #endregion
+
+    #region private variables
+    #endregion
 
     public void OnCollisionEnter(Collision collision)
     {

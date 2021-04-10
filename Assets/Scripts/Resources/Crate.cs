@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
+    #region public variables
     public LayerMask tankLayer;
     public GameObject smallExplosionPrefab;
     public GameObject fuelItemPrefab;
     public GameObject ammoItemPrefab;
+
+    public bool debuggingEnabled = false; // enables/disables debugging
+    #endregion
+
+    #region private variables
+    #endregion
 
     /// <summary>
     /// if the crate collides with certain objects it executes this function
@@ -17,6 +24,10 @@ public class Crate : MonoBehaviour
     {
         if(collision.transform.tag == tag) // if object has same tag, it will return
         {
+            if(debuggingEnabled)
+            {
+                Debug.Log("Object has same tag");
+            }
             return;
         }
 
@@ -24,15 +35,29 @@ public class Crate : MonoBehaviour
 
         if(collision.transform.tag == "Player" || collision.transform.tag == "Shell") // if object has tag of player or shell it proceeds
         {
-            
+            if (debuggingEnabled)
+            {
+                Debug.Log("Object has tag " + collision.transform.tag);
+            }
+
             int coinFlip = Random.Range(0, 2);
             if(coinFlip == 0)
             {
                 FuelDrop(); // calls fuel drop function
+
+                if (debuggingEnabled)
+                {
+                    Debug.Log("Fuel dropped");
+                }
             }
             else if(coinFlip == 1)
             {
                 AmmoDrop(); // calls ammo drop function
+
+                if (debuggingEnabled)
+                {
+                    Debug.Log("Ammo Dropped");
+                }
             }
 
             if(collision.transform.tag == "Shell") // if the colliding object has tag shell

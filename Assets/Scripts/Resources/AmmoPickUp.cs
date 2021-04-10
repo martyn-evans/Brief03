@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class AmmoPickUp : MonoBehaviour
 {
+    #region public variables
     public int ammoValue = 3; // amount of ammo player is given when picked up
+
+    public bool debuggingEnabled = false; // enables/disables debugging
+    #endregion
+
+    #region private variables
+    #endregion
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -13,6 +20,11 @@ public class AmmoPickUp : MonoBehaviour
             Stats.playerPickUp?.Invoke();
             collision.transform.root.GetComponent<Tank>().tankMovement.resources.ammo.AddAmmo(ammoValue);
             Destroy(gameObject);
+
+            if(debuggingEnabled)
+            {
+                Debug.Log("Ammo has been picked up");
+            }
         }
     }
 }

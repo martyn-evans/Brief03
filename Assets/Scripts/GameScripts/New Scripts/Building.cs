@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    #region public variables
     public Stats stats;
     public GameObject explosionPrefab;
     public GameObject buildingDebris;
+
+    public bool debuggingEnabled = false;
+    #endregion
+
+    #region private variables
+    #endregion
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Shell")
         {
-            stats.playerScore += 2;
-            BuildingExplosion(explosionPrefab, collision);
-            stats.uiManager.loseMenu.UpdateLoseMenuScore();
-            stats.uiManager.inGameUI.UpdateScore();
+            stats.playerScore += 2; // add two to player score
+            BuildingExplosion(explosionPrefab, collision); // explode building
+            UpdateUI();
             Destroy(collision.gameObject); // destroy object on collision
             DebrisSpawn(buildingDebris);
-            Destroy(gameObject);
+            Destroy(gameObject); // destroy building
         }
     }
 
@@ -32,8 +38,29 @@ public class Building : MonoBehaviour
         Destroy(clone, 2);
     }
 
+    /// <summary>
+    /// spawns debris when building is destroyed
+    /// </summary>
+    /// <param name="Prefab"></param>
     public void DebrisSpawn(GameObject Prefab)
     {
         GameObject clone = Instantiate(buildingDebris, transform.position, buildingDebris.transform.rotation);
+        if (debuggingEnabled)
+        {
+            Debug.Log("Debris Spawned");
+        }
+    }
+
+    /// <summary>
+    /// updates score in UI
+    /// </summary>
+    public void UpdateUI()
+    {
+        stats.uiManager.loseMenu.UpdateLoseMenuScore(); // update lose menu UI
+        stats.uiManager.inGameUI.UpdateScore(); // update ingame UI
+        if (debuggingEnabled)
+        {
+            Debug.Log("UI updated");
+        }
     }
 }
