@@ -21,10 +21,12 @@ public class AmmoPickUp : MonoBehaviour
             collision.transform.root.GetComponent<Tank>().tankMovement.resources.ammo.AddAmmo(ammoValue);
             Destroy(gameObject);
 
+            #region debugging
             if (debuggingEnabled)
             {
                 Debug.Log("Ammo has been picked up");
             }
+            #endregion
         }
     }
 }

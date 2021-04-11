@@ -82,10 +82,13 @@ public class TankMainGun
             if(!weaponSystemSource.isPlaying)
             {
                 weaponSystemSource.Play();// start playing the charging up sound effect
-                if(debuggingEnabled)
+
+                #region debugging
+                if (debuggingEnabled)
                 {
                     Debug.Log("Charging");
                 }
+                #endregion
             }
             // play a charging up sound effect
         }

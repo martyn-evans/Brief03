@@ -46,13 +46,17 @@ public class MainMenuUI : MonoBehaviour
 [System.Serializable]
 public class MainMenu
 {
+    #region public variables 
     public GameObject mainMenuScreen; // a reference to the main menu UI object
-
     public Text title; // a reference to the title text
     public Button playGameButton; // a reference to the play game button
     public Button creditsButton; // a reference to the credits button
     public Button quitButton; // a reference to the quit button
+    #endregion
+
+    #region private variables
     private MainMenuUI m_MainMenuUI;
+    #endregion
 
     /// <summary>
     /// Sets up the fields for this screen
@@ -116,12 +120,17 @@ public class MainMenu
 [System.Serializable]
 public class CreditsMenu
 {
+    #region public variables
     public GameObject creditsMenuScreen;  // a reference to the credits menu object
     public Text title;  // a reference to the title text
     public Text creditText;  // a reference to the credit text
     public Text creditDeveloper;  // a reference to the developer text
     public Button backButton;  // a reference to the back button
+    #endregion
+
+    #region private variables
     private MainMenuUI m_MainMenuUI;
+    #endregion
 
     /// <summary>
     /// Sets up the fields for this screen

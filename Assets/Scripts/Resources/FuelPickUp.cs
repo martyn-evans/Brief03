@@ -21,10 +21,12 @@ public class FuelPickUp : MonoBehaviour
             collision.transform.root.GetComponent<Tank>().tankMovement.resources.fuel.AddFuel(fuelValue);
             Destroy(gameObject);
 
+            #region debugging
             if (debuggingEnabled)
             {
                 Debug.Log("Fuel has been picked up");
             }
+            #endregion
         }
     }
 }

@@ -10,9 +10,8 @@ public class SceneLoading : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator LoadLevelAsync()
     {
-        
+        yield return null;
     }
 }

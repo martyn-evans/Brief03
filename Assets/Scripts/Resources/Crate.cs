@@ -24,43 +24,52 @@ public class Crate : MonoBehaviour
     {
         if(collision.transform.tag == tag) // if object has same tag, it will return
         {
-            if(debuggingEnabled)
+            #region debugging
+            if (debuggingEnabled)
             {
                 Debug.Log("Object has same tag");
             }
+            #endregion
             return;
+            
         }
 
         //if (collision.transform.root.GetComponent<Tank>() || collision.gameObject && gameObject.tag == "Shell")
 
-        if(collision.transform.tag == "Player" || collision.transform.tag == "Shell") // if object has tag of player or shell it proceeds
+        if (collision.transform.tag == "Player" || collision.transform.tag == "Shell") // if object has tag of player or shell it proceeds
         {
+            #region debugging
             if (debuggingEnabled)
             {
                 Debug.Log("Object has tag " + collision.transform.tag);
             }
+            #endregion
 
             int coinFlip = Random.Range(0, 2);
             if(coinFlip == 0)
             {
                 FuelDrop(); // calls fuel drop function
 
+                #region debugging
                 if (debuggingEnabled)
                 {
                     Debug.Log("Fuel dropped");
                 }
+                #endregion
             }
             else if(coinFlip == 1)
             {
                 AmmoDrop(); // calls ammo drop function
 
+                #region debugging
                 if (debuggingEnabled)
                 {
                     Debug.Log("Ammo Dropped");
                 }
+                #endregion
             }
 
-            if(collision.transform.tag == "Shell") // if the colliding object has tag shell
+            if (collision.transform.tag == "Shell") // if the colliding object has tag shell
             {
                 Destroy(collision.gameObject); // destroy object on collision
             }

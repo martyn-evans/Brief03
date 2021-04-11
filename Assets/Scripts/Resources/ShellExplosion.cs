@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class ShellExplosion : MonoBehaviour
 {
+    #region public variables
     public GameObject explosionPrefab; // the explosion we want to spawn in
     public LayerMask tankLayer; // the layer of the game object to effect
     public float maxDamage = 100f; // the maximum amount of damage that my shell can do.
     public float explosionForce = 1000f; // the amount of force this shell has
     public float maxShellLifeTime = 2f; // how long should the shell live for before it goes boom!
     public float explosionRadius = 5f; // how big is our explosion
+    #endregion
+
+    #region private varaibles
+    #endregion
 
 
     // is called when the trigger hits an object

@@ -9,14 +9,22 @@ using UnityEngine.UI;
 [System.Serializable]
 public class TankHealth 
 {
+    #region public variables
     public float minHealth = 0; // our min health
     public float maxHealth = 100; // our max health
-    private float currentHealth; // our current health
     public bool isDead = true; // is our character alive?
+    public Slider healthSlider; // reference to the health Slider
     public Color fullHealthColour = Color.green; // our full health colour
     public Color zeroHealthColour = Color.red; // colour of no health
-    private Transform tankParent; // reference to the tank that this script is attached to
+
     public bool debuggingEnabled = false;
+    #endregion
+
+    #region private variables
+    private float currentHealth; // our current health
+    private Transform tankParent; // reference to the tank that this script is attached to
+    private Image fillImage; // reference to the fill image component of our slider;
+    #endregion
 
     public float CurrentHealth
     {
@@ -61,9 +69,6 @@ public class TankHealth
         }
     }
 
-    public Slider healthSlider; // reference to the health Slider
-    private Image fillImage; // reference to the fill image component of our slider;
-
     public void SetUp(Transform TankTransform)
     {
         tankParent = TankTransform;
@@ -73,10 +78,12 @@ public class TankHealth
             {
                 fillImage = healthSlider.fillRect.transform.GetComponent<Image>(); // grab a reference to our health slider image
 
+                #region debugging
                 if (debuggingEnabled)
                 {
                     Debug.Log("Got instance");
                 }
+                #endregion
             }
             else
             {

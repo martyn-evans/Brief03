@@ -44,10 +44,7 @@ public class TankMovement
         }
         else
         {
-            if (debuggingEnabled)
-            {
-                Debug.LogError("No Rigidbody attached to the tank");
-            }
+            Debug.LogError("No Rigidbody attached to the tank");
         }
         tankParticleEffects.SetUpEffects(tankReference); // set up our tank effects
         tankSoundEffects.SetUp(tankReference);
@@ -72,10 +69,12 @@ public class TankMovement
         // if we can't move don't
         if(enableMovement == false || resources.fuel.CurrentFuel <= 0) // checks enable movement or fuel value
         {
+            #region debugging
             if (debuggingEnabled)
             {
                 Debug.Log("Player unable to move");
             }
+            #endregion
             return;
         }
         
