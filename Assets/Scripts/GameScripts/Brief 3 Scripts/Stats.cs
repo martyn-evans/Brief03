@@ -14,7 +14,7 @@ public class Stats : MonoBehaviour
     public int upgradeSpeedLevel = 0; // the upgrade level of turret speed upgrades
 
     public Resources resources; // reference for resources script
-    public TankMovement turret; // reference for our tank movement script
+    // public TankMovement turret; // reference for our tank movement script
     public UIManager uiManager; // reference for our ui manager
 
     public static UnityEvent playerPickUp = new UnityEvent(); // event for when a player picks up items
@@ -146,14 +146,9 @@ public class Stats : MonoBehaviour
         if (statPoint > 0) // if stat points are greater than 0
         {
             upgradeSpeedLevel += 1; // upgrade turret level by 1
-            turret.turretTurnSpeed += 2.5f; // increases turret speed by 2.5 degrees a second
+            TankGameEvents.UpgradeEvent?.Invoke("Turret", 2.5f);
             statPoint -= 1; // stat point decreases by 1
             uiManager.skillMenu.UpdateSkillPointUI();
-
-            if (debuggingEnabled)
-            {
-                Debug.Log("turret speed is " + turret.turretTurnSpeed);
-            }
 
             if (statPoint == 0) // if stat points equal zero, disable upgrade available text
             {

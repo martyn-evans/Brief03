@@ -7,7 +7,7 @@ using UnityEngine;
 /// Handle everything to do with our tank movement
 /// </summary>
 [System.Serializable]
-public class TankMovement 
+public class TankMovement
 {
     #region public variables
     public float speed = 12f; // the speed our tank moves
@@ -17,6 +17,7 @@ public class TankMovement
     public TankSoundEffects tankSoundEffects = new TankSoundEffects(); // creating a new instance of our tank sound effects class
     public Transform turretTransform; // a reference to the transform of the turret
     public Resources resources; // a reference to the Resource script
+    // public Stats stats; // a reference to our stats script
 
     public bool debuggingEnabled = false;
     #endregion
@@ -118,6 +119,16 @@ public class TankMovement
     private void TurretTurn(float RotationalAmount)
     {
         turretTransform.Rotate(0, RotationalAmount * turretTurnSpeed * Time.deltaTime, 0, 0); // rotates the turrets transform on the y axis, by the turret speed per second
+    }
+
+    public void UpgradeTurret(float amount)
+    {
+        turretTurnSpeed += amount;
+
+        if (debuggingEnabled)
+        {
+            Debug.Log("turret speed is " + turretTurnSpeed);
+        }
     }
 }
 

@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
     public NavMeshAgent agent;
-
+    public float turnSpeed = 1000f;
     public Vector3 targetPos;
 
     private void Start()
@@ -21,9 +21,16 @@ public class AIController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("AI controller update is called");
         if(targetPos != null)
         {
             agent.SetDestination(targetPos);
+            agent.speed = 2000 * Time.deltaTime;
+            transform.LookAt(targetPos);
+            Vector3 direction = targetPos - transform.position;
+            direction.y = transform.position.y; // direction is always going to have the same y value as the tank
+            Quaternion lookRotation = Quaternion.LookRotation(direction, transform.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, turnSpeed * Time.deltaTime);
         }
 
         if(agent.remainingDistance > agent.stoppingDistance)

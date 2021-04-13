@@ -10,6 +10,8 @@ public static class TankGameEvents
     public delegate void SpawnTanksIn(int NumberToSpawn);
     public delegate void OnTanksSpawned(List<GameObject> allTanksSpawnedIn);
 
+    public delegate void UpgradeStat(string UpgradeType, float amount);
+
     public delegate void ResetGame();
     public delegate void ResetRound();
 
@@ -69,4 +71,9 @@ public static class TankGameEvents
     /// Called when the round is reset
     /// </summary>
     public static ResetRound OnRoundResetEvent;
+
+    /// <summary>
+    /// Called when the turret is upgraded
+    /// </summary>
+    public static UpgradeStat UpgradeEvent; 
 }

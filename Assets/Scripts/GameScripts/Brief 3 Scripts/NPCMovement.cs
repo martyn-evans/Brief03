@@ -34,6 +34,11 @@ public class NPCMovement : MonoBehaviour
             StopCoroutine(Racing());
         }
         movingRoutine = StartCoroutine(Racing());
+
+        if (enableDebug)
+        {
+            Debug.Log("Coroutine called");
+        } 
     }
 
     // Update is called once per frame
@@ -51,7 +56,7 @@ public class NPCMovement : MonoBehaviour
         for (int i = 0; i < nodeToMoveTo.Count; i++)
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawSphere(nodeToMoveTo[i].position, 0.25f);
+            Gizmos.DrawSphere(nodeToMoveTo[i].position, 0.5f);
         }
     }
 
@@ -59,10 +64,15 @@ public class NPCMovement : MonoBehaviour
     {
         while(this.enabled)
         {
-            if(Vector3.Distance(transform.position, currentTargetNode.position) <= 0.5f)
+            if(Vector3.Distance(transform.position, currentTargetNode.position) <= 4f)
             {
                 currentTargetNode = SetNextGoal();
                 characterControl.SetTarget(currentTargetNode.position);
+
+                if (enableDebug)
+                {
+                    Debug.Log("Setting next node");
+                }
             }
             yield return null;
         }
@@ -86,9 +96,10 @@ public class NPCMovement : MonoBehaviour
     public void CalculateDistance(Transform cornerTransform)
     {
         distanceTo = Vector3.Distance(tankReference.position, cornerTransform.position);
+
         if(enableDebug)
         {
-            // Debug.Log("Distance to next corner is " + distanceTo);
+            Debug.Log("Distance to next corner is " + distanceTo);
         }
     }
 
@@ -100,6 +111,11 @@ public class NPCMovement : MonoBehaviour
             if (nodeToMoveTo[i] == currentTargetNode)
             {
                 currentNode = i;
+
+                if (enableDebug)
+                {
+                    Debug.Log("Current node is " + currentNode);
+                }
             }
         }
 
