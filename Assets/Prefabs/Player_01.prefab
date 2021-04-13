@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!208 &1525876881810140773
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598633211480631984}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2879090350755103736
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,13 +40,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2879090350755103736}
-  m_LocalRotation: {x: 0.07841404, y: -0.0012687849, z: 0.016128639, w: 0.99678963}
-  m_LocalPosition: {x: -0.361, y: 0.763, z: 0.495}
+  m_LocalRotation: {x: 0.09540297, y: -0.0009935249, z: 0.016147932, w: 0.99530727}
+  m_LocalPosition: {x: -0.3770008, y: 1.2500001, z: 0.5720005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7288597494190208551}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 8.996, y: 0, z: 1.854}
+  m_LocalEulerAnglesHint: {x: 10.949, y: 0.064, z: 1.865}
 --- !u!108 &3231564243041994862
 Light:
   m_ObjectHideFlags: 0
@@ -43,9 +59,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 20
-  m_SpotAngle: 30
+  m_Intensity: 3
+  m_Range: 30
+  m_SpotAngle: 59.758022
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -108,6 +124,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 318541969840425566, guid: 268f946728390b64db521f40f31a4a70,
+        type: 3}
+      propertyPath: tankMainGun.shellType
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fbcd02fee78e1442b56cd40296bc486,
+        type: 2}
+    - target: {fileID: 318541969840425566, guid: 268f946728390b64db521f40f31a4a70,
+        type: 3}
+      propertyPath: tankMovement.turretTransform
+      value: 
+      objectReference: {fileID: 7288597494190208551}
+    - target: {fileID: 318541969840425566, guid: 268f946728390b64db521f40f31a4a70,
+        type: 3}
+      propertyPath: tankMovement.turretTurnSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 491440104372762015, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
       propertyPath: m_Name
@@ -131,17 +163,17 @@ PrefabInstance:
     - target: {fileID: 3497797121813383052, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.39
+      value: -53
       objectReference: {fileID: 0}
     - target: {fileID: 3497797121813383052, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07616801
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 3497797121813383052, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.56
+      value: -41.7
       objectReference: {fileID: 0}
     - target: {fileID: 3497797121813383052, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
@@ -195,6 +227,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 268f946728390b64db521f40f31a4a70, type: 3}
+--- !u!1 &2598633211480631984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 491440104372762015, guid: 268f946728390b64db521f40f31a4a70,
+    type: 3}
+  m_PrefabInstance: {fileID: 2504495111896899375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7288597494190208551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5181265773667248392, guid: 268f946728390b64db521f40f31a4a70,

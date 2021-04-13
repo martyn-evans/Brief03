@@ -2,60 +2,81 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class NPCMovement : MonoBehaviour
 {
+    Vector3 m_GroundNormal;
+
     public float speed = 12f; // the speed our tank moves
     public float turnSpeed = 180f; // the speed that we can turn in degrees in seconds.
-    public float distanceTo; // 
+    public float distanceTo; // distance to next target
 
-    public List<Transform> cornerList = new List<Transform>();
-    public int currentIndex;
-    public Transform currentGoal;
+    public List<Transform> nodeToMoveTo = new List<Transform>();
+    public Transform currentTargetNode;
 
     public bool enableDebug = false; // enables/disables debug logs
 
     private Transform tankReference; // a reference to the tank gameobject
     private Rigidbody rigidBody;// a reference to the rigidbody on our tank
+    private Coroutine movingRoutine;
+    private AIController characterControl;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentIndex = 0;
-        currentGoal = cornerList[currentIndex];
         tankReference = gameObject.transform;
-        if (tankReference.GetComponent<Rigidbody>())
+        rigidBody = tankReference.GetComponent<Rigidbody>(); // grab a reference to our tanks rigidbody
+        characterControl = GetComponent<AIController>();
+        characterControl.SetTarget(currentTargetNode.position);
+
+        if(movingRoutine != null)
         {
-            rigidBody = tankReference.GetComponent<Rigidbody>(); // grab a reference to our tanks rigidbody
+            StopCoroutine(Racing());
         }
-        else
-        {
-            Debug.LogError("No Rigidbody attached to the tank");
-        }
+        movingRoutine = StartCoroutine(Racing());
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        
     }
 
-    public void Move()
+    /// <summary>
+    /// draws spheres where the path nodes are
+    /// </summary>
+    private void OnDrawGizmos()
     {
-        Vector3 movementVector = tankReference.forward * speed * Time.deltaTime;
-        Vector3 tankMovement = new Vector3(currentGoal.position.x, transform.position.y, currentGoal.position.z);
-        rigidBody.MovePosition(rigidBody.position + movementVector); // move our rigibody based on our current position + our movement vector
-        tankReference.transform.Rotate(currentGoal.position.x, 0, currentGoal.position.z, Space.Self);
-
-        transform.position = Vector3.MoveTowards(transform.position, tankMovement, speed * Time.deltaTime);
-        CalculateDistance(currentGoal);
-        if(distanceTo < 2f)
+        // go through all the way points and draw a sphere
+        for (int i = 0; i < nodeToMoveTo.Count; i++)
         {
-            SetNextGoal();
-            if (enableDebug)
-            {
-                Debug.Log("Passed first corner");
-            }
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawSphere(nodeToMoveTo[i].position, 0.25f);
         }
+    }
+
+    private IEnumerator Racing()
+    {
+        while(this.enabled)
+        {
+            if(Vector3.Distance(transform.position, currentTargetNode.position) <= 0.5f)
+            {
+                currentTargetNode = SetNextGoal();
+                characterControl.SetTarget(currentTargetNode.position);
+            }
+            yield return null;
+        }
+    }
+
+    public void Move(Vector3 move)
+    {
+
+        if(move.magnitude > 1f)
+        {
+            move.Normalize();
+        }
+        move = transform.InverseTransformDirection(move);
+        move = Vector3.ProjectOnPlane(move, m_GroundNormal);
     }
 
     /// <summary>
@@ -71,13 +92,23 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
-    public void SetNextGoal()
+    private Transform SetNextGoal()
     {
-        currentIndex ++;
-        if(currentIndex >= cornerList.Count) // win condition?
+        int currentNode = 0;
+        for (int i = 0; i < nodeToMoveTo.Count; i++)
         {
-            currentIndex = 0;
+            if (nodeToMoveTo[i] == currentTargetNode)
+            {
+                currentNode = i;
+            }
         }
-        currentGoal = cornerList[currentIndex];
+
+        currentNode += 1;
+        if (currentNode >= nodeToMoveTo.Count)
+        {
+            currentNode = 0;
+        }
+
+        return nodeToMoveTo[currentNode];
     }
 }
