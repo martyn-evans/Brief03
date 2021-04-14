@@ -52,4 +52,13 @@ public static class GameText
     public static string Upgrade_Text = "Upgrade Available";
     public static string Upgrade_Instruct = "Press 'tab' to upgrade";
     #endregion
+
+    #region Loading Screen Text
+    public static string Loading_Title = "Loading Level";
+    public static string Continue_Text = "Press 'Space' to continue";
+    public static string TipWord_Text = "Tip:";
+    public static string TipSentenceOne_Text = "Destroy buildings for extra points";
+    public static string TipSentenceTwo_Text = "Crates will drop extra ammo or fuel";
+    #endregion
+
 }

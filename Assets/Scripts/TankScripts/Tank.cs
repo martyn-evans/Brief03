@@ -24,7 +24,6 @@ public class Tank : MonoBehaviour
         TankGameEvents.OnObjectTakeDamageEvent += TankTakenDamage; // assign our health function to our event so we can take damage
         TankGameEvents.OnGameStartedEvent += EnableInput; // assign our tank movement function to the game started event
         TankGameEvents.UpgradeEvent += UpgradeTank; // add upgrade turret speed function
-
     }
 
     private void OnDisable()

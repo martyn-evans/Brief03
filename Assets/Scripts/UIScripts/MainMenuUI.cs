@@ -9,6 +9,8 @@ public class MainMenuUI : MonoBehaviour
     #region public variables
     public MainMenu mainMenu; // a reference to a new instance of the main menu data class
     public CreditsMenu creditMenu; // a reference to a new instance of the credits menu data class
+    public SceneLoading sceneLoadingOperation;
+    public LevelLoadingScreen loadingScreen;
     #endregion
 
     #region private variables
@@ -19,9 +21,11 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenu.Setup(this); // sets up the main menu reference
         creditMenu.Setup(this); // sets up the credit menu reference
+        loadingScreen.Setup(this);
                                 
         mainMenu.ShowScreen(true); // display the main menu
         creditMenu.ShowScreen(false); // hides the credits menu
+        loadingScreen.ShowScreen(false);
     }
 
     /// <summary>
@@ -40,6 +44,11 @@ public class MainMenuUI : MonoBehaviour
     public void ShowCredits(bool ShowScreen)
     {
         creditMenu.ShowScreen(ShowScreen);
+    }
+
+    public void ShowLoadingScreen(bool ShowScreen)
+    {
+        loadingScreen.ShowScreen(ShowScreen);
     }
 }
 
@@ -96,7 +105,11 @@ public class MainMenu
     /// </summary>
     private void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // just get the next scene in the build index
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // just get the next scene in the build index
+        m_MainMenuUI.ShowLoadingScreen(true);
+        m_MainMenuUI.sceneLoadingOperation.SetUp(1);
+        m_MainMenuUI.ShowMainMenu(false);
+        m_MainMenuUI.ShowCredits(false);
     }
 
     /// <summary>
@@ -166,5 +179,65 @@ public class CreditsMenu
     {
         ShowScreen(false); // hide the credits
         m_MainMenuUI.ShowMainMenu(true); // displays the main menu
+    }
+}
+
+[System.Serializable]
+public class LevelLoadingScreen
+{
+    public GameObject loadingScreen;
+
+    public Text titleText;
+    public Text tipText;
+    public Text tipSentenceOne;
+    public Text tipSentenceTwo;
+    public List<Text> tipTextList = new List<Text>();
+
+    // public List<string> tipList = new List<string>();
+
+    #region private variables
+    private MainMenuUI m_MainMenuUI;
+    #endregion
+
+    public void Setup(MainMenuUI mainMenuUI)
+    {
+        m_MainMenuUI = mainMenuUI;
+
+        titleText.text = GameText.Loading_Title;
+        tipText.text = GameText.TipWord_Text;
+        TipTextList();
+        ShowRandomTip();
+
+    }
+
+    public void ShowScreen(bool displayScreen)
+    {
+        loadingScreen.SetActive(displayScreen);
+    }
+
+    /// <summary>
+    /// sets up and disables tip text for loading screen
+    /// </summary>
+    public void TipTextList()
+    {
+        tipSentenceOne.text = GameText.TipSentenceOne_Text;
+        tipSentenceTwo.text = GameText.TipSentenceTwo_Text;
+
+        tipSentenceOne.enabled = false;
+        tipSentenceTwo.enabled = false;
+
+        tipTextList.Add(tipSentenceOne);
+        tipTextList.Add(tipSentenceTwo);
+    }
+
+    /// <summary>
+    /// picks a random tip text from the list
+    /// </summary>
+    /// <returns></returns>
+    public Text ShowRandomTip()
+    {
+        int randomTip = Random.Range(0, tipTextList.Count);
+        tipTextList[randomTip].enabled = true;
+        return tipTextList[randomTip];
     }
 }

@@ -75,5 +75,5 @@ public static class TankGameEvents
     /// <summary>
     /// Called when the turret is upgraded
     /// </summary>
-    public static UpgradeStat UpgradeEvent; 
+    public static UpgradeStat UpgradeEvent;
 }

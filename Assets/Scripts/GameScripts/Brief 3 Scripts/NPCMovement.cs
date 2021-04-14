@@ -1,33 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(NavMeshAgent))]
+
 public class NPCMovement : MonoBehaviour
 {
-    Vector3 m_GroundNormal;
-
-    public float speed = 12f; // the speed our tank moves
-    public float turnSpeed = 180f; // the speed that we can turn in degrees in seconds.
+    #region public variables
+    public float speed = 2000f;
+    public float turnSpeed = 1000f;
     public float distanceTo; // distance to next target
 
+    public Vector3 targetPos;
+
     public List<Transform> nodeToMoveTo = new List<Transform>();
-    public Transform currentTargetNode;
+    public Transform currentTargetNode; // a reference to the current target nodes transform
+    public NavMeshAgent agent; // a reference to the nav mesh agent component 
 
     public bool enableDebug = false; // enables/disables debug logs
+    #endregion
 
+    #region private variables
     private Transform tankReference; // a reference to the tank gameobject
     private Rigidbody rigidBody;// a reference to the rigidbody on our tank
     private Coroutine movingRoutine;
-    private AIController characterControl;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        tankReference = gameObject.transform;
-        rigidBody = tankReference.GetComponent<Rigidbody>(); // grab a reference to our tanks rigidbody
-        characterControl = GetComponent<AIController>();
-        characterControl.SetTarget(currentTargetNode.position);
+        tankReference = gameObject.transform; // the reference of the tank objects transform
+        rigidBody = tankReference.GetComponent<Rigidbody>(); // the reference to the tanks rigidbody
+        SetTarget(currentTargetNode.position);
 
         if(movingRoutine != null)
         {
@@ -38,13 +44,26 @@ public class NPCMovement : MonoBehaviour
         if (enableDebug)
         {
             Debug.Log("Coroutine called");
-        } 
+        }
+
+        agent = GetComponentInChildren<NavMeshAgent>();
+
+        agent.updateRotation = false;
+        agent.updatePosition = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (targetPos != null)
+        {
+            agent.SetDestination(targetPos);
+            agent.speed = speed * Time.deltaTime;
+            transform.LookAt(targetPos);
+            Vector3 direction = targetPos - transform.position;
+            direction.y = transform.position.y; // direction is always going to have the same y value as the tank
+            Quaternion lookRotation = Quaternion.LookRotation(direction, transform.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, turnSpeed * Time.deltaTime);
+        }
     }
 
     /// <summary>
@@ -60,46 +79,25 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    public void SetTarget(Vector3 targetPos)
+    {
+        this.targetPos = targetPos;
+    }
+
     private IEnumerator Racing()
     {
         while(this.enabled)
         {
-            if(Vector3.Distance(transform.position, currentTargetNode.position) <= 4f)
+            if(Vector3.Distance(transform.position, currentTargetNode.position) <= 10f)
             {
                 currentTargetNode = SetNextGoal();
-                characterControl.SetTarget(currentTargetNode.position);
-
+                SetTarget(currentTargetNode.position);
                 if (enableDebug)
                 {
                     Debug.Log("Setting next node");
                 }
             }
             yield return null;
-        }
-    }
-
-    public void Move(Vector3 move)
-    {
-
-        if(move.magnitude > 1f)
-        {
-            move.Normalize();
-        }
-        move = transform.InverseTransformDirection(move);
-        move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-    }
-
-    /// <summary>
-    /// Calculates distance from the given corner to the player
-    /// </summary>
-    /// <param name="cornerTransform"></param>
-    public void CalculateDistance(Transform cornerTransform)
-    {
-        distanceTo = Vector3.Distance(tankReference.position, cornerTransform.position);
-
-        if(enableDebug)
-        {
-            Debug.Log("Distance to next corner is " + distanceTo);
         }
     }
 
