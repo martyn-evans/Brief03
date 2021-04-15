@@ -95,7 +95,7 @@ public class TankMovement
         //Debug.Log(movementVector);
         if(ForwardMovement > 0 || ForwardMovement < 0) // if fuel is not zero, use fuel when moving
         {
-            resources.fuel.UseFuel();
+            resources.fuel.UseFuel(0.01f);
         }
         rigidbody.MovePosition(rigidbody.position + movementVector); // move our rigibody based on our current position + our movement vector
     }
@@ -107,6 +107,11 @@ public class TankMovement
         // get the key input value, multiply it by the turn speed, multiply it by the time between frames
         float turnAngle = RotationalAmount * turnSpeed * Time.deltaTime; // the angle in degrees we want to turn our tank
         Quaternion turnRotation = Quaternion.Euler(0f, turnAngle, 0); // essentially turn our angle into a quarternion for our rotation
+
+        if (RotationalAmount > 0 || RotationalAmount < 0) // if fuel is not zero, use fuel while turning
+        {
+            resources.fuel.UseFuel(0.005f);
+        }
 
         // update our rigidboy with this new rotation
         rigidbody.MoveRotation(rigidbody.rotation * turnRotation); // rotate our rigidbody based on our input.
@@ -121,13 +126,23 @@ public class TankMovement
         turretTransform.Rotate(0, RotationalAmount * turretTurnSpeed * Time.deltaTime, 0, 0); // rotates the turrets transform on the y axis, by the turret speed per second
     }
 
-    public void UpgradeTurret(float amount)
+    public void UpgradeTurretSpeed(float amount)
     {
         turretTurnSpeed += amount;
 
         if (debuggingEnabled)
         {
             Debug.Log("turret speed is " + turretTurnSpeed);
+        }
+    }
+
+    public void UpgradeTankSpeed(float amount)
+    {
+        speed += amount;
+
+        if (debuggingEnabled)
+        {
+            Debug.Log("tank speed is " + speed);
         }
     }
 }

@@ -189,8 +189,11 @@ public class LevelLoadingScreen
 
     public Text titleText;
     public Text tipText;
-    public Text tipSentenceOne;
-    public Text tipSentenceTwo;
+    public Text tipOne;
+    public Text tipTwo;
+    public Text tipThree;
+    public Text tipFour;
+
     public List<Text> tipTextList = new List<Text>();
 
     // public List<string> tipList = new List<string>();
@@ -220,14 +223,20 @@ public class LevelLoadingScreen
     /// </summary>
     public void TipTextList()
     {
-        tipSentenceOne.text = GameText.TipSentenceOne_Text;
-        tipSentenceTwo.text = GameText.TipSentenceTwo_Text;
+        tipOne.text = GameText.TipOne_Text;
+        tipTwo.text = GameText.TipTwo_Text;
+        tipThree.text = GameText.TipThree_Text;
+        tipFour.text = GameText.TipFour_Text;
 
-        tipSentenceOne.enabled = false;
-        tipSentenceTwo.enabled = false;
+        tipOne.enabled = false;
+        tipTwo.enabled = false;
+        tipThree.enabled = false;
+        tipFour.enabled = false;
 
-        tipTextList.Add(tipSentenceOne);
-        tipTextList.Add(tipSentenceTwo);
+        tipTextList.Add(tipOne);
+        tipTextList.Add(tipTwo);
+        tipTextList.Add(tipThree);
+        tipTextList.Add(tipFour);
     }
 
     /// <summary>

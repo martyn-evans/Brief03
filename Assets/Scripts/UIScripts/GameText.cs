@@ -28,6 +28,8 @@ public static class GameText
     public static string Skill_MaxAmmo = "Max Ammo";
     public static string Skill_TurretSpeedLevel = "Turret Speed Level";
     public static string Skill_TurretSpeed = "Turret Speed";
+    public static string Skill_TankSpeedLevel = "Tank Speed Level";
+    public static string Skill_TankSpeed = "Tank Speed";
     #endregion
 
     #region Pause Menu Text
@@ -57,8 +59,10 @@ public static class GameText
     public static string Loading_Title = "Loading Level";
     public static string Continue_Text = "Press 'Space' to continue";
     public static string TipWord_Text = "Tip:";
-    public static string TipSentenceOne_Text = "Destroy buildings for extra points";
-    public static string TipSentenceTwo_Text = "Crates will drop extra ammo or fuel";
+    public static string TipOne_Text = "Destroy buildings for extra points";
+    public static string TipTwo_Text = "Crates will drop extra ammo or fuel";
+    public static string TipThree_Text = "Fuel isn't used when turning the turret";
+    public static string TipFour_Text = "Don't forget to upgrade your tank";
     #endregion
 
 }

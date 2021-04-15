@@ -106,7 +106,12 @@ public class Tank : MonoBehaviour
     {
         if(upgradeType == "Turret")
         {
-            tankMovement.UpgradeTurret(amount);
+            tankMovement.UpgradeTurretSpeed(amount);
+        }
+
+        if (upgradeType == "Speed")
+        {
+            tankMovement.UpgradeTankSpeed(amount);
         }
     }
 }

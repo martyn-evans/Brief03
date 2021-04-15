@@ -155,9 +155,9 @@ public class Fuel
     /// minus fuel of a certain value
     /// </summary>
     /// <param name="amount"></param>
-    public void UseFuel()
+    public void UseFuel(float value)
     {
-        CurrentFuel -= 0.005f;
+        CurrentFuel -= value;
 
         if (debuggingEnable)
         {

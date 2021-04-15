@@ -11,7 +11,8 @@ public class Stats : MonoBehaviour
     public int pointThreshold = 10; // the value for the point threshold
     public int upgradeFuelLevel = 0; // the upgrade level of fuel upgrades
     public int upgradeAmmoLevel = 0; // the upgrade level of ammo upgrades
-    public int upgradeSpeedLevel = 0; // the upgrade level of turret speed upgrades
+    public int upgradeTurretLevel = 0; // the upgrade level of turret speed upgrades
+    public int upgradeSpeedLevel = 0;
 
     public Resources resources; // reference for resources script
     // public TankMovement turret; // reference for our tank movement script
@@ -21,6 +22,7 @@ public class Stats : MonoBehaviour
     public static UnityEvent upgradeFuel = new UnityEvent(); // event for upgrading fuel
     public static UnityEvent upgradeAmmo = new UnityEvent(); // event for upgrading ammo
     public static UnityEvent upgradeTurret = new UnityEvent(); // event for upgrading turret
+    public static UnityEvent upgradeSpeed = new UnityEvent();
 
     public bool debuggingEnabled = false; // enables/disables debugging
     #endregion
@@ -40,6 +42,7 @@ public class Stats : MonoBehaviour
         upgradeFuel.AddListener(UpgradeFuel);
         upgradeAmmo.AddListener(UpgradeAmmo);
         upgradeTurret.AddListener(UpgradeTurretSpeed);
+        upgradeSpeed.AddListener(UpgradeTankSpeed);
         playerPickUp.AddListener(ItemPickUpBonus);
     }
 
@@ -48,6 +51,7 @@ public class Stats : MonoBehaviour
         upgradeFuel.RemoveListener(UpgradeFuel);
         upgradeAmmo.RemoveListener(UpgradeAmmo);
         upgradeTurret.RemoveListener(UpgradeTurretSpeed);
+        upgradeSpeed.RemoveListener(UpgradeTankSpeed);
         playerPickUp.RemoveListener(ItemPickUpBonus);
     }
     #endregion
@@ -145,7 +149,7 @@ public class Stats : MonoBehaviour
     {
         if (statPoint > 0) // if stat points are greater than 0
         {
-            upgradeSpeedLevel += 1; // upgrade turret level by 1
+            upgradeTurretLevel += 1; // upgrade turret level by 1
             TankGameEvents.UpgradeEvent?.Invoke("Turret", 2.5f);
             statPoint -= 1; // stat point decreases by 1
             uiManager.skillMenu.UpdateSkillPointUI();
@@ -160,6 +164,30 @@ public class Stats : MonoBehaviour
             return;
         }
     }
+
+    /// <summary>
+    /// upgrade for the turret speed, increases it by 2.5 degrees a second
+    /// </summary>
+    public void UpgradeTankSpeed()
+    {
+        if (statPoint > 0) // if stat points are greater than 0
+        {
+            upgradeSpeedLevel += 1; // upgrade turret level by 1
+            TankGameEvents.UpgradeEvent?.Invoke("Speed", 2.5f);
+            statPoint -= 1; // stat point decreases by 1
+            uiManager.skillMenu.UpdateSkillPointUI();
+
+            if (statPoint == 0) // if stat points equal zero, disable upgrade available text
+            {
+                uiManager.inGameUI.ShowUpgradeTextUI(false);
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+
 
     /// <summary>
     /// updates the score on the lose menu

@@ -181,9 +181,13 @@ public class SkillMenu
     public Text ammoLevel;
     public Text turretLevelText;
     public Text turretLevel;
-    public Button maxFuel;
-    public Button maxAmmo;
-    public Button turretSpeed;
+    public Text tankSpeedLevelText;
+    public Text tankSpeedLevel;
+
+    public Button maxFuelButton;
+    public Button maxAmmoButton;
+    public Button turretSpeedButton;
+    public Button tankSpeedButton;
     #endregion
 
     #region private variables
@@ -200,17 +204,22 @@ public class SkillMenu
         remainingText.text = GameText.Skill_RemainingText;
 
         fuelLevelText.text = GameText.Skill_FuelLevel;
-        maxFuel.GetComponentInChildren<Text>().text = GameText.Skill_MaxFuel;
+        maxFuelButton.GetComponentInChildren<Text>().text = GameText.Skill_MaxFuel;
         ammoLevelText.text = GameText.Skill_AmmoLevel;
-        maxAmmo.GetComponentInChildren<Text>().text = GameText.Skill_MaxAmmo;
+        maxAmmoButton.GetComponentInChildren<Text>().text = GameText.Skill_MaxAmmo;
         turretLevelText.text = GameText.Skill_TurretSpeedLevel;
-        turretSpeed.GetComponentInChildren<Text>().text = GameText.Skill_TurretSpeed;
+        turretSpeedButton.GetComponentInChildren<Text>().text = GameText.Skill_TurretSpeed;
+        tankSpeedLevelText.text = GameText.Skill_TankSpeedLevel;
+        tankSpeedButton.GetComponentInChildren<Text>().text = GameText.Skill_TankSpeed;
 
-        maxFuel.onClick.AddListener(() => Stats.upgradeFuel?.Invoke());
 
-        maxAmmo.onClick.AddListener(() => Stats.upgradeAmmo?.Invoke());
+        maxFuelButton.onClick.AddListener(() => Stats.upgradeFuel?.Invoke());
 
-        turretSpeed.onClick.AddListener(() => Stats.upgradeTurret?.Invoke());
+        maxAmmoButton.onClick.AddListener(() => Stats.upgradeAmmo?.Invoke());
+
+        turretSpeedButton.onClick.AddListener(() => Stats.upgradeTurret?.Invoke());
+
+        tankSpeedButton.onClick.AddListener(() => Stats.upgradeSpeed?.Invoke());
     }
 
     public void UpdateSkillPointUI()
@@ -219,6 +228,7 @@ public class SkillMenu
         UpdateFuelLevelUI();
         UpdateAmmoLevelUI();
         UpdateTurretLevelUI();
+        UpdateSpeedLevelUI();
     }
 
     public void UpdateFuelLevelUI()
@@ -233,7 +243,12 @@ public class SkillMenu
 
     public void UpdateTurretLevelUI()
     {
-        turretLevel.text = " " + uiManager.stats.upgradeSpeedLevel;
+        turretLevel.text = " " + uiManager.stats.upgradeTurretLevel;
+    }
+    
+    public void UpdateSpeedLevelUI()
+    {
+        tankSpeedLevel.text = " " + uiManager.stats.upgradeSpeedLevel;
     }
 
     public void Resume()
