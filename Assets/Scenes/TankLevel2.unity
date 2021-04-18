@@ -756,9 +756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -1712,9 +1709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -3554,9 +3548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -4195,9 +4186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -4489,9 +4477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -4797,9 +4782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -4931,9 +4913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -5900,9 +5879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -7029,9 +7005,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -7163,9 +7136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -7490,9 +7460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -7817,9 +7784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -7951,9 +7915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -8085,9 +8046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -8769,9 +8727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -9447,9 +9402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -9853,9 +9805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -10622,9 +10571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -10782,9 +10728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -11072,9 +11015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -12340,6 +12280,7 @@ MonoBehaviour:
     quitButton: {fileID: 1299762815}
   stats: {fileID: 907214329}
   gameManager: {fileID: 907214326}
+  sceneLoadingOperation: {fileID: 0}
 --- !u!4 &907214325
 Transform:
   m_ObjectHideFlags: 0
@@ -13029,9 +12970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -13462,9 +13400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -14040,9 +13975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -14174,9 +14106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -14308,9 +14237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -15829,9 +15755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -15963,9 +15886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -16630,9 +16550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -17278,9 +17195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -17412,9 +17326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -17679,6 +17590,310 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262502310}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1270123080
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: currentTargetNode
+      value: 
+      objectReference: {fileID: 1750339155}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[0]
+      value: 
+      objectReference: {fileID: 1929318713}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[1]
+      value: 
+      objectReference: {fileID: 1191693481}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[2]
+      value: 
+      objectReference: {fileID: 1442315828}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[3]
+      value: 
+      objectReference: {fileID: 1349968196}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[4]
+      value: 
+      objectReference: {fileID: 173352082}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[5]
+      value: 
+      objectReference: {fileID: 1290460217}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[6]
+      value: 
+      objectReference: {fileID: 1728150035}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[7]
+      value: 
+      objectReference: {fileID: 1599734272}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[8]
+      value: 
+      objectReference: {fileID: 1042638148}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[9]
+      value: 
+      objectReference: {fileID: 527700781}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[10]
+      value: 
+      objectReference: {fileID: 1602304855}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[11]
+      value: 
+      objectReference: {fileID: 1679166111}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[12]
+      value: 
+      objectReference: {fileID: 1652039008}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[13]
+      value: 
+      objectReference: {fileID: 66464092}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[14]
+      value: 
+      objectReference: {fileID: 1040954977}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[15]
+      value: 
+      objectReference: {fileID: 551656732}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[16]
+      value: 
+      objectReference: {fileID: 194913017}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[17]
+      value: 
+      objectReference: {fileID: 1750339155}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[18]
+      value: 
+      objectReference: {fileID: 1881431015}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[19]
+      value: 
+      objectReference: {fileID: 93192716}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[20]
+      value: 
+      objectReference: {fileID: 1839228905}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[21]
+      value: 
+      objectReference: {fileID: 1839415133}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[22]
+      value: 
+      objectReference: {fileID: 1665484663}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[23]
+      value: 
+      objectReference: {fileID: 1262502311}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[24]
+      value: 
+      objectReference: {fileID: 1386152991}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[25]
+      value: 
+      objectReference: {fileID: 62605579}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[26]
+      value: 
+      objectReference: {fileID: 130125772}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[27]
+      value: 
+      objectReference: {fileID: 409946692}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[28]
+      value: 
+      objectReference: {fileID: 2140099613}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[29]
+      value: 
+      objectReference: {fileID: 1546922702}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[30]
+      value: 
+      objectReference: {fileID: 1303528636}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[31]
+      value: 
+      objectReference: {fileID: 1067995335}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[32]
+      value: 
+      objectReference: {fileID: 620082488}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[33]
+      value: 
+      objectReference: {fileID: 687081971}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[34]
+      value: 
+      objectReference: {fileID: 1152485831}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[35]
+      value: 
+      objectReference: {fileID: 857659929}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[36]
+      value: 
+      objectReference: {fileID: 811692944}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[37]
+      value: 
+      objectReference: {fileID: 292757190}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[38]
+      value: 
+      objectReference: {fileID: 147189002}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[39]
+      value: 
+      objectReference: {fileID: 314182685}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[40]
+      value: 
+      objectReference: {fileID: 742709607}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[41]
+      value: 
+      objectReference: {fileID: 1561862802}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[42]
+      value: 
+      objectReference: {fileID: 1386802588}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[43]
+      value: 
+      objectReference: {fileID: 845954627}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[44]
+      value: 
+      objectReference: {fileID: 1975037449}
+    - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: nodeToMoveTo.Array.data[45]
+      value: 
+      objectReference: {fileID: 334956297}
+    - target: {fileID: 4671718852944695416, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_Name
+      value: NPCTank (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8351681
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000018253253
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5499949
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000012020566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 66.733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542798886875783787, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e, type: 3}
 --- !u!1 &1279153711
 GameObject:
   m_ObjectHideFlags: 0
@@ -17726,9 +17941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -18442,9 +18654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -20236,9 +20445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -21536,9 +21742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -22621,9 +22824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -23141,9 +23341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -24150,9 +24347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -25353,9 +25547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -27717,9 +27908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -27851,9 +28039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -28066,9 +28251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -28424,9 +28606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -28880,9 +29059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -29420,9 +29596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -30208,9 +30381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -30566,9 +30736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
@@ -30700,9 +30867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd487b461ba8fb4085a19a83eddd5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankLayer:
-    serializedVersion: 2
-    m_Bits: 256
   smallExplosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
   fuelItemPrefab: {fileID: 8587564469842895006, guid: 8db89de4d4b7f4440a187bc2b96586d1,
     type: 3}
