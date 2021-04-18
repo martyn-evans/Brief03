@@ -30,8 +30,6 @@ public class TankMovement
     private Rigidbody rigidbody;// a reference to the rigidbody on our tank
     #endregion
 
-
-
     /// <summary>
     /// Handles the set up of our tank movement script
     /// </summary>

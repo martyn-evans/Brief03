@@ -16,6 +16,7 @@ public class TankHealth
     public Slider healthSlider; // reference to the health Slider
     public Color fullHealthColour = Color.green; // our full health colour
     public Color zeroHealthColour = Color.red; // colour of no health
+    public UIManager uiManager;
 
     public bool debuggingEnabled = false;
     #endregion
@@ -45,6 +46,7 @@ public class TankHealth
                 // if we are dead we'd want some explosions
                 // call an event for the players death
                 TankGameEvents.OnObjectDestroyedEvent?.Invoke(tankParent); // so pass in our tank's health script into the tank destroyed event
+                uiManager.loseMenu.ShowLoseMenu(true,2);
             }
             else
             {
@@ -57,7 +59,7 @@ public class TankHealth
 
                 if (fillImage != null)
                 {                
-                                                    // if there is a fill image then let's change its colour to match our current health
+                    // if there is a fill image then let's change its colour to match our current health
                     fillImage.color = Color.Lerp(zeroHealthColour, fullHealthColour, CurrentHealth / maxHealth);
                     // move towards the colour at the rate of our health/maxhealth = a % of our health
                 }
@@ -101,7 +103,10 @@ public class TankHealth
     /// <param name="Amount"></param>
     public void ApplyHealthChange(float Amount)
     {
-        Debug.Log(Amount);
+        if(debuggingEnabled)
+        {
+            Debug.Log(Amount);
+        }
         CurrentHealth += Amount; // increase our health by the amount
     }
 }

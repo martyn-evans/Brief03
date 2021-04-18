@@ -10,6 +10,7 @@ public enum PlayerNumber { One = 1, Two = 2, Three = 3, Four = 4 } // the number
 /// </summary>
 public class Tank : MonoBehaviour
 {
+    #region public variables
     public bool enableTankMovement = false;
     public PlayerNumber playerNumber; // the number of our players tank
     public TankControls tankControls = new TankControls(); // creating a new instance of our tank controls
@@ -18,6 +19,13 @@ public class Tank : MonoBehaviour
     public TankMainGun tankMainGun = new TankMainGun(); // creating a new instance of our tank main gun script
     public GameObject explosionPrefab; // the prefab we will use when we have 0 left to make it go boom!
 
+    public bool enableDebugging = false;
+    #endregion
+
+    #region private variabkes
+    #endregion
+
+    #region unity functions
     private void OnEnable()
     {
         TankGameEvents.OnObjectDestroyedEvent += Dead; // add dead function to the event for when a tank is destroyed
@@ -54,6 +62,7 @@ public class Tank : MonoBehaviour
         tankMovement.HandleMovement(tankControls.ReturnKeyValue(TankControls.KeyType.Movement), tankControls.ReturnKeyValue(TankControls.KeyType.Rotation), tankControls.ReturnKeyValue(TankControls.KeyType.TurretRotation));
         tankMainGun.UpdateMainGun(tankControls.ReturnKeyValue(TankControls.KeyType.Fire)); // grab the input from the fire key
     }
+    #endregion
 
     /// <summary>
     /// Enables our tank to recieve input
@@ -72,7 +81,11 @@ public class Tank : MonoBehaviour
     /// <param name="AmountOfDamage"></param>
     private void TankTakenDamage(Transform TankTransform, float AmountOfDamage)
     {
-        Debug.Log("Damage Taken");
+        if(enableDebugging)
+        {
+            Debug.Log("Damage Taken");
+        }
+
         // if the Tank transform coming in, isn't this particular tank, ignore it.
         if(TankTransform != transform)
         {
@@ -81,7 +94,10 @@ public class Tank : MonoBehaviour
         }
         else
         {
-            Debug.Log("Damage applied?" + AmountOfDamage);
+            if (enableDebugging)
+            {
+                Debug.Log("Damage applied?" + AmountOfDamage);
+            }
             tankHealth.ApplyHealthChange(AmountOfDamage);
         }
     }
@@ -102,6 +118,11 @@ public class Tank : MonoBehaviour
         gameObject.SetActive(false); // turn off our tank as we are dead
     }
 
+    /// <summary>
+    /// upgrades the tank, either turret speed or tank speed
+    /// </summary>
+    /// <param name="upgradeType"></param>
+    /// <param name="amount"></param>
     private void UpgradeTank(string upgradeType, float amount)
     {
         if(upgradeType == "Turret")

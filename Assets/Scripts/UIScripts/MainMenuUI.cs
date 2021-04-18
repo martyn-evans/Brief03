@@ -16,7 +16,9 @@ public class MainMenuUI : MonoBehaviour
     #region private variables
     #endregion
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         mainMenu.Setup(this); // sets up the main menu reference
@@ -46,6 +48,10 @@ public class MainMenuUI : MonoBehaviour
         creditMenu.ShowScreen(ShowScreen);
     }
 
+    /// <summary>
+    /// function that can show/hide the loading screen
+    /// </summary>
+    /// <param name="ShowScreen"></param>
     public void ShowLoadingScreen(bool ShowScreen)
     {
         loadingScreen.ShowScreen(ShowScreen);
@@ -185,68 +191,65 @@ public class CreditsMenu
 [System.Serializable]
 public class LevelLoadingScreen
 {
+    #region public variables
     public GameObject loadingScreen;
-
     public Text titleText;
     public Text tipText;
-    public Text tipOne;
-    public Text tipTwo;
-    public Text tipThree;
-    public Text tipFour;
-
-    public List<Text> tipTextList = new List<Text>();
-
-    // public List<string> tipList = new List<string>();
+    public Text tip;
+    public List<string> tipStringList = new List<string>();
+    #endregion
 
     #region private variables
     private MainMenuUI m_MainMenuUI;
     #endregion
 
+    /// <summary>
+    /// sets up the loading screen
+    /// </summary>
+    /// <param name="mainMenuUI"></param>
     public void Setup(MainMenuUI mainMenuUI)
     {
         m_MainMenuUI = mainMenuUI;
 
         titleText.text = GameText.Loading_Title;
         tipText.text = GameText.TipWord_Text;
-        TipTextList();
-        ShowRandomTip();
-
+        SetUpStringList();
+        tip.text = PickRandomTip();
     }
 
+    /// <summary>
+    /// enables/disables the loading screen
+    /// </summary>
+    /// <param name="displayScreen"></param>
     public void ShowScreen(bool displayScreen)
     {
         loadingScreen.SetActive(displayScreen);
     }
 
     /// <summary>
-    /// sets up and disables tip text for loading screen
+    /// adds game text to the list
     /// </summary>
-    public void TipTextList()
+    public void SetUpStringList()
     {
-        tipOne.text = GameText.TipOne_Text;
-        tipTwo.text = GameText.TipTwo_Text;
-        tipThree.text = GameText.TipThree_Text;
-        tipFour.text = GameText.TipFour_Text;
-
-        tipOne.enabled = false;
-        tipTwo.enabled = false;
-        tipThree.enabled = false;
-        tipFour.enabled = false;
-
-        tipTextList.Add(tipOne);
-        tipTextList.Add(tipTwo);
-        tipTextList.Add(tipThree);
-        tipTextList.Add(tipFour);
+        tipStringList.Add(GameText.TipOne_Text);
+        tipStringList.Add(GameText.TipTwo_Text);
+        tipStringList.Add(GameText.TipThree_Text);
+        tipStringList.Add(GameText.TipFour_Text);
+        tipStringList.Add(GameText.TipFive_Text);
+        tipStringList.Add(GameText.TipSix_Text);
+        tipStringList.Add(GameText.TipSeven_Text);
+        tipStringList.Add(GameText.TipEight_Text);
+        tipStringList.Add(GameText.TipNine_Text);
+        tipStringList.Add(GameText.TipTen_Text);
     }
 
     /// <summary>
     /// picks a random tip text from the list
     /// </summary>
     /// <returns></returns>
-    public Text ShowRandomTip()
+    public string PickRandomTip()
     {
-        int randomTip = Random.Range(0, tipTextList.Count);
-        tipTextList[randomTip].enabled = true;
-        return tipTextList[randomTip];
+        int randomTip = Random.Range(0, tipStringList.Count);
+        return tipStringList[randomTip];
     }
 }

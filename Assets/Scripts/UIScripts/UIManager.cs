@@ -117,7 +117,7 @@ public class LoseMenu
     #region public variables
     public GameObject loseMenu;
     public Text gameOver;
-    public Text outOfFuel;
+    public Text reasonForLoss;
     public Text scoreText;
     public Text scoreCount;
     public Button retryButton;
@@ -129,13 +129,17 @@ public class LoseMenu
     private UIManager uiManager;
     #endregion
 
+    /// <summary>
+    /// sets up the lose menu
+    /// </summary>
+    /// <param name="current"></param>
     public void SetUp(UIManager current)
     {
         uiManager = current;
-        ShowLoseMenu(false);
+        ShowLoseMenu(false,1);
 
         gameOver.text = GameText.Lose_Title;
-        outOfFuel.text = GameText.Lose_OutOfFuel;
+
         scoreText.text = GameText.Lose_ScoreText;
 
         retryButton.GetComponentInChildren<Text>().text = GameText.Lose_Retry;
@@ -153,14 +157,31 @@ public class LoseMenu
         quitButton.onClick.AddListener(() => GameManager.quitGame?.Invoke());
     }
 
+    /// <summary>
+    /// updates the score UI on the lose menu
+    /// </summary>
     public void UpdateLoseMenuScore()
     {
         scoreCount.text = " " + uiManager.stats.playerScore;
     }
 
-    public void ShowLoseMenu(bool enable)
+    /// <summary>
+    /// shows the lose menu, if 1 displays fuel text, if 2 displays health text
+    /// </summary>
+    /// <param name="enable"></param>
+    /// <param name="number"></param>
+    public void ShowLoseMenu(bool enable, int number)
     {
         loseMenu.SetActive(enable);
+
+        if(number == 1)
+        {
+            reasonForLoss.text = GameText.Lose_OutOfFuel;
+        }
+        else if(number == 2)
+        {
+            reasonForLoss.text = GameText.Lose_OutOfHealth;
+        }
     }
 }
 #endregion
