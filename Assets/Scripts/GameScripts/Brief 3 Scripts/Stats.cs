@@ -12,7 +12,7 @@ public class Stats : MonoBehaviour
     public int upgradeFuelLevel = 0; // the upgrade level of fuel upgrades
     public int upgradeAmmoLevel = 0; // the upgrade level of ammo upgrades
     public int upgradeTurretLevel = 0; // the upgrade level of turret speed upgrades
-    public int upgradeSpeedLevel = 0;
+    public int upgradeSpeedLevel = 0; // the upgrade level of tank speed upgrades
 
     public Resources resources; // reference for resources script
     // public TankMovement turret; // reference for our tank movement script
@@ -22,7 +22,7 @@ public class Stats : MonoBehaviour
     public static UnityEvent upgradeFuel = new UnityEvent(); // event for upgrading fuel
     public static UnityEvent upgradeAmmo = new UnityEvent(); // event for upgrading ammo
     public static UnityEvent upgradeTurret = new UnityEvent(); // event for upgrading turret
-    public static UnityEvent upgradeSpeed = new UnityEvent();
+    public static UnityEvent upgradeSpeed = new UnityEvent(); // event for upgrading tank
 
     public bool debuggingEnabled = false; // enables/disables debugging
     #endregion
@@ -66,6 +66,7 @@ public class Stats : MonoBehaviour
             statPoint += 1; // adds a stat point
             uiManager.inGameUI.ShowUpgradeTextUI(true);
             uiManager.skillMenu.UpdateSkillPointUI();
+            uiManager.loseMenu.CheckToWinLevel();
             pointThreshold *= 2; // doubles the point threshold
 
             if (debuggingEnabled)
@@ -186,14 +187,5 @@ public class Stats : MonoBehaviour
         {
             return;
         }
-    }
-
-
-    /// <summary>
-    /// updates the score on the lose menu
-    /// </summary>
-    public void UpdateScore()
-    {
-        uiManager.loseMenu.UpdateLoseMenuScore();
     }
 }

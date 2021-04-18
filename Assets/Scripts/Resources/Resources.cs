@@ -118,8 +118,8 @@ public class Ammo
 public class Fuel
 {
     #region public variables
-    private float currentFuel = 15;
-    public float maxFuel = 20;
+    private float currentFuel = 15; // the value of the current fuel
+    public float maxFuel = 20; // the value of the max fuel
 
     public bool debuggingEnable = false; // enables/disables debugging
     #endregion

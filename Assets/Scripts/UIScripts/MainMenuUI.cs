@@ -7,10 +7,9 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     #region public variables
-    public MainMenu mainMenu; // a reference to a new instance of the main menu data class
-    public CreditsMenu creditMenu; // a reference to a new instance of the credits menu data class
-    public SceneLoading sceneLoadingOperation;
-    public LevelLoadingScreen loadingScreen;
+    public MainMenu mainMenu; // a reference to the main menu data class
+    public CreditsMenu creditMenu; // a reference to the credits menu data class
+    public SceneLoading sceneLoadingOperation; // a reference to the sceneloading data class
     #endregion
 
     #region private variables
@@ -23,11 +22,11 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenu.Setup(this); // sets up the main menu reference
         creditMenu.Setup(this); // sets up the credit menu reference
-        loadingScreen.Setup(this);
+        sceneLoadingOperation.levelLoadingScreen.SetupMainMenu(this);
                                 
         mainMenu.ShowScreen(true); // display the main menu
         creditMenu.ShowScreen(false); // hides the credits menu
-        loadingScreen.ShowScreen(false);
+        sceneLoadingOperation.levelLoadingScreen.ShowScreen(false);
     }
 
     /// <summary>
@@ -54,7 +53,7 @@ public class MainMenuUI : MonoBehaviour
     /// <param name="ShowScreen"></param>
     public void ShowLoadingScreen(bool ShowScreen)
     {
-        loadingScreen.ShowScreen(ShowScreen);
+        sceneLoadingOperation.levelLoadingScreen.ShowScreen(ShowScreen);
     }
 }
 
@@ -185,71 +184,5 @@ public class CreditsMenu
     {
         ShowScreen(false); // hide the credits
         m_MainMenuUI.ShowMainMenu(true); // displays the main menu
-    }
-}
-
-[System.Serializable]
-public class LevelLoadingScreen
-{
-    #region public variables
-    public GameObject loadingScreen;
-    public Text titleText;
-    public Text tipText;
-    public Text tip;
-    public List<string> tipStringList = new List<string>();
-    #endregion
-
-    #region private variables
-    private MainMenuUI m_MainMenuUI;
-    #endregion
-
-    /// <summary>
-    /// sets up the loading screen
-    /// </summary>
-    /// <param name="mainMenuUI"></param>
-    public void Setup(MainMenuUI mainMenuUI)
-    {
-        m_MainMenuUI = mainMenuUI;
-
-        titleText.text = GameText.Loading_Title;
-        tipText.text = GameText.TipWord_Text;
-        SetUpStringList();
-        tip.text = PickRandomTip();
-    }
-
-    /// <summary>
-    /// enables/disables the loading screen
-    /// </summary>
-    /// <param name="displayScreen"></param>
-    public void ShowScreen(bool displayScreen)
-    {
-        loadingScreen.SetActive(displayScreen);
-    }
-
-    /// <summary>
-    /// adds game text to the list
-    /// </summary>
-    public void SetUpStringList()
-    {
-        tipStringList.Add(GameText.TipOne_Text);
-        tipStringList.Add(GameText.TipTwo_Text);
-        tipStringList.Add(GameText.TipThree_Text);
-        tipStringList.Add(GameText.TipFour_Text);
-        tipStringList.Add(GameText.TipFive_Text);
-        tipStringList.Add(GameText.TipSix_Text);
-        tipStringList.Add(GameText.TipSeven_Text);
-        tipStringList.Add(GameText.TipEight_Text);
-        tipStringList.Add(GameText.TipNine_Text);
-        tipStringList.Add(GameText.TipTen_Text);
-    }
-
-    /// <summary>
-    /// picks a random tip text from the list
-    /// </summary>
-    /// <returns></returns>
-    public string PickRandomTip()
-    {
-        int randomTip = Random.Range(0, tipStringList.Count);
-        return tipStringList[randomTip];
     }
 }

@@ -17,7 +17,6 @@ public class TankMovement
     public TankSoundEffects tankSoundEffects = new TankSoundEffects(); // creating a new instance of our tank sound effects class
     public Transform turretTransform; // a reference to the transform of the turret
     public Resources resources; // a reference to the Resource script
-    // public Stats stats; // a reference to our stats script
 
     public bool debuggingEnabled = false;
     #endregion
@@ -124,6 +123,10 @@ public class TankMovement
         turretTransform.Rotate(0, RotationalAmount * turretTurnSpeed * Time.deltaTime, 0, 0); // rotates the turrets transform on the y axis, by the turret speed per second
     }
 
+    /// <summary>
+    /// upgrades the turret speed
+    /// </summary>
+    /// <param name="amount"></param>
     public void UpgradeTurretSpeed(float amount)
     {
         turretTurnSpeed += amount;
@@ -134,6 +137,10 @@ public class TankMovement
         }
     }
 
+    /// <summary>
+    /// upgrades the tank speed
+    /// </summary>
+    /// <param name="amount"></param>
     public void UpgradeTankSpeed(float amount)
     {
         speed += amount;

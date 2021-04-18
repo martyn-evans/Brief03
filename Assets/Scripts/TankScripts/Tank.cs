@@ -18,11 +18,12 @@ public class Tank : MonoBehaviour
     public TankMovement tankMovement = new TankMovement(); // creating a new instance of our tank movement script
     public TankMainGun tankMainGun = new TankMainGun(); // creating a new instance of our tank main gun script
     public GameObject explosionPrefab; // the prefab we will use when we have 0 left to make it go boom!
+    public GameObject fireParticle; // the prefab will use when the players tank is destroyed
 
-    public bool enableDebugging = false;
+    public bool enableDebugging = false; // enables/disables debugging
     #endregion
 
-    #region private variabkes
+    #region private variables
     #endregion
 
     #region unity functions
@@ -114,8 +115,9 @@ public class Tank : MonoBehaviour
         }
 
         GameObject clone = Instantiate(explosionPrefab, transform.position,explosionPrefab.transform.rotation); // spawn in our explosion effect
+        Instantiate(fireParticle, transform.position, fireParticle.transform.rotation);
         Destroy(clone, 2); // just cleaning up our particle effect
-        gameObject.SetActive(false); // turn off our tank as we are dead
+        tankMovement.EnableTankMovement(false);
     }
 
     /// <summary>

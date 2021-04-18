@@ -5,10 +5,9 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
     #region public variables
-    public LayerMask tankLayer;
-    public GameObject smallExplosionPrefab;
-    public GameObject fuelItemPrefab;
-    public GameObject ammoItemPrefab;
+    public GameObject smallExplosionPrefab; // a refernece to the explosion prefab
+    public GameObject fuelItemPrefab; // a reference to the fuel pickup prefab
+    public GameObject ammoItemPrefab; // a reference to the ammo pickup prefab
 
     public bool debuggingEnabled = false; // enables/disables debugging
     #endregion
@@ -33,8 +32,6 @@ public class Crate : MonoBehaviour
             return;
             
         }
-
-        //if (collision.transform.root.GetComponent<Tank>() || collision.gameObject && gameObject.tag == "Shell")
 
         if (collision.transform.tag == "Player" || collision.transform.tag == "Shell") // if object has tag of player or shell it proceeds
         {

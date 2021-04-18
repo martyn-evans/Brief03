@@ -9,9 +9,10 @@ public class UIManager : MonoBehaviour
     public InGameUI inGameUI; // reference to the ingame class
     public PauseMenu pauseMenu; // reference to the pause menu class
     public SkillMenu skillMenu; // reference to the skill menu class
-    public LoseMenu loseMenu; // reference to the lose menu class
+    public LoseWinMenu loseMenu; // reference to the lose menu class
     public Stats stats; // reference to the stats script
     public GameManager gameManager; // reference to the game manager
+    public SceneLoading sceneLoadingOperation; // a reference to the scene loading script
     #endregion
 
     #region private variables
@@ -47,6 +48,8 @@ public class UIManager : MonoBehaviour
         pauseMenu.Setup(this);
         skillMenu.SetUp(this);
         loseMenu.SetUp(this);
+        sceneLoadingOperation.levelLoadingScreen.SetupInGame(this);
+        sceneLoadingOperation.levelLoadingScreen.ShowScreen(false);
     }
     #endregion
 }
@@ -71,6 +74,10 @@ public class InGameUI
     private UIManager uiManager;
     #endregion
 
+    /// <summary>
+    /// sets up the ingame UI
+    /// </summary>
+    /// <param name="current"></param>
     public void SetUp(UIManager current)
     {
         uiManager = current;
@@ -81,26 +88,46 @@ public class InGameUI
         scoreText.text = GameText.Score_Text;
     }
 
+    /// <summary>
+    /// updates the scores in the ingame ui
+    /// </summary>
     public void UpdateScore()
     {
         scoreCount.text = " " + uiManager.stats.playerScore;
     }
 
+    /// <summary>
+    /// updates the ammo in the ingame ui
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="maxAmount"></param>
     public void UpdateAmmoUI(int amount, int maxAmount)
     {
         ammoCount.text = " " + amount + " / " + maxAmount;
     }
 
+    /// <summary>
+    /// updates the fuel in the ingame ui
+    /// </summary>
+    /// <param name="amount"></param>
     public void UpdateFuelUI(float amount)
     {
         fuelGauge.value = amount;
     }
 
+    /// <summary>
+    /// enables/disables the ingame ui
+    /// </summary>
+    /// <param name="enable"></param>
     public void ShowInGameUI(bool enable)
     {
         inGameUI.SetActive(enable);
     }
 
+    /// <summary>
+    /// this enables/disables the upgrade available text
+    /// </summary>
+    /// <param name="enable"></param>
     public void ShowUpgradeTextUI(bool enable)
     {
         upgradeText.text = GameText.Upgrade_Text;
@@ -110,9 +137,9 @@ public class InGameUI
 }
 #endregion
 
-#region Lose Menu
+#region Lose / Win Menu
 [System.Serializable]
-public class LoseMenu
+public class LoseWinMenu
 {
     #region public variables
     public GameObject loseMenu;
@@ -138,11 +165,9 @@ public class LoseMenu
         uiManager = current;
         ShowLoseMenu(false,1);
 
-        gameOver.text = GameText.Lose_Title;
-
         scoreText.text = GameText.Lose_ScoreText;
 
-        retryButton.GetComponentInChildren<Text>().text = GameText.Lose_Retry;
+
         mainMenuButton.GetComponentInChildren<Text>().text = GameText.Lose_MainMenu;
         quitButton.GetComponentInChildren<Text>().text = GameText.Lose_Quit;
 
@@ -176,11 +201,60 @@ public class LoseMenu
 
         if(number == 1)
         {
+            gameOver.text = GameText.Lose_Title;
             reasonForLoss.text = GameText.Lose_OutOfFuel;
+            SetUpRetryButton();
         }
         else if(number == 2)
         {
+            gameOver.text = GameText.Lose_Title;
             reasonForLoss.text = GameText.Lose_OutOfHealth;
+            SetUpRetryButton();
+        }
+        else if(number == 3)
+        {
+            gameOver.text = GameText.Win_Title;
+            reasonForLoss.text = GameText.Win_PointsReached;
+            SetUpNextLevelButton();
+        }
+    }
+
+    /// <summary>
+    /// this sets up the retry button when the player loses
+    /// </summary>
+    public void SetUpRetryButton()
+    {
+        retryButton.GetComponentInChildren<Text>().text = GameText.Lose_Retry;
+
+        retryButton.onClick.RemoveAllListeners();
+        retryButton.onClick.AddListener(() => GameManager.retryLevel?.Invoke());
+    }
+
+    /// <summary>
+    /// this sets up the next level button when the player wins
+    /// </summary>
+    public void SetUpNextLevelButton()
+    {
+        retryButton.GetComponentInChildren<Text>().text = GameText.Win_LoadNext;
+
+        retryButton.onClick.RemoveAllListeners();
+        retryButton.onClick.AddListener(LoadLevelTwo);
+    }
+
+    public void LoadLevelTwo()
+    {
+        uiManager.sceneLoadingOperation.levelLoadingScreen.ShowScreen(true);
+        uiManager.sceneLoadingOperation.SetUp(2);
+    }
+
+    /// <summary>
+    /// is called when the player reaches 140 points
+    /// </summary>
+    public void CheckToWinLevel()
+    {
+        if(uiManager.stats.playerScore>=140)
+        {
+            ShowLoseMenu(true, 3);
         }
     }
 }

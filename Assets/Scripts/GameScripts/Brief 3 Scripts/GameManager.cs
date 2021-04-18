@@ -135,19 +135,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void LoadNextLevel()
-    {
-        // CancelInvoke("LoadNext");
-        // Invoke("LoadNext", 3);
-        // Time.timeScale = 1;
-    }
-
-    private void LoadNext()
-    {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // Time.timeScale = 1;
-    }
-
     /// <summary>
     /// quits the application
     /// </summary>

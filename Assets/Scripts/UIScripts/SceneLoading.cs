@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoading : MonoBehaviour
 {
+    #region public variables
     public KeyCode levelLoadButton = KeyCode.Space; // the button that needs to be pressed for loading to follow through
-    public Text continueText;
+    public Text continueText; // a reference to the conetinue text object on the loading screen
+    public Slider progressBar; // a reference to the loading bar slider on the loading screen
+    public LevelLoadingScreen levelLoadingScreen;
+    #endregion
 
+    #region private variables
     private AsyncOperation levelLoading; // a reference used to hold my async loading
     private Coroutine levelLoadingRoutine; // used to display level loading progress
+    #endregion
 
     /// <summary>
     ///  Sets up the async loading
@@ -19,7 +25,6 @@ public class SceneLoading : MonoBehaviour
     {
         levelLoading = SceneManager.LoadSceneAsync(scene); // this holds a reference to my current async operation so I can access it later
         levelLoading.allowSceneActivation = false; // this stops the scene from automatically switching
-        TextSetUp();
 
         if (levelLoadingRoutine != null) // if routine is not null
         {
@@ -29,28 +34,18 @@ public class SceneLoading : MonoBehaviour
     }
 
     /// <summary>
-    /// sets up the load level text and disables the text object
-    /// </summary>
-    public void TextSetUp()
-    {
-        continueText.text = GameText.Continue_Text;
-        continueText.enabled = false;
-    }
-
-    /// <summary>
     /// loads level to 0.89f, user has to press load level button to fully load scene
     /// </summary>
     /// <returns></returns>
     private IEnumerator LoadLevelAsync()
     {
-        while(levelLoading.progress < 0.89f)
-        {
-            yield return null;
-        }
-
         while (!levelLoading.allowSceneActivation)
         {
-            continueText.enabled = true;
+            float progress = Mathf.Clamp01(levelLoading.progress / 0.9f); // normalises the level loading progress
+            progressBar.value = progress; // updates progress bar value
+
+            continueText.text = GameText.Continue_Text; // updates continue text
+
             if (Input.GetKeyDown(levelLoadButton))
             {
                 levelLoading.allowSceneActivation = true;
@@ -58,5 +53,91 @@ public class SceneLoading : MonoBehaviour
             yield return null;
         }
         yield return null;
+    }
+}
+
+[System.Serializable]
+public class LevelLoadingScreen
+{
+    #region public variables
+    public GameObject loadingScreen;
+    public Text titleText;
+    public Text tipText;
+    public Text tip;
+    public List<string> tipStringList = new List<string>();
+    #endregion
+
+    #region private variables
+    private MainMenuUI m_MainMenuUI;
+    private UIManager m_UIManager;
+    #endregion
+
+    /// <summary>
+    /// sets up the loading screen
+    /// </summary>
+    /// <param name="mainMenuUI"></param>
+    public void SetupMainMenu(MainMenuUI mainMenuUI)
+    {
+        m_MainMenuUI = mainMenuUI;
+
+        titleText.text = GameText.Loading_Title;
+        tipText.text = GameText.TipWord_Text;
+        SetUpStringList();
+        tip.text = PickRandomTip();
+    }
+
+    /// <summary>
+    /// sets up the loading screen fo
+    /// </summary>
+    /// <param name="uiManager"></param>
+    public void SetupInGame(UIManager uiManager)
+    {
+        m_UIManager = uiManager;
+
+        titleText.text = GameText.Loading_Title;
+        tipText.text = GameText.TipWord_Text;
+        SetUpStringList();
+        tip.text = PickRandomTip();
+    }
+
+    /// <summary>
+    /// enables/disables the loading screen
+    /// </summary>
+    /// <param name="displayScreen"></param>
+    public void ShowScreen(bool displayScreen)
+    {
+        loadingScreen.SetActive(displayScreen);
+    }
+
+    /// <summary>
+    /// adds game text to the list
+    /// </summary>
+    public void SetUpStringList()
+    {
+        tipStringList.Add(GameText.TipOne_Text);
+        tipStringList.Add(GameText.TipTwo_Text);
+        tipStringList.Add(GameText.TipThree_Text);
+        tipStringList.Add(GameText.TipFour_Text);
+        tipStringList.Add(GameText.TipFive_Text);
+        tipStringList.Add(GameText.TipSix_Text);
+        tipStringList.Add(GameText.TipSeven_Text);
+        tipStringList.Add(GameText.TipEight_Text);
+        tipStringList.Add(GameText.TipNine_Text);
+        tipStringList.Add(GameText.TipTen_Text);
+        tipStringList.Add(GameText.TipEleven_Text);
+        tipStringList.Add(GameText.TipTwelve_Text);
+        tipStringList.Add(GameText.TipThirteen_Text);
+        tipStringList.Add(GameText.TipFourteen_Text);
+        tipStringList.Add(GameText.TipFifteen_Text);
+    }
+
+    /// <summary>
+    /// picks a random tip text from the list
+    /// </summary>
+    /// <returns></returns>
+    public string PickRandomTip()
+    {
+        int randomTip = Random.Range(0, tipStringList.Count);
+        return tipStringList[randomTip];
     }
 }

@@ -9,8 +9,8 @@ using UnityEngine.AI;
 public class NPCMovement : MonoBehaviour
 {
     #region public variables
-    public float speed = 2000f;
-    public float turnSpeed = 1000f;
+    public float speed = 2000f; // the value of the NPC forward speed
+    public float turnSpeed = 1000f; // the value of the NPC turning speed
     public float distanceTo; // distance to next target
 
     public Vector3 targetPos;

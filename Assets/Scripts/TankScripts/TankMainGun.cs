@@ -59,6 +59,10 @@ public class TankMainGun
         enableShooting = Enabled;
     }
 
+    /// <summary>
+    /// this updates the launch force of the main gun and shoots
+    /// </summary>
+    /// <param name="MainGunValue"></param>
     public void UpdateMainGun(float MainGunValue)
     {   
         if(enableShooting != true)
@@ -75,8 +79,10 @@ public class TankMainGun
         // get the input from out main button press
         else if(MainGunValue > 0 && !weaponFired)
         {
-            //Debug.Log("Weapon button pressed");
-
+            if (debuggingEnabled)
+            {
+                Debug.Log("Weapon button pressed");
+            }
             // we want to charge up our weapon
             currentLaunchForce += chargeSpeed * Time.deltaTime; // increase the current force
             if(!weaponSystemSource.isPlaying)
@@ -94,7 +100,10 @@ public class TankMainGun
         }
         else if(MainGunValue < 0 && !weaponFired)
         {
-           // Debug.Log("Weapon Button Released");
+            if (debuggingEnabled)
+            {
+                Debug.Log("Weapon button pressed");
+            }
             // we've released our button
             // we want to fire our weapon
             FireWeapon(mainGunTransform, currentLaunchForce, true);

@@ -16,7 +16,7 @@ public class TankHealth
     public Slider healthSlider; // reference to the health Slider
     public Color fullHealthColour = Color.green; // our full health colour
     public Color zeroHealthColour = Color.red; // colour of no health
-    public UIManager uiManager;
+    public UIManager uiManager; // a reference to the uimanager
 
     public bool debuggingEnabled = false;
     #endregion
@@ -27,6 +27,9 @@ public class TankHealth
     private Image fillImage; // reference to the fill image component of our slider;
     #endregion
 
+    /// <summary>
+    /// gives current / max values to the tank slider
+    /// </summary>
     public float CurrentHealth
     {
         get
@@ -71,6 +74,10 @@ public class TankHealth
         }
     }
 
+    /// <summary>
+    /// sets up the tank slider
+    /// </summary>
+    /// <param name="TankTransform"></param>
     public void SetUp(Transform TankTransform)
     {
         tankParent = TankTransform;

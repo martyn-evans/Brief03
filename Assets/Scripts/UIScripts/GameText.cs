@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GameText
 {
     #region Main Menu Text
-    public static string MainMenu_Title = "Brief 170 Project";
+    public static string MainMenu_Title = "TANKZILLA";
     public static string MainMenu_PlayGame = "Play Game";
     public static string MainMenu_Credits = "Credits";
     public static string MainMenu_Quit = "Quit";
@@ -39,12 +39,15 @@ public static class GameText
     public static string Paused_Quit = "Quit Game";
     #endregion
 
-    #region Lose Menu Text
+    #region Lose / Win Menu Text
     public static string Lose_Title = "Game Over!";
+    public static string Win_Title = "You Won!";
     public static string Lose_OutOfFuel = "You Ran Out Of Fuel";
     public static string Lose_OutOfHealth = "You Lost All Of Your Health";
+    public static string Win_PointsReached = "You Got All The Points!";
     public static string Lose_ScoreText = "Score:";
     public static string Lose_Retry = "Retry";
+    public static string Win_LoadNext = "Next Level";
     public static string Lose_MainMenu = "Main Menu";
     public static string Lose_Quit = "Quit Game";
     #endregion
@@ -65,12 +68,17 @@ public static class GameText
     public static string TipTwo_Text = "Crates will drop extra ammo or fuel";
     public static string TipThree_Text = "Fuel isn't used when turning the turret";
     public static string TipFour_Text = "Don't forget to upgrade your tank";
-    public static string TipFive_Text = "You can move the tank with W,A,S,D";
+    public static string TipFive_Text = "You can move the tank W,A,S,D";
     public static string TipSix_Text = "You can move the turret with the left and right arrows";
     public static string TipSeven_Text = "When it tells you to, Press 'Space' to continue";
     public static string TipEight_Text = "Press 'Space' to shoot";
     public static string TipNine_Text = "Get more points by shooting buildings";
     public static string TipTen_Text = "Get more points by running over crates and through checkpoints";
+    public static string TipEleven_Text = "Don't let TankZilla hit you!";
+    public static string TipTwelve_Text = "There is no more health, what you get is what you get";
+    public static string TipThirteen_Text = "Your shells do nothing to TankZilla";
+    public static string TipFourteen_Text = "Upgrade your tank speed to go faster";
+    public static string TipFifteen_Text = "This is a tip";
     #endregion
     #endregion
 

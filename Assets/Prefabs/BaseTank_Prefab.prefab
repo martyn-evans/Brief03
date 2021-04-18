@@ -435,9 +435,11 @@ MonoBehaviour:
     minHealth: 0
     maxHealth: 100
     isDead: 1
+    healthSlider: {fileID: 2328160367877027846}
     fullHealthColour: {r: 0, g: 1, b: 0, a: 1}
     zeroHealthColour: {r: 1, g: 0, b: 0, a: 1}
-    healthSlider: {fileID: 2328160367877027846}
+    uiManager: {fileID: 0}
+    debuggingEnabled: 0
   tankMovement:
     speed: 12
     turnSpeed: 180
@@ -448,6 +450,7 @@ MonoBehaviour:
       pitchRangeMax: 0.2
     turretTransform: {fileID: 0}
     resources: {fileID: 0}
+    debuggingEnabled: 0
   tankMainGun:
     mainGunTransform: {fileID: 3182881852141773420}
     tankShellPrefab: {fileID: 6863767184128917887, guid: 64d33ca7dc1959b43b854fc666f30204,
@@ -459,7 +462,10 @@ MonoBehaviour:
     weaponSystemSource: {fileID: 1071528758635921753}
     chargingSFX: {fileID: 8300000, guid: b07c1f85edea5fb429801d35ecdf71c8, type: 3}
     firingSFX: {fileID: 8300000, guid: a9a8ff8d2e81a96488285207119885db, type: 3}
+    shellType: {fileID: 0}
+    debuggingEnabled: 0
   explosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  enableDebugging: 0
 --- !u!1 &2328160366355997736
 GameObject:
   m_ObjectHideFlags: 0

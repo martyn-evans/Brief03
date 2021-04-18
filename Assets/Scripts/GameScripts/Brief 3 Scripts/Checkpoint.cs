@@ -5,8 +5,11 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     #region public variables
-    public Stats stats;
-    public bool debuggingEnabled = false;
+    public Stats stats; // a reference to the stats data class
+    public GameObject particle; // a reference to the particle gameobject of our checkpoint
+    public Transform particleSpawnTransform; // the transform our particle will spawn at
+
+    public bool debuggingEnabled = false; // enables/disables debugging
     #endregion
 
     #region private variables
@@ -23,6 +26,7 @@ public class Checkpoint : MonoBehaviour
         {
             stats.resources.fuel.AddFuel(5); // add value to fuel
             stats.playerScore += 5; // add value to score
+            SpawnParticle();
             stats.CheckStatPoint(); // checks stat points through function
             UpdateUI(); // calls update ui function
             Destroy(gameObject); // destroys object
@@ -45,5 +49,14 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.Log("UI updated");
         }
+    }
+
+    /// <summary>
+    /// instantiates particle when the player goes through the checkpoint
+    /// </summary>
+    public void SpawnParticle()
+    {
+        GameObject clone = Instantiate(particle, particleSpawnTransform.transform.position, particle.transform.rotation);
+        Destroy(clone, 2);
     }
 }
