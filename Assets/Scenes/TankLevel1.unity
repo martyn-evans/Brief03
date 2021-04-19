@@ -12485,7 +12485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statPoint: 0
-  playerScore: 135
+  playerScore: 0
   pointThreshold: 10
   upgradeFuelLevel: 0
   upgradeAmmoLevel: 0
@@ -20569,23 +20569,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
         type: 3}
-      propertyPath: fireParticle
-      value: 
-      objectReference: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9,
-        type: 3}
-    - target: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
-        type: 3}
-      propertyPath: explosionPrefab
-      value: 
-      objectReference: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
-        type: 3}
-    - target: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
-        type: 3}
-      propertyPath: tankMovement.stats
-      value: 
-      objectReference: {fileID: 907214329}
-    - target: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
-        type: 3}
       propertyPath: tankHealth.uiManager
       value: 
       objectReference: {fileID: 907214324}
@@ -20613,11 +20596,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9203272823665557663, guid: aba5dc34144335c43a163d644929c642,
-        type: 3}
-      propertyPath: field of view
-      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aba5dc34144335c43a163d644929c642, type: 3}
@@ -31225,6 +31203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1881492033, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e, type: 3}
+      propertyPath: m_Acceleration
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3743804784028978095, guid: 0fa9a863a4df8aa4eaeecc0e4cb94f7e,
         type: 3}
       propertyPath: currentTargetNode
