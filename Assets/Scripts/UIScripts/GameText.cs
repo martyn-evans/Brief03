@@ -44,7 +44,7 @@ public static class GameText
     public static string Win_Title = "You Won!";
     public static string Lose_OutOfFuel = "You Ran Out Of Fuel";
     public static string Lose_OutOfHealth = "You Lost All Of Your Health";
-    public static string Win_PointsReached = "You Got All The Points!";
+    public static string Win_PointsReached = "You Got 200 Points!";
     public static string Lose_ScoreText = "Score:";
     public static string Lose_Retry = "Retry";
     public static string Win_LoadNext = "Next Level";
@@ -63,6 +63,8 @@ public static class GameText
     public static string Loading_Title = "Loading Level";
     public static string Continue_Text = "Press 'Space' to continue";
     public static string TipWord_Text = "Tip:";
+    public static string Goal_Text = "Goal:";
+    public static string Goal_Description = "Reach 200 Score, also avoid TankZilla";
     #region Tips Text
     public static string TipOne_Text = "Destroy buildings for extra points";
     public static string TipTwo_Text = "Crates will drop extra ammo or fuel";
@@ -82,4 +84,11 @@ public static class GameText
     #endregion
     #endregion
 
+    #region EndScreen Text
+    public static string End_Title = "Thanks For Playing!";
+    public static string End_Description = "You reached 150 points";
+    public static string End_Replay = "Replay";
+    public static string End_ReturnToMenu = "Main Menu";
+    public static string End_Quit = "Quit Game";
+    #endregion
 }

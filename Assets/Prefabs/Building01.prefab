@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6266539067199680287}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.865616, y: 0.128379, z: -8.514944}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.5000001, y: 1.5, z: 1.5000001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,9 +61,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 391ac6010f7534841801762425337138, type: 2}
-  - {fileID: 5749725841448625722, guid: df30b16482bb5654fbff5e8c7aa7eddd, type: 3}
-  - {fileID: -4038749657778151293, guid: df30b16482bb5654fbff5e8c7aa7eddd, type: 3}
+  - {fileID: 2100000, guid: 124e63b4187883b4eac07677426e1fe7, type: 2}
+  - {fileID: 2100000, guid: 2bc6cabc982f2e044a0252082142e997, type: 2}
+  - {fileID: 2100000, guid: cb56238ff0dab8743ae5fc841e56472c, type: 2}
   - {fileID: 2732543721198269830, guid: df30b16482bb5654fbff5e8c7aa7eddd, type: 3}
   - {fileID: -2392901664259246583, guid: df30b16482bb5654fbff5e8c7aa7eddd, type: 3}
   m_StaticBatchInfo:
@@ -99,6 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4078a57b164e845adb37688563aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  explosionPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
+    type: 3}
+  buildingDebris: {fileID: 1764105204400834059, guid: e3944fd6dbfecf04f9d28d3ea9c3b890,
+    type: 3}
+  debuggingEnabled: 0
 --- !u!65 &8899562975847034219
 BoxCollider:
   m_ObjectHideFlags: 0

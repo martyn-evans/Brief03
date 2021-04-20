@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957327149162841951}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.074251, y: 0.12838069, z: -14.758713}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.5000001, y: 1.5, z: 1.5000001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,9 +64,9 @@ MeshRenderer:
   - {fileID: 2100000, guid: cb56238ff0dab8743ae5fc841e56472c, type: 2}
   - {fileID: 2732543721198269830, guid: 992c4a39423e14441b0ca193156ada69, type: 3}
   - {fileID: 5749725841448625722, guid: 992c4a39423e14441b0ca193156ada69, type: 3}
-  - {fileID: -4038749657778151293, guid: 992c4a39423e14441b0ca193156ada69, type: 3}
+  - {fileID: 2100000, guid: 4cfa7cc6f7c550d44bd4bdc6df3ebc1d, type: 2}
   - {fileID: -2392901664259246583, guid: 992c4a39423e14441b0ca193156ada69, type: 3}
-  - {fileID: -8363946513141647315, guid: 992c4a39423e14441b0ca193156ada69, type: 3}
+  - {fileID: 2100000, guid: e70d60038a4f03f428d695ce1e983d36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4078a57b164e845adb37688563aced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  explosionPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
+    type: 3}
+  buildingDebris: {fileID: 1764105204400834059, guid: e3944fd6dbfecf04f9d28d3ea9c3b890,
+    type: 3}
+  debuggingEnabled: 0
 --- !u!65 &577452813233164270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,5 +117,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.057485, y: 2.567079, z: 4.14055}
-  m_Center: {x: -0.566597, y: 1.2051609, z: -0.54220456}
+  m_Size: {x: 7.3038173, y: 2.567079, z: 4.1760454}
+  m_Center: {x: -0.58408415, y: 1.2051609, z: -0.5599725}

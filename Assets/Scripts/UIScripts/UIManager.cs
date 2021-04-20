@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public PauseMenu pauseMenu; // reference to the pause menu class
     public SkillMenu skillMenu; // reference to the skill menu class
     public LoseWinMenu loseMenu; // reference to the lose menu class
+    public EndScreen endScreen; // reference to the end screen class
     public Stats stats; // reference to the stats script
     public GameManager gameManager; // reference to the game manager
     public SceneLoading sceneLoadingOperation; // a reference to the scene loading script
@@ -47,6 +48,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.Setup(this);
         skillMenu.SetUp(this);
         loseMenu.SetUp(this);
+        endScreen.Setup(this);
         sceneLoadingOperation.levelLoadingScreen.SetupInGame(this);
         sceneLoadingOperation.levelLoadingScreen.ShowScreen(false);
     }
@@ -198,6 +200,15 @@ public class LoseWinMenu
     {
         loseMenu.SetActive(enable);
 
+        if(enable == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
         if(number == 1)
         {
             gameOver.text = GameText.Lose_Title;
@@ -245,15 +256,8 @@ public class LoseWinMenu
     /// </summary>
     public void LoadNext()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2) // if build index = to 2
-        {
-            SceneManager.LoadScene(3); // load up end screen
-        }
-        else
-        {
-            uiManager.sceneLoadingOperation.levelLoadingScreen.ShowScreen(true);
-            uiManager.sceneLoadingOperation.SetUp(SceneManager.GetActiveScene().buildIndex + 1); // get current build index and plus 1 to it
-        }
+        uiManager.sceneLoadingOperation.levelLoadingScreen.ShowScreen(true);
+        uiManager.sceneLoadingOperation.SetUp(SceneManager.GetActiveScene().buildIndex + 1); // get current build index and plus 1 to it
     }
 
     /// <summary>
@@ -261,9 +265,19 @@ public class LoseWinMenu
     /// </summary>
     public void CheckToWinLevel()
     {
-        if (uiManager.stats.playerScore >= 140) // if score is 140 or above show win menu
+        if (SceneManager.GetActiveScene().buildIndex != 2) // if scene has index that is not 2
         {
-            ShowWinLoseMenu(true, 3);
+            if (uiManager.stats.playerScore >= 200) // if score is 200 or above show win menu
+            {
+                ShowWinLoseMenu(true, 3); // show win menu with winning description
+            }
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2) // if scene has index of 2
+        {
+            if (uiManager.stats.playerScore >= 200) // if score is 200 or above show win menu
+            {
+                uiManager.endScreen.ShowEndScreenUI(true); // shows end screen
+            }
         }
     }
 }
@@ -388,6 +402,10 @@ public class PauseMenu
     private UIManager uiManager;
     #endregion
 
+    /// <summary>
+    /// sets up the pause menu and disables it
+    /// </summary>
+    /// <param name="current"></param>
     public void Setup(UIManager current)
     {
         uiManager = current;
@@ -409,19 +427,83 @@ public class PauseMenu
         quit.onClick.AddListener(() => GameManager.quitGame?.Invoke());
     }
 
+    /// <summary>
+    /// a function to disable the pause menu used in an event
+    /// </summary>
     public void Resume()
     {
         ShowPauseUI(false);
     }
 
+    /// <summary>
+    /// a function to enable the pause menu used in an event
+    /// </summary>
     public void PauseGame()
     {
         ShowPauseUI(true);
     }
 
+    /// <summary>
+    /// enables/disables the pause menu
+    /// </summary>
+    /// <param name="Enable"></param>
     public void ShowPauseUI(bool Enable)
     {
         pauseMenu.SetActive(Enable);
+    }
+}
+#endregion
+
+#region EndScreen
+[System.Serializable]
+public class EndScreen
+{
+    #region public variables
+    public GameObject endScreen;
+    public Text title;
+    public Text description;
+    public Button replay;
+    public Button returnToMenu;
+    public Button quit;
+    #endregion
+
+    #region private variables
+    private UIManager uiManager;
+    #endregion
+
+    /// <summary>
+    /// sets up the end screen menu
+    /// </summary>
+    /// <param name="current"></param>
+    public void Setup(UIManager current)
+    {
+        uiManager = current;
+        ShowEndScreenUI(false);
+
+        title.text = GameText.End_Title;
+        description.text = GameText.End_Description;
+
+        replay.GetComponentInChildren<Text>().text = GameText.End_Replay;
+        returnToMenu.GetComponentInChildren<Text>().text = GameText.End_ReturnToMenu;
+        quit.GetComponentInChildren<Text>().text = GameText.End_Quit;
+
+        replay.onClick.RemoveAllListeners();
+        replay.onClick.AddListener(() => GameManager.retryLevel?.Invoke());
+
+        returnToMenu.onClick.RemoveAllListeners();
+        returnToMenu.onClick.AddListener(() => GameManager.returnToMenu?.Invoke());
+
+        quit.onClick.RemoveAllListeners();
+        quit.onClick.AddListener(() => GameManager.quitGame?.Invoke());
+    }
+
+    /// <summary>
+    /// enables/disables the end screen
+    /// </summary>
+    /// <param name="enable"></param>
+    public void ShowEndScreenUI(bool enable)
+    {
+        endScreen.SetActive(enable);
     }
 }
 #endregion

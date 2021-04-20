@@ -16,6 +16,8 @@ public class SceneLoading : MonoBehaviour
     #region private variables
     private AsyncOperation levelLoading; // a reference used to hold my async loading
     private Coroutine levelLoadingRoutine; // used to display level loading progress
+
+    private bool loadingDone;
     #endregion
 
     /// <summary>
@@ -25,6 +27,7 @@ public class SceneLoading : MonoBehaviour
     {
         levelLoading = SceneManager.LoadSceneAsync(scene); // this holds a reference to my current async operation so I can access it later
         levelLoading.allowSceneActivation = false; // this stops the scene from automatically switching
+        loadingDone = false;
 
         if (levelLoadingRoutine != null) // if routine is not null
         {
@@ -39,16 +42,28 @@ public class SceneLoading : MonoBehaviour
     /// <returns></returns>
     private IEnumerator LoadLevelAsync()
     {
-        while (!levelLoading.allowSceneActivation)
+        while (!loadingDone) // if loading is not done
         {
             float progress = Mathf.Clamp01(levelLoading.progress / 0.9f); // normalises the level loading progress
             progressBar.value = progress; // updates progress bar value
 
+            if(progress >= 0.9f) // if progresss equals 0.9 or higher
+            {
+                loadingDone = true; // loading is true
+            }
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(2); // waits for 2 seconds
+
+        while(loadingDone) // if loading is done
+        {
             continueText.text = GameText.Continue_Text; // updates continue text
 
             if (Input.GetKeyDown(levelLoadButton))
             {
-                levelLoading.allowSceneActivation = true;
+                levelLoading.allowSceneActivation = true; // activates scene activation
             }
             yield return null;
         }
@@ -64,6 +79,8 @@ public class LevelLoadingScreen
     public Text titleText;
     public Text tipText;
     public Text tip;
+    public Text goalText;
+    public Text goal;
     public List<string> tipStringList = new List<string>();
     #endregion
 
@@ -80,8 +97,11 @@ public class LevelLoadingScreen
     {
         m_MainMenuUI = mainMenuUI;
 
+        goalText.text = GameText.Goal_Text;
+        goal.text = GameText.Goal_Description;
         titleText.text = GameText.Loading_Title;
         tipText.text = GameText.TipWord_Text;
+
         SetUpStringList();
         tip.text = PickRandomTip();
     }
