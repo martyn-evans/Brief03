@@ -26,7 +26,7 @@ public class Resources : MonoBehaviour
     {
         if(fuel.CurrentFuel <= 0) // if fuel hits 0, player loses and displays lose menu
         {
-            uiManager.loseMenu.ShowLoseMenu(enabled,1);
+            uiManager.loseMenu.ShowWinLoseMenu(enabled,1);
 
             if (debuggingEnable)
             {

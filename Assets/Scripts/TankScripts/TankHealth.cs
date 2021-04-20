@@ -49,7 +49,7 @@ public class TankHealth
                 // if we are dead we'd want some explosions
                 // call an event for the players death
                 TankGameEvents.OnObjectDestroyedEvent?.Invoke(tankParent); // so pass in our tank's health script into the tank destroyed event
-                uiManager.loseMenu.ShowLoseMenu(true,2);
+                uiManager.loseMenu.ShowWinLoseMenu(true,2);
             }
             else
             {

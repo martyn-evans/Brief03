@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -163,7 +162,7 @@ public class LoseWinMenu
     public void SetUp(UIManager current)
     {
         uiManager = current;
-        ShowLoseMenu(false,1);
+        ShowWinLoseMenu(false,1);
 
         scoreText.text = GameText.Lose_ScoreText;
 
@@ -191,11 +190,11 @@ public class LoseWinMenu
     }
 
     /// <summary>
-    /// shows the lose menu, if 1 displays fuel text, if 2 displays health text
+    /// shows the win/lose menu, if 1 displays fuel fail text, if 2 displays health fail text. if 3 displays win text
     /// </summary>
     /// <param name="enable"></param>
     /// <param name="number"></param>
-    public void ShowLoseMenu(bool enable, int number)
+    public void ShowWinLoseMenu(bool enable, int number)
     {
         loseMenu.SetActive(enable);
 
@@ -238,13 +237,23 @@ public class LoseWinMenu
         retryButton.GetComponentInChildren<Text>().text = GameText.Win_LoadNext;
 
         retryButton.onClick.RemoveAllListeners();
-        retryButton.onClick.AddListener(LoadLevelTwo);
+        retryButton.onClick.AddListener(LoadNext);
     }
 
-    public void LoadLevelTwo()
+    /// <summary>
+    /// loads the next level, or loads end screen menu
+    /// </summary>
+    public void LoadNext()
     {
-        uiManager.sceneLoadingOperation.levelLoadingScreen.ShowScreen(true);
-        uiManager.sceneLoadingOperation.SetUp(2);
+        if (SceneManager.GetActiveScene().buildIndex == 2) // if build index = to 2
+        {
+            SceneManager.LoadScene(3); // load up end screen
+        }
+        else
+        {
+            uiManager.sceneLoadingOperation.levelLoadingScreen.ShowScreen(true);
+            uiManager.sceneLoadingOperation.SetUp(SceneManager.GetActiveScene().buildIndex + 1); // get current build index and plus 1 to it
+        }
     }
 
     /// <summary>
@@ -252,9 +261,9 @@ public class LoseWinMenu
     /// </summary>
     public void CheckToWinLevel()
     {
-        if(uiManager.stats.playerScore>=140)
+        if (uiManager.stats.playerScore >= 140) // if score is 140 or above show win menu
         {
-            ShowLoseMenu(true, 3);
+            ShowWinLoseMenu(true, 3);
         }
     }
 }
