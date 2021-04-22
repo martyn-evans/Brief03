@@ -79,11 +79,19 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// this sets the position of a node as a target
+    /// </summary>
+    /// <param name="targetPos"></param>
     public void SetTarget(Vector3 targetPos)
     {
         this.targetPos = targetPos;
     }
 
+    /// <summary>
+    /// this checks how close to the target it is, and if it is close sets the next target
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Racing()
     {
         while(this.enabled)
@@ -101,6 +109,10 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// this returns the transform from the next node in the list
+    /// </summary>
+    /// <returns></returns>
     private Transform SetNextGoal()
     {
         int currentNode = 0;

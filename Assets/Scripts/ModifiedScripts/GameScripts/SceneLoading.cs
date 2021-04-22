@@ -25,9 +25,9 @@ public class SceneLoading : MonoBehaviour
     /// </summary>
     public void SetUp(int scene)
     {
+        loadingDone = false;
         levelLoading = SceneManager.LoadSceneAsync(scene); // this holds a reference to my current async operation so I can access it later
         levelLoading.allowSceneActivation = false; // this stops the scene from automatically switching
-        loadingDone = false;
 
         if (levelLoadingRoutine != null) // if routine is not null
         {
@@ -47,7 +47,7 @@ public class SceneLoading : MonoBehaviour
             float progress = Mathf.Clamp01(levelLoading.progress / 0.9f); // normalises the level loading progress
             progressBar.value = progress; // updates progress bar value
 
-            if(progress >= 0.9f) // if progresss equals 0.9 or higher
+            if(progress >= 0.89f) // if progresss equals 0.89 or higher
             {
                 loadingDone = true; // loading is true
             }
@@ -114,8 +114,11 @@ public class LevelLoadingScreen
     {
         m_UIManager = uiManager;
 
+        goalText.text = GameText.Goal_Text;
+        goal.text = GameText.Goal_Description;
         titleText.text = GameText.Loading_Title;
         tipText.text = GameText.TipWord_Text;
+
         SetUpStringList();
         tip.text = PickRandomTip();
     }

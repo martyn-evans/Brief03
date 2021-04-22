@@ -22,11 +22,13 @@ public class Resources : MonoBehaviour
         ammo.SetUp(uiManager);
         fuel.SetUp(uiManager);
     }
+
+    // update is called every frame
     public void Update()
     {
         if(fuel.CurrentFuel <= 0) // if fuel hits 0, player loses and displays lose menu
         {
-            uiManager.loseMenu.ShowWinLoseMenu(enabled,1);
+            uiManager.loseMenu.ShowWinLoseMenu(true,1);
 
             if (debuggingEnable)
             {

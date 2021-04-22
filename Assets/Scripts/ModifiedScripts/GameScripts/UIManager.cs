@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +18,7 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region private variables
+    private Coroutine waitToPauseRoutine;
     #endregion
 
     #region Unity Functions
@@ -51,6 +54,39 @@ public class UIManager : MonoBehaviour
         endScreen.Setup(this);
         sceneLoadingOperation.levelLoadingScreen.SetupInGame(this);
         sceneLoadingOperation.levelLoadingScreen.ShowScreen(false);
+    }
+    #endregion
+
+    #region Coroutine used for LoseMenu TankZilla Lose Condition
+    /// <summary>
+    /// starts the coroutine to pause the game
+    /// </summary>
+    /// <param name="enable"></param>
+    public void PauseGame(bool enable)
+    {
+        if(waitToPauseRoutine != null)
+        {
+            StopCoroutine(waitToPauseRoutine);
+        }
+        waitToPauseRoutine = StartCoroutine(WaitToPauseLose(enable));
+        Debug.Log("Coroutine is called");
+    }
+
+    /// <summary>
+    /// a coroutine to wait seconds to pause the timescale
+    /// </summary>
+    /// <param name="enable"></param>
+    /// <returns></returns>
+    private IEnumerator WaitToPauseLose(bool enable)
+    {
+        yield return new WaitForSeconds(1);
+
+        if (enable == true)
+        {
+            Debug.Log("Time scale is 0");
+            loseMenu.TimeScale(0);
+        }
+        yield return null;
     }
     #endregion
 }
@@ -200,15 +236,6 @@ public class LoseWinMenu
     {
         loseMenu.SetActive(enable);
 
-        if(enable == true)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
-
         if(number == 1)
         {
             gameOver.text = GameText.Lose_Title;
@@ -220,13 +247,24 @@ public class LoseWinMenu
             gameOver.text = GameText.Lose_Title;
             reasonForLoss.text = GameText.Lose_OutOfHealth;
             SetUpRetryButton();
+            uiManager.PauseGame(enable);
         }
         else if(number == 3)
         {
             gameOver.text = GameText.Win_Title;
             reasonForLoss.text = GameText.Win_PointsReached;
             SetUpNextLevelButton();
+            uiManager.PauseGame(enable);
         }
+    }
+
+    /// <summary>
+    /// this is used to stop/play the world
+    /// </summary>
+    /// <param name="value"></param>
+    public void TimeScale(int value)
+    {
+        Time.timeScale = value;
     }
 
     /// <summary>
@@ -237,6 +275,7 @@ public class LoseWinMenu
         retryButton.GetComponentInChildren<Text>().text = GameText.Lose_Retry;
 
         retryButton.onClick.RemoveAllListeners();
+        TimeScale(1);
         retryButton.onClick.AddListener(() => GameManager.retryLevel?.Invoke());
     }
 
@@ -248,6 +287,7 @@ public class LoseWinMenu
         retryButton.GetComponentInChildren<Text>().text = GameText.Win_LoadNext;
 
         retryButton.onClick.RemoveAllListeners();
+        TimeScale(1);
         retryButton.onClick.AddListener(LoadNext);
     }
 
@@ -257,7 +297,9 @@ public class LoseWinMenu
     public void LoadNext()
     {
         uiManager.sceneLoadingOperation.levelLoadingScreen.ShowScreen(true);
+        TimeScale(1);
         uiManager.sceneLoadingOperation.SetUp(SceneManager.GetActiveScene().buildIndex + 1); // get current build index and plus 1 to it
+
     }
 
     /// <summary>
