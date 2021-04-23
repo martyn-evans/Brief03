@@ -68,8 +68,7 @@ public class UIManager : MonoBehaviour
         {
             StopCoroutine(waitToPauseRoutine);
         }
-        waitToPauseRoutine = StartCoroutine(WaitToPauseLose(enable));
-        Debug.Log("Coroutine is called");
+        waitToPauseRoutine = StartCoroutine(WaitToPauseRoutine(enable));
     }
 
     /// <summary>
@@ -77,13 +76,12 @@ public class UIManager : MonoBehaviour
     /// </summary>
     /// <param name="enable"></param>
     /// <returns></returns>
-    private IEnumerator WaitToPauseLose(bool enable)
+    private IEnumerator WaitToPauseRoutine(bool enable)
     {
         yield return new WaitForSeconds(1);
 
         if (enable == true)
         {
-            Debug.Log("Time scale is 0");
             loseMenu.TimeScale(0);
         }
         yield return null;

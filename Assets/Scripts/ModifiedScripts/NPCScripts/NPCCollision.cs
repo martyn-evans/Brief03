@@ -28,7 +28,7 @@ public class NPCCollision : MonoBehaviour
             return;
         }
 
-        if (collision.transform.tag == "Player") // if object has tag of player or shell it proceeds
+        if (collision.transform.tag == "Player") // if object has tag of player  it proceeds
         {
             #region debugging
             if (debuggingEnabled)
