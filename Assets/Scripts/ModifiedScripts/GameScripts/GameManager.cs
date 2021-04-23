@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused) // checks if escape key has been pressed and is paused
         {
-            resumeGame?.Invoke(); // resumes game
+            resumeGame?.Invoke(); // resumes game, disables pause menu
             isPaused = false; // is not paused
 
             if(debuggingEnabled)
@@ -71,13 +71,14 @@ public class GameManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Tab) && isPaused) // checks if escape key has been pressed and is paused
             {
-                return; // do nothing
+                skillPauseGame?.Invoke(); // pauses game, displays skill menu
+                isPaused = true; // is paused
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Tab) && isPaused) // checks if tab key has been pressed and is paused
         {
-            skillResumeGame?.Invoke(); // resumes game
+            skillResumeGame?.Invoke(); // resumes game, disables skill menu
             isPaused = false; // is not paused
 
             if (debuggingEnabled)
@@ -97,7 +98,8 @@ public class GameManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape) && isPaused) // checks if escape key has been pressed and is paused
             {
-                return; // do nothing
+                skillResumeGame?.Invoke(); // resumes game, disables skill menu
+                isPaused = false; // is not paused
             }
         }
     }

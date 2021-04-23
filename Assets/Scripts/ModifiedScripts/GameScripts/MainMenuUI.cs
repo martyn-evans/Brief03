@@ -22,7 +22,7 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenu.Setup(this); // sets up the main menu reference
         creditMenu.Setup(this); // sets up the credit menu reference
-        sceneLoadingOperation.levelLoadingScreen.SetupMainMenu(this);
+        sceneLoadingOperation.levelLoadingScreen.SetUpMainMenuLoading(this);
                                 
         mainMenu.ShowScreen(true); // display the main menu
         creditMenu.ShowScreen(false); // hides the credits menu
@@ -110,11 +110,10 @@ public class MainMenu
     /// </summary>
     private void PlayGame()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // just get the next scene in the build index
-        m_MainMenuUI.ShowLoadingScreen(true);
-        m_MainMenuUI.sceneLoadingOperation.SetUp(1);
-        m_MainMenuUI.ShowMainMenu(false);
-        m_MainMenuUI.ShowCredits(false);
+        m_MainMenuUI.ShowLoadingScreen(true); // enables loading screen
+        m_MainMenuUI.sceneLoadingOperation.SetUp(1); // calls the set up function for the next scene
+        m_MainMenuUI.ShowMainMenu(false); // disables main menu ui
+        m_MainMenuUI.ShowCredits(false); // disables credits ui
     }
 
     /// <summary>

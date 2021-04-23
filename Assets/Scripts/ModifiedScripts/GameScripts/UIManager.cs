@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
         skillMenu.SetUp(this);
         loseMenu.SetUp(this);
         endScreen.Setup(this);
-        sceneLoadingOperation.levelLoadingScreen.SetupInGame(this);
+        sceneLoadingOperation.levelLoadingScreen.SetUpInGameLoading(this);
         sceneLoadingOperation.levelLoadingScreen.ShowScreen(false);
     }
     #endregion

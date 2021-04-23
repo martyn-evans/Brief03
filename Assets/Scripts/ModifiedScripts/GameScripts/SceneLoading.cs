@@ -93,7 +93,7 @@ public class LevelLoadingScreen
     /// sets up the loading screen
     /// </summary>
     /// <param name="mainMenuUI"></param>
-    public void SetupMainMenu(MainMenuUI mainMenuUI)
+    public void SetUpMainMenuLoading(MainMenuUI mainMenuUI)
     {
         m_MainMenuUI = mainMenuUI;
 
@@ -110,7 +110,7 @@ public class LevelLoadingScreen
     /// sets up the loading screen fo
     /// </summary>
     /// <param name="uiManager"></param>
-    public void SetupInGame(UIManager uiManager)
+    public void SetUpInGameLoading(UIManager uiManager)
     {
         m_UIManager = uiManager;
 
