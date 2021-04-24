@@ -78,7 +78,7 @@ public class Crate : MonoBehaviour
     /// </summary>
     public void FuelDrop()
     {
-        CrateExplosion(smallExplosionPrefab);
+        CrateExplosion();
         DropItem(fuelItemPrefab);
     }
 
@@ -87,7 +87,7 @@ public class Crate : MonoBehaviour
     /// </summary>
     public void AmmoDrop()
     {
-        CrateExplosion(smallExplosionPrefab);
+        CrateExplosion();
         DropItem(ammoItemPrefab);
     }
 
@@ -95,7 +95,7 @@ public class Crate : MonoBehaviour
     /// this spawns explosion prefab when create is destroyed
     /// </summary>
     /// <param name="Prefab"></param>
-    public void CrateExplosion(GameObject Prefab)
+    public void CrateExplosion()
     {
         GameObject clone = Instantiate(smallExplosionPrefab, transform.position, smallExplosionPrefab.transform.rotation);
         Destroy(clone, 2);
@@ -107,7 +107,7 @@ public class Crate : MonoBehaviour
     /// <param name="Prefab"></param>
     public void DropItem(GameObject Prefab)
     {
-        GameObject clone = Instantiate(Prefab, transform.position, Prefab.transform.rotation);
+        Instantiate(Prefab, transform.position, Prefab.transform.rotation);
         Destroy(gameObject);
     }
 }

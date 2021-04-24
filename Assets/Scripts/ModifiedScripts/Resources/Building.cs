@@ -25,11 +25,11 @@ public class Building : MonoBehaviour
         if(collision.transform.tag == "Shell")
         {
             stats.playerScore += 2; // add two to player score
-            BuildingExplosion(explosionPrefab, collision); // explode building
+            BuildingExplosion(collision); // explode building
             stats.CheckStatPoint();
             UpdateUI();
             Destroy(collision.gameObject); // destroy object on collision
-            DebrisSpawn(buildingDebris);
+            DebrisSpawn();
             Destroy(gameObject); // destroy building
         }
     }
@@ -38,7 +38,7 @@ public class Building : MonoBehaviour
     /// this spawns explosion prefab when create is destroyed
     /// </summary>
     /// <param name="Prefab"></param>
-    public void BuildingExplosion(GameObject Prefab, Collision collision)
+    public void BuildingExplosion(Collision collision)
     {
         GameObject clone = Instantiate(explosionPrefab, collision.transform.position, explosionPrefab.transform.rotation);
         Destroy(clone, 2);
@@ -48,9 +48,10 @@ public class Building : MonoBehaviour
     /// spawns debris when building is destroyed
     /// </summary>
     /// <param name="Prefab"></param>
-    public void DebrisSpawn(GameObject Prefab)
+    public void DebrisSpawn()
     {
-        GameObject clone = Instantiate(buildingDebris, transform.position, buildingDebris.transform.rotation);
+        Instantiate(buildingDebris, transform.position, buildingDebris.transform.rotation);
+
         if (debuggingEnabled)
         {
             Debug.Log("Debris Spawned");
@@ -64,6 +65,7 @@ public class Building : MonoBehaviour
     {
         stats.uiManager.loseMenu.UpdateLoseMenuScore(); // update lose menu UI
         stats.uiManager.inGameUI.UpdateScore(); // update ingame UI
+
         if (debuggingEnabled)
         {
             Debug.Log("UI updated");
