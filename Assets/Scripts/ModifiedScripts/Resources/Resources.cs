@@ -91,6 +91,7 @@ public class Ammo
         ammoValue += amount;
         ammoValue = Mathf.Clamp(ammoValue, 0, maxAmmoValue);
         uiManager.inGameUI.UpdateAmmoUI(ammoValue, maxAmmoValue);
+        uiManager.loseMenu.CheckToWinLevel();
 
         if (debuggingEnable)
         {
@@ -146,6 +147,7 @@ public class Fuel
     public void AddFuel(float amount)
     {
         CurrentFuel += amount;
+        uiManager.loseMenu.CheckToWinLevel();
 
         if (debuggingEnable)
         {

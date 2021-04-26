@@ -55,7 +55,7 @@ public class SceneLoading : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(2); // waits for 2 seconds
+        yield return new WaitForSeconds(3); // waits for 3 seconds
 
         while(loadingDone) // if loading is done
         {
