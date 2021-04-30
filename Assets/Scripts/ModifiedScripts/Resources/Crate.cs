@@ -8,6 +8,7 @@ public class Crate : MonoBehaviour
     public GameObject smallExplosionPrefab; // a refernece to the explosion prefab
     public GameObject fuelItemPrefab; // a reference to the fuel pickup prefab
     public GameObject ammoItemPrefab; // a reference to the ammo pickup prefab
+    public GameObject shellTypePrefab; // a reference to the shell type pickup prefab
 
     public bool debuggingEnabled = false; // enables/disables debugging
     #endregion
@@ -42,7 +43,7 @@ public class Crate : MonoBehaviour
             }
             #endregion
 
-            int coinFlip = Random.Range(0, 2);
+            int coinFlip = Random.Range(0, 3);
             if(coinFlip == 0)
             {
                 FuelDrop(); // calls fuel drop function
@@ -62,6 +63,18 @@ public class Crate : MonoBehaviour
                 if (debuggingEnabled)
                 {
                     Debug.Log("Ammo Dropped");
+                }
+                #endregion
+            }
+
+            else if (coinFlip == 2)
+            {
+                ShellDrop(); // calls ammo drop function
+
+                #region debugging
+                if (debuggingEnabled)
+                {
+                    Debug.Log("Shell Type Dropped");
                 }
                 #endregion
             }
@@ -89,6 +102,15 @@ public class Crate : MonoBehaviour
     {
         CrateExplosion();
         DropItem(ammoItemPrefab);
+    }
+
+    /// <summary>
+    /// this creates a small explosion and drops shell type
+    /// </summary>
+    public void ShellDrop()
+    {
+        CrateExplosion();
+        DropItem(shellTypePrefab);
     }
 
     /// <summary>
