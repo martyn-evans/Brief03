@@ -887,12 +887,13 @@ GameObject:
   - component: {fileID: 41875187}
   - component: {fileID: 41875186}
   - component: {fileID: 41875189}
+  - component: {fileID: 41875190}
   m_Layer: 0
   m_Name: Wall 4 (23)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &41875185
 Transform:
@@ -986,6 +987,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &41875190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41875184}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &42537558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 79cc36a7317be2748aaa86ec65617336,
@@ -1810,12 +1827,13 @@ GameObject:
   - component: {fileID: 79455541}
   - component: {fileID: 79455540}
   - component: {fileID: 79455543}
+  - component: {fileID: 79455544}
   m_Layer: 0
   m_Name: Wall 4 (15)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &79455539
 Transform:
@@ -1909,6 +1927,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &79455544
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79455538}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &89293405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3355,12 +3389,13 @@ GameObject:
   - component: {fileID: 147951883}
   - component: {fileID: 147951882}
   - component: {fileID: 147951885}
+  - component: {fileID: 147951886}
   m_Layer: 0
   m_Name: Wall 4 (27)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &147951881
 Transform:
@@ -3454,6 +3489,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &147951886
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147951880}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &152462212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,12 +3555,13 @@ GameObject:
   - component: {fileID: 153873316}
   - component: {fileID: 153873315}
   - component: {fileID: 153873318}
+  - component: {fileID: 153873319}
   m_Layer: 0
   m_Name: Wall 4 (6)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &153873314
 Transform:
@@ -3603,6 +3655,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &153873319
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153873313}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &154039055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5876,12 +5944,13 @@ GameObject:
   - component: {fileID: 263285261}
   - component: {fileID: 263285260}
   - component: {fileID: 263285263}
+  - component: {fileID: 263285264}
   m_Layer: 0
   m_Name: Wall 4
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &263285259
 Transform:
@@ -5975,6 +6044,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &263285264
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263285258}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &271991224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6776,12 +6861,13 @@ GameObject:
   - component: {fileID: 295633645}
   - component: {fileID: 295633644}
   - component: {fileID: 295633647}
+  - component: {fileID: 295633648}
   m_Layer: 0
   m_Name: Wall 4 (38)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &295633643
 Transform:
@@ -6875,6 +6961,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &295633648
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295633642}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &302661190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8485,12 +8587,13 @@ GameObject:
   - component: {fileID: 372311738}
   - component: {fileID: 372311737}
   - component: {fileID: 372311740}
+  - component: {fileID: 372311741}
   m_Layer: 0
   m_Name: Wall 4 (11)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &372311736
 Transform:
@@ -8584,6 +8687,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &372311741
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372311735}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &378221156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9890,12 +10009,13 @@ GameObject:
   - component: {fileID: 421447098}
   - component: {fileID: 421447097}
   - component: {fileID: 421447100}
+  - component: {fileID: 421447101}
   m_Layer: 0
   m_Name: Wall 4 (34)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &421447096
 Transform:
@@ -9989,6 +10109,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &421447101
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421447095}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &423181777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8404482693969333398, guid: 15d46ac60a7085844823104e19bd3e0c,
@@ -10260,12 +10396,13 @@ GameObject:
   - component: {fileID: 438804513}
   - component: {fileID: 438804512}
   - component: {fileID: 438804511}
+  - component: {fileID: 438804515}
   m_Layer: 0
   m_Name: Wall 4 (30)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &438804510
 Transform:
@@ -10359,6 +10496,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438804509}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &438804515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438804509}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &442794933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12572,12 +12725,13 @@ GameObject:
   - component: {fileID: 545229726}
   - component: {fileID: 545229725}
   - component: {fileID: 545229728}
+  - component: {fileID: 545229729}
   m_Layer: 0
   m_Name: Wall 4 (41)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &545229724
 Transform:
@@ -12671,6 +12825,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &545229729
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545229723}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &546432623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14393,12 +14563,13 @@ GameObject:
   - component: {fileID: 628440513}
   - component: {fileID: 628440512}
   - component: {fileID: 628440515}
+  - component: {fileID: 628440516}
   m_Layer: 0
   m_Name: Wall 4 (8)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &628440511
 Transform:
@@ -14492,6 +14663,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &628440516
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628440510}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &632999530
 GameObject:
   m_ObjectHideFlags: 0
@@ -14963,12 +15150,13 @@ GameObject:
   - component: {fileID: 647199811}
   - component: {fileID: 647199810}
   - component: {fileID: 647199813}
+  - component: {fileID: 647199814}
   m_Layer: 0
   m_Name: Wall 4 (44)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &647199809
 Transform:
@@ -15062,6 +15250,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &647199814
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647199808}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &647955403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16417,12 +16621,13 @@ GameObject:
   - component: {fileID: 700903786}
   - component: {fileID: 700903785}
   - component: {fileID: 700903788}
+  - component: {fileID: 700903789}
   m_Layer: 0
   m_Name: Wall 4 (36)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &700903784
 Transform:
@@ -16516,6 +16721,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &700903789
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700903783}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &704890359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 79cc36a7317be2748aaa86ec65617336,
@@ -16874,12 +17095,13 @@ GameObject:
   - component: {fileID: 718807213}
   - component: {fileID: 718807212}
   - component: {fileID: 718807215}
+  - component: {fileID: 718807216}
   m_Layer: 0
   m_Name: Wall 4 (10)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &718807211
 Transform:
@@ -16973,6 +17195,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &718807216
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718807210}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &735872154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6966050254854397196, guid: 090fb37137d761643ac78471f6c86775,
@@ -16992,12 +17230,13 @@ GameObject:
   - component: {fileID: 737096230}
   - component: {fileID: 737096229}
   - component: {fileID: 737096228}
+  - component: {fileID: 737096232}
   m_Layer: 0
   m_Name: Wall 4 (20)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &737096227
 Transform:
@@ -17091,6 +17330,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737096226}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &737096232
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737096226}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &742709606
 GameObject:
   m_ObjectHideFlags: 0
@@ -21359,12 +21614,13 @@ GameObject:
   - component: {fileID: 920914165}
   - component: {fileID: 920914164}
   - component: {fileID: 920914167}
+  - component: {fileID: 920914168}
   m_Layer: 0
   m_Name: Wall 4 (37)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &920914163
 Transform:
@@ -21458,6 +21714,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &920914168
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920914162}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &922027598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8404482693969333398, guid: 15d46ac60a7085844823104e19bd3e0c,
@@ -22022,12 +22294,13 @@ GameObject:
   - component: {fileID: 941226226}
   - component: {fileID: 941226225}
   - component: {fileID: 941226228}
+  - component: {fileID: 941226229}
   m_Layer: 0
   m_Name: Wall 4 (17)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &941226224
 Transform:
@@ -22121,6 +22394,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &941226229
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941226223}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &941422548
 GameObject:
   m_ObjectHideFlags: 0
@@ -22423,12 +22712,13 @@ GameObject:
   - component: {fileID: 956100946}
   - component: {fileID: 956100945}
   - component: {fileID: 956100948}
+  - component: {fileID: 956100949}
   m_Layer: 0
   m_Name: Wall 4 (29)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &956100944
 Transform:
@@ -22522,6 +22812,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &956100949
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956100943}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &963455935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6966050254854397196, guid: 090fb37137d761643ac78471f6c86775,
@@ -22961,12 +23267,13 @@ GameObject:
   - component: {fileID: 973572108}
   - component: {fileID: 973572107}
   - component: {fileID: 973572110}
+  - component: {fileID: 973572111}
   m_Layer: 0
   m_Name: Wall 4 (28)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &973572106
 Transform:
@@ -23060,6 +23367,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &973572111
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973572105}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &976136114
 GameObject:
   m_ObjectHideFlags: 0
@@ -23206,12 +23529,13 @@ GameObject:
   - component: {fileID: 979749789}
   - component: {fileID: 979749788}
   - component: {fileID: 979749791}
+  - component: {fileID: 979749792}
   m_Layer: 0
   m_Name: Wall 4 (3)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &979749787
 Transform:
@@ -23305,6 +23629,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &979749792
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979749786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &984713058
 GameObject:
   m_ObjectHideFlags: 0
@@ -23318,12 +23658,13 @@ GameObject:
   - component: {fileID: 984713061}
   - component: {fileID: 984713060}
   - component: {fileID: 984713063}
+  - component: {fileID: 984713064}
   m_Layer: 0
   m_Name: Wall 4 (9)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &984713059
 Transform:
@@ -23417,6 +23758,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &984713064
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984713058}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &991639721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24620,12 +24977,13 @@ GameObject:
   - component: {fileID: 1038239884}
   - component: {fileID: 1038239883}
   - component: {fileID: 1038239887}
+  - component: {fileID: 1038239888}
   m_Layer: 0
   m_Name: Wall 1
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1038239883
 BoxCollider:
@@ -24719,6 +25077,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1038239888
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038239882}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1040320595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28284,12 +28658,13 @@ GameObject:
   - component: {fileID: 1239546566}
   - component: {fileID: 1239546565}
   - component: {fileID: 1239546568}
+  - component: {fileID: 1239546569}
   m_Layer: 0
   m_Name: Wall 4 (22)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1239546564
 Transform:
@@ -28383,6 +28758,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1239546569
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239546563}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1242910990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30216,12 +30607,13 @@ GameObject:
   - component: {fileID: 1296331651}
   - component: {fileID: 1296331650}
   - component: {fileID: 1296331653}
+  - component: {fileID: 1296331654}
   m_Layer: 0
   m_Name: Wall 4 (45)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1296331649
 Transform:
@@ -30315,6 +30707,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1296331654
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296331648}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1299762814
 GameObject:
   m_ObjectHideFlags: 0
@@ -30449,12 +30857,13 @@ GameObject:
   - component: {fileID: 1301435602}
   - component: {fileID: 1301435601}
   - component: {fileID: 1301435604}
+  - component: {fileID: 1301435605}
   m_Layer: 0
   m_Name: Wall 4 (18)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1301435600
 Transform:
@@ -30548,6 +30957,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1301435605
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301435599}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1302784083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31480,12 +31905,13 @@ GameObject:
   - component: {fileID: 1334154225}
   - component: {fileID: 1334154224}
   - component: {fileID: 1334154227}
+  - component: {fileID: 1334154228}
   m_Layer: 0
   m_Name: Wall 2
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1334154223
 Transform:
@@ -31579,6 +32005,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1334154228
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334154222}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1337294225
 GameObject:
   m_ObjectHideFlags: 0
@@ -32113,12 +32555,13 @@ GameObject:
   - component: {fileID: 1370700380}
   - component: {fileID: 1370700379}
   - component: {fileID: 1370700382}
+  - component: {fileID: 1370700383}
   m_Layer: 0
   m_Name: Wall 4 (43)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1370700378
 Transform:
@@ -32212,6 +32655,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1370700383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370700377}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &1371493231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6966050254854397196, guid: 090fb37137d761643ac78471f6c86775,
@@ -34039,12 +34498,13 @@ GameObject:
   - component: {fileID: 1423016653}
   - component: {fileID: 1423016652}
   - component: {fileID: 1423016655}
+  - component: {fileID: 1423016656}
   m_Layer: 0
   m_Name: Wall 4 (14)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1423016651
 Transform:
@@ -34138,6 +34598,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1423016656
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423016650}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1426850420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34225,6 +34701,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2598633211480631990, guid: aba5dc34144335c43a163d644929c642,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598633211480631990, guid: aba5dc34144335c43a163d644929c642,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
         type: 3}
       propertyPath: tankHealth.uiManager
@@ -34234,7 +34720,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tankMainGun.shellType
       value: 
-      objectReference: {fileID: 11400000, guid: 416d5897fd0aded40aca270da4af32fe,
+      objectReference: {fileID: 11400000, guid: 7fbcd02fee78e1442b56cd40296bc486,
         type: 2}
     - target: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
         type: 3}
@@ -34596,12 +35082,13 @@ GameObject:
   - component: {fileID: 1441662624}
   - component: {fileID: 1441662623}
   - component: {fileID: 1441662626}
+  - component: {fileID: 1441662627}
   m_Layer: 0
   m_Name: Wall 3
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1441662622
 Transform:
@@ -34695,6 +35182,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1441662627
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441662621}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1442315827
 GameObject:
   m_ObjectHideFlags: 0
@@ -35199,12 +35702,13 @@ GameObject:
   - component: {fileID: 1466155871}
   - component: {fileID: 1466155870}
   - component: {fileID: 1466155873}
+  - component: {fileID: 1466155874}
   m_Layer: 0
   m_Name: Wall 4 (7)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1466155869
 Transform:
@@ -35298,6 +35802,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1466155874
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466155868}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1468733093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35504,12 +36024,13 @@ GameObject:
   - component: {fileID: 1489572415}
   - component: {fileID: 1489572414}
   - component: {fileID: 1489572413}
+  - component: {fileID: 1489572417}
   m_Layer: 0
   m_Name: Wall 4 (31)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1489572412
 Transform:
@@ -35603,6 +36124,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489572411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1489572417
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489572411}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &1490820396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8404482693969333398, guid: 15d46ac60a7085844823104e19bd3e0c,
@@ -36406,12 +36943,13 @@ GameObject:
   - component: {fileID: 1519800683}
   - component: {fileID: 1519800682}
   - component: {fileID: 1519800681}
+  - component: {fileID: 1519800685}
   m_Layer: 0
   m_Name: Wall 4 (21)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1519800680
 Transform:
@@ -36505,6 +37043,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519800679}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1519800685
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519800679}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1520034449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37373,12 +37927,13 @@ GameObject:
   - component: {fileID: 1549365633}
   - component: {fileID: 1549365632}
   - component: {fileID: 1549365635}
+  - component: {fileID: 1549365636}
   m_Layer: 0
   m_Name: Wall 4 (33)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1549365631
 Transform:
@@ -37472,6 +38027,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1549365636
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549365630}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1549373361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38479,12 +39050,13 @@ GameObject:
   - component: {fileID: 1599024103}
   - component: {fileID: 1599024102}
   - component: {fileID: 1599024105}
+  - component: {fileID: 1599024106}
   m_Layer: 0
   m_Name: Wall 4 (5)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1599024101
 Transform:
@@ -38578,6 +39150,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1599024106
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599024100}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1599734271
 GameObject:
   m_ObjectHideFlags: 0
@@ -38672,12 +39260,13 @@ GameObject:
   - component: {fileID: 1601040708}
   - component: {fileID: 1601040707}
   - component: {fileID: 1601040710}
+  - component: {fileID: 1601040711}
   m_Layer: 0
   m_Name: Wall 4 (35)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1601040706
 Transform:
@@ -38771,6 +39360,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1601040711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601040705}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1602104691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39560,12 +40165,13 @@ GameObject:
   - component: {fileID: 1617595228}
   - component: {fileID: 1617595227}
   - component: {fileID: 1617595230}
+  - component: {fileID: 1617595231}
   m_Layer: 0
   m_Name: Wall 4 (25)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1617595226
 Transform:
@@ -39659,6 +40265,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1617595231
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617595225}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &1619024096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1922871854356880875, guid: 5cbc54450e9d8c34aaf8ecc13e963550,
@@ -40179,12 +40801,13 @@ GameObject:
   - component: {fileID: 1659056307}
   - component: {fileID: 1659056306}
   - component: {fileID: 1659056309}
+  - component: {fileID: 1659056310}
   m_Layer: 0
   m_Name: Wall 4 (16)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1659056305
 Transform:
@@ -40278,6 +40901,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1659056310
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659056304}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1660864718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41899,12 +42538,13 @@ GameObject:
   - component: {fileID: 1746534471}
   - component: {fileID: 1746534470}
   - component: {fileID: 1746534473}
+  - component: {fileID: 1746534474}
   m_Layer: 0
   m_Name: Wall 4 (2)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1746534469
 Transform:
@@ -41998,6 +42638,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1746534474
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746534468}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1748625757
 GameObject:
   m_ObjectHideFlags: 0
@@ -42892,12 +43548,13 @@ GameObject:
   - component: {fileID: 1766131878}
   - component: {fileID: 1766131877}
   - component: {fileID: 1766131880}
+  - component: {fileID: 1766131881}
   m_Layer: 0
   m_Name: Wall 4 (13)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1766131876
 Transform:
@@ -42991,6 +43648,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1766131881
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766131875}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1767065078
 GameObject:
   m_ObjectHideFlags: 0
@@ -43562,12 +44235,13 @@ GameObject:
   - component: {fileID: 1789056641}
   - component: {fileID: 1789056640}
   - component: {fileID: 1789056643}
+  - component: {fileID: 1789056644}
   m_Layer: 0
   m_Name: Wall 4 (32)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1789056639
 Transform:
@@ -43661,6 +44335,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1789056644
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789056638}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1791911781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43780,12 +44470,13 @@ GameObject:
   - component: {fileID: 1793715908}
   - component: {fileID: 1793715907}
   - component: {fileID: 1793715910}
+  - component: {fileID: 1793715911}
   m_Layer: 0
   m_Name: Wall 4 (24)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1793715906
 Transform:
@@ -43879,6 +44570,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1793715911
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793715905}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &1793973517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44429,12 +45136,13 @@ GameObject:
   - component: {fileID: 1824690343}
   - component: {fileID: 1824690342}
   - component: {fileID: 1824690345}
+  - component: {fileID: 1824690346}
   m_Layer: 0
   m_Name: Wall 4 (19)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1824690341
 Transform:
@@ -44528,6 +45236,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1824690346
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824690340}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1825608941
 GameObject:
   m_ObjectHideFlags: 0
@@ -45917,12 +46641,13 @@ GameObject:
   - component: {fileID: 1887085639}
   - component: {fileID: 1887085638}
   - component: {fileID: 1887085641}
+  - component: {fileID: 1887085642}
   m_Layer: 0
   m_Name: Wall 4 (26)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1887085637
 Transform:
@@ -46016,6 +46741,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1887085642
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887085636}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1887472490
 GameObject:
   m_ObjectHideFlags: 0
@@ -46490,12 +47231,13 @@ GameObject:
   - component: {fileID: 1901853654}
   - component: {fileID: 1901853653}
   - component: {fileID: 1901853656}
+  - component: {fileID: 1901853657}
   m_Layer: 0
   m_Name: Wall 4 (4)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1901853652
 Transform:
@@ -46589,6 +47331,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &1901853657
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901853651}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &1903461063
 GameObject:
   m_ObjectHideFlags: 0
@@ -50108,12 +50866,13 @@ GameObject:
   - component: {fileID: 2040132276}
   - component: {fileID: 2040132275}
   - component: {fileID: 2040132278}
+  - component: {fileID: 2040132279}
   m_Layer: 0
   m_Name: Wall 4 (39)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2040132274
 Transform:
@@ -50207,6 +50966,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &2040132279
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040132273}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &2040208830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50739,12 +51514,13 @@ GameObject:
   - component: {fileID: 2079517659}
   - component: {fileID: 2079517658}
   - component: {fileID: 2079517661}
+  - component: {fileID: 2079517662}
   m_Layer: 0
   m_Name: Wall 4 (42)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2079517657
 Transform:
@@ -50838,6 +51614,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &2079517662
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079517656}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &2079521646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8404482693969333398, guid: 15d46ac60a7085844823104e19bd3e0c,
@@ -50857,12 +51649,13 @@ GameObject:
   - component: {fileID: 2085787747}
   - component: {fileID: 2085787746}
   - component: {fileID: 2085787749}
+  - component: {fileID: 2085787750}
   m_Layer: 0
   m_Name: Wall 4 (12)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2085787745
 Transform:
@@ -50956,6 +51749,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &2085787750
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085787744}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!4 &2086666758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8404482693969333398, guid: 15d46ac60a7085844823104e19bd3e0c,
@@ -51114,12 +51923,13 @@ GameObject:
   - component: {fileID: 2101453701}
   - component: {fileID: 2101453700}
   - component: {fileID: 2101453703}
+  - component: {fileID: 2101453704}
   m_Layer: 0
   m_Name: Wall 4 (40)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2101453699
 Transform:
@@ -51213,6 +52023,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &2101453704
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101453698}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1001 &2102836475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51576,12 +52402,13 @@ GameObject:
   - component: {fileID: 2121913819}
   - component: {fileID: 2121913818}
   - component: {fileID: 2121913821}
+  - component: {fileID: 2121913822}
   m_Layer: 0
   m_Name: Wall 4 (1)
   m_TagString: Enrivonment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2121913817
 Transform:
@@ -51675,6 +52502,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!54 &2121913822
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121913816}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!1 &2125382706
 GameObject:
   m_ObjectHideFlags: 0

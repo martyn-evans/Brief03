@@ -61,7 +61,7 @@ public class ShellPickUp : MonoBehaviour
                 #endregion
             }
 
-            if (chance == 6)
+            if (chance == 5)
             {
                 playerTank.tankMainGun.shellType = shotgunShellType;
 

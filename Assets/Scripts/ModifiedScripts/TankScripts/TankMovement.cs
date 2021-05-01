@@ -12,7 +12,7 @@ public class TankMovement
     #region public variables
     public float speed = 12f; // the speed our tank moves
     public float turnSpeed = 180f; // the speed that we can turn in degrees in seconds.
-    public float turretTurnSpeed = 20f; // the speed our turret turns in degrees in seconds
+    public float turretTurnSpeed = 25f; // the speed our turret turns in degrees in seconds
 
     public TankSoundEffects tankSoundEffects = new TankSoundEffects(); // creating a new instance of our tank sound effects class
     public Transform turretTransform; // a reference to the transform of the turret

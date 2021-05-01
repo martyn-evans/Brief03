@@ -7,7 +7,7 @@ using UnityEngine;
 public class ShellScriptableObject : ScriptableObject
 {
     #region public variables
-    public enum ShellType {Single, Double, Triple, Shotgun, Area }; // enum of shell types
+    public enum ShellType {Single, Double, Triple, Shotgun }; // enum of shell types
     public ShellType currentShellType; // current shell type
     public GameObject shellPrefab; // a refernce to th shell prefab
     #endregion
@@ -45,11 +45,6 @@ public class ShellScriptableObject : ScriptableObject
             case ShellType.Shotgun:
                 {
                     Shotgun(SpawnPoint);
-                    break;
-                }
-            case ShellType.Area:
-                {
-                    Area(SpawnPoint);
                     break;
                 }
         }
@@ -94,14 +89,6 @@ public class ShellScriptableObject : ScriptableObject
         Single(SpawnPoint, new Vector3(-2, 0, 0));
     }
 
-    void Shotgun(Transform SpawnPoint)
-    {
-        SlugSingle(SpawnPoint, 0);
-        SlugSingle(SpawnPoint, 90);
-        SlugSingle(SpawnPoint, 180);
-        SlugSingle(SpawnPoint, 270);
-    }
-
     void SlugSingle(Transform SpawnPoint, float angle)
     {
         // spawns in a tank shell at the main gun transform and matches the rotation of the main gun and stores it in the clone GameObject variable
@@ -115,26 +102,11 @@ public class ShellScriptableObject : ScriptableObject
         Object.Destroy(clone, 5f);
     }
 
-    void Area(Transform SpawnPoint)
+    void Shotgun(Transform SpawnPoint)
     {
-        AreaSingle(SpawnPoint, 230);
-        AreaSingle(SpawnPoint, 250);
-        AreaSingle(SpawnPoint, 270);
-        AreaSingle(SpawnPoint, 290);
-        AreaSingle(SpawnPoint, 310);
-    }
-
-    void AreaSingle(Transform SpawnPoint, float angle)
-    {
-        float shellAngle = SpawnPoint.rotation.y + angle;
-        // spawns in a tank shell at the main gun transform and matches the rotation of the main gun and stores it in the clone GameObject variable
-        GameObject clone = Object.Instantiate(shellPrefab, SpawnPoint.position, Quaternion.Euler(SpawnPoint.rotation.x, shellAngle, SpawnPoint.rotation.z));
-
-        // If the clone has a rigidbody, we want to add some velocity to it to make it fire!
-        if (clone.GetComponent<Rigidbody>())
-        {
-            clone.GetComponent<Rigidbody>().velocity = shellForce * clone.transform.forward; // make the velocity of our bullet go in the direction of our gun at the launch force
-        }
-        Object.Destroy(clone, 5f);
+        SlugSingle(SpawnPoint, 0);
+        SlugSingle(SpawnPoint, 90);
+        SlugSingle(SpawnPoint, 180);
+        SlugSingle(SpawnPoint, 270);
     }
 }
